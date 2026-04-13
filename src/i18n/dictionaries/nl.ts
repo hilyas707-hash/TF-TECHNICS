@@ -1,0 +1,155 @@
+import type { Dictionary } from "./types";
+
+const nl: Dictionary = {
+  /* ─── Metagegevens SEO ────────────────────────────────────────────────── */
+  meta: {
+    siteName: "Elektricien Herstellingen Brussel",
+    defaultTitle: "Elektricien Herstellingen Brussel | Spoed 24u/24 – 7d/7",
+    defaultDescription:
+      "Erkende elektricien voor spoedinterventies in Brussel, Vlaanderen en Waals-Brabant. Snelle herstellingen, installaties en laadpaal. Gratis offerte.",
+    keywords:
+      "elektricien brussel, elektrische panne, spoed elektricien, laadpaal elektrische wagen, erkende elektricien belgie",
+  },
+
+  /* ─── Navigatie ───────────────────────────────────────────────────────── */
+  nav: {
+    services: "Diensten",
+    zones: "Werkgebied",
+    bornes: "Laadpalen",
+    urgence: "Spoed",
+    contact: "Contact",
+    callNow: "Nu bellen",
+    language: "FR",
+  },
+
+  /* ─── Hero ────────────────────────────────────────────────────────────── */
+  hero: {
+    badge: "Interventie binnen 60 min",
+    title: "Uw elektricien\nvoor herstellingen in Brussel",
+    subtitle:
+      "24u/24 – 7d/7 beschikbaar voor al uw elektrische spoedgevallen in Brussel, Vlaanderen en Waals-Brabant.",
+    cta: "Bellen voor spoed",
+    ctaSecondary: "Onze diensten",
+    phone: "+32 XXX XX XX XX",
+    trust: {
+      certified: "Erkend AREI",
+      available: "Beschikbaar 24u/24",
+      speed: "Interventie < 60 min",
+    },
+  },
+
+  /* ─── Diensten ────────────────────────────────────────────────────────── */
+  services: {
+    sectionTitle: "Onze diensten",
+    sectionSubtitle:
+      "Snelle en vakkundige interventies voor particulieren en bedrijven.",
+    items: {
+      depannage: {
+        title: "Spoedherstellingen",
+        description:
+          "Stroomuitval, kortsluiting, zekering die springt? Wij interveniëren dag en nacht.",
+      },
+      borne: {
+        title: "Laadpaal",
+        description:
+          "Installatie van wallboxen tot 22 kW thuis of op kantoor. Gecertificeerd voor regionale premies.",
+      },
+      renovation: {
+        title: "AREI-conformiteit",
+        description:
+          "Aanpassing aan de AREI-normen. Officieel conformiteitsrapport voor verzekering en verkoop.",
+      },
+      installation: {
+        title: "Elektrische installatie",
+        description:
+          "Zekeringkast, stopcontacten, verlichting: alle soorten installaties voor uw woning of kantoor.",
+      },
+      diagnostic: {
+        title: "Elektrische diagnose",
+        description:
+          "Volledige controle van uw installatie met gedetailleerd technisch rapport en prioriteitsaanbevelingen.",
+      },
+    },
+  },
+
+  /* ─── Werkgebied ──────────────────────────────────────────────────────── */
+  zones: {
+    sectionTitle: "Werkgebied",
+    sectionSubtitle:
+      "Wij dekken Brussel en omgeving in Vlaanderen en Waals-Brabant.",
+    regions: {
+      bruxelles: {
+        name: "Brussels Hoofdstedelijk Gewest",
+        cities: [
+          "Anderlecht", "Oudergem", "Sint-Agatha-Berchem", "Brussel-Stad",
+          "Etterbeek", "Evere", "Vorst", "Ganshoren", "Elsene", "Jette",
+          "Koekelberg", "Molenbeek", "Sint-Gillis", "Sint-Joost", "Schaarbeek",
+          "Ukkel", "Watermaal-Bosvoorde", "Sint-Lambrechts-Woluwe", "Sint-Pieters-Woluwe",
+        ],
+      },
+      brabantWallon: {
+        name: "Waals-Brabant",
+        cities: [
+          "Waver", "Waterloo", "Eigenbrakel", "Ottignies-LLN",
+          "La Hulpe", "Rixensart", "Nijvel",
+        ],
+      },
+      flamand: {
+        name: "Vlaams-Brabant",
+        cities: [
+          "Zaventem", "Tervuren", "Wezembeek-Oppem", "Kraainem",
+          "Overijse", "Halle", "Vilvoorde",
+        ],
+      },
+    },
+  },
+
+  /* ─── Laadpalen ───────────────────────────────────────────────────────── */
+  bornes: {
+    sectionTitle: "Laadpalen",
+    sectionSubtitle:
+      "Professionele installatie van wallboxen voor elektrische voertuigen.",
+    ctaInstall: "Offerte aanvragen",
+    features: {
+      certified: "Gecertificeerd installateur",
+      subsidy: "Hulp bij premieaanvragen",
+      speed: "Installatie op één dag",
+    },
+  },
+
+  /* ─── Vertrouwen / Sociale bewijzen ──────────────────────────────────── */
+  trust: {
+    sectionTitle: "Waarom ons kiezen?",
+    stats: {
+      interventions: { value: "2.500+", label: "Uitgevoerde interventies" },
+      experience:    { value: "15 jaar", label: "Ervaring" },
+      satisfaction:  { value: "98 %",   label: "Tevreden klanten" },
+      response:      { value: "< 60 min", label: "Reactietijd" },
+    },
+  },
+
+  /* ─── Contact & Spoed ─────────────────────────────────────────────────── */
+  contact: {
+    sectionTitle: "Contacteer ons",
+    urgencyTitle: "Elektrisch noodgeval?",
+    urgencySubtitle: "Bel ons onmiddellijk, wij interveniëren binnen 60 minuten.",
+    phone: "+32 XXX XX XX XX",
+    email: "info@electricien-bruxelles.be",
+    hours: "Beschikbaar 24u/24 – 7d/7",
+    formName: "Uw naam",
+    formPhone: "Uw telefoonnummer",
+    formMessage: "Beschrijf uw probleem",
+    formSubmit: "Mijn aanvraag verzenden",
+    formSuccess: "Uw bericht is verzonden. Wij nemen snel contact met u op.",
+  },
+
+  /* ─── Voettekst ───────────────────────────────────────────────────────── */
+  footer: {
+    tagline: "Erkende elektricien – Brussel, Vlaanderen, Waals-Brabant",
+    rights: "Alle rechten voorbehouden.",
+    legal: "Juridische vermeldingen",
+    privacy: "Privacybeleid",
+  },
+};
+
+export default nl;

@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* ─── Charte graphique — TF Technics ───────────────────────────────────────── */
+@theme {
+  /* Police — Plus Jakarta Sans chargée via next/font */
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  /* Couleurs principales */
+  --color-white:             #ffffff;
+  --color-anthracite:        #2b2b2b;
+  --color-anthracite-light:  #3f3f3f;
+  --color-anthracite-muted:  #6b6b6b;
+  --color-orange:            #f97316;
+  --color-orange-dark:       #ea580c;
+  --color-orange-light:      #fdba74;
+  --color-orange-subtle:     #fff7ed;
+
+  /* Alias sémantiques */
+  --color-background:        var(--color-white);
+  --color-foreground:        var(--color-anthracite);
+  --color-muted:             var(--color-anthracite-muted);
+  --color-accent:            var(--color-orange);
+  --color-accent-hover:      var(--color-orange-dark);
+
+  /* Ombres */
+  --shadow-card:  0 4px 24px 0 rgba(43, 43, 43, 0.08);
+  --shadow-btn:   0 4px 20px 0 rgba(249, 115, 22, 0.35);
+  --shadow-hero:  0 8px 48px 0 rgba(43, 43, 43, 0.10);
+}
+
+/* ─── Reset & base ──────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #ffffff;
+  color: #2b2b2b;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* ─── Sélection de texte avec accent orange ─────────────────────────────────── */
+::selection {
+  background-color: #fdba74;
+  color: #2b2b2b;
+}
