@@ -149,7 +149,7 @@ export default function BornesSection({ dict }: Props) {
                 style={{ borderRadius: "calc(2rem - 0.5rem)" }}
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=85"
+                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=85"
                   alt="Borne de recharge électrique installée par TF Technics à Bruxelles"
                   fill
                   className="object-cover object-center"
