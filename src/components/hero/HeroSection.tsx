@@ -369,20 +369,6 @@ export default function HeroSection({ dict }: HeroSectionProps) {
                   </span>
                 </a>
 
-                {/* CTA secondaire — pleine largeur sur mobile */}
-                <button
-                  className="
-                    flex items-center justify-center
-                    w-full sm:w-auto sm:inline-flex
-                    px-6 py-3.5 sm:py-3 rounded-full
-                    border border-[#2b2b2b]/12 text-[#2b2b2b] font-semibold text-[16px] sm:text-[15px]
-                    transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
-                    hover:bg-[#2b2b2b]/[0.04] hover:border-[#2b2b2b]/20
-                    active:scale-[0.98]
-                  "
-                >
-                  {hero.ctaSecondary}
-                </button>
               </motion.div>
 
               {/* ── Pilules de confiance ── */}
