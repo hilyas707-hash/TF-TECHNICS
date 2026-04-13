@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { BatteryCharging, CheckCircle2, ArrowUpRight, Zap } from "lucide-react";
 import type { Dictionary } from "@/i18n/dictionaries/types";
 
@@ -143,27 +142,63 @@ export default function BornesSection({ dict }: Props) {
                 shadow-[0_8px_48px_rgba(249,115,22,0.15)]
               "
             >
-              {/* Inner core */}
+              {/* Inner core — visuel graphique SVG */}
               <div
-                className="relative overflow-hidden aspect-[4/5] sm:aspect-[3/4]"
-                style={{ borderRadius: "calc(2rem - 0.5rem)" }}
+                className="relative overflow-hidden aspect-[4/5] sm:aspect-[3/4] flex items-center justify-center"
+                style={{
+                  borderRadius: "calc(2rem - 0.5rem)",
+                  background: "linear-gradient(145deg, #1a1a1a 0%, #2b2b2b 50%, #1f1f1f 100%)",
+                }}
               >
-                <Image
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=85"
-                  alt="Borne de recharge électrique installée par TF Technics à Bruxelles"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+                {/* Cercles décoratifs */}
+                <div aria-hidden className="absolute inset-0 overflow-hidden">
+                  <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full" style={{ background: "radial-gradient(circle, rgba(249,115,22,0.18) 0%, transparent 65%)" }} />
+                  <div className="absolute -bottom-16 -left-16 w-56 h-56 rounded-full" style={{ background: "radial-gradient(circle, rgba(249,115,22,0.10) 0%, transparent 65%)" }} />
+                  {/* Grille subtile */}
+                  <svg className="absolute inset-0 w-full h-full opacity-[0.06]" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5"/>
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                  </svg>
+                </div>
 
-                {/* Overlay bas */}
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background:
-                      "linear-gradient(to top, rgba(249,115,22,0.30) 0%, transparent 50%)",
-                  }}
-                />
+                {/* Icône principale */}
+                <div className="relative flex flex-col items-center gap-6">
+                  {/* Anneau externe */}
+                  <div className="relative w-36 h-36 flex items-center justify-center">
+                    <div className="absolute inset-0 rounded-full" style={{ background: "rgba(249,115,22,0.12)", boxShadow: "0 0 60px rgba(249,115,22,0.20)" }} />
+                    <div className="absolute inset-3 rounded-full border border-[#f97316]/20" />
+                    {/* SVG connecteur de recharge */}
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      {/* Corps du connecteur */}
+                      <rect x="18" y="8" width="28" height="36" rx="6" fill="#f97316" opacity="0.15" stroke="#f97316" strokeWidth="1.5"/>
+                      {/* Broches */}
+                      <rect x="25" y="16" width="5" height="12" rx="2.5" fill="#f97316"/>
+                      <rect x="34" y="16" width="5" height="12" rx="2.5" fill="#f97316"/>
+                      <rect x="29.5" y="22" width="5" height="9" rx="2.5" fill="#f97316" opacity="0.6"/>
+                      {/* Câble */}
+                      <path d="M32 44 Q32 52 32 56" stroke="#f97316" strokeWidth="3" strokeLinecap="round" opacity="0.5"/>
+                      {/* Éclair central */}
+                      <path d="M35 26 L29 34 H33 L29 42 L38 31 H34 L38 26 Z" fill="white" opacity="0.9"/>
+                    </svg>
+                  </div>
+
+                  {/* Texte sous l'icône */}
+                  <div className="text-center">
+                    <p className="text-white/90 text-[13px] font-bold tracking-wider uppercase">Mode 3 · AC</p>
+                    <p className="text-[#f97316] text-[11px] font-medium mt-1 tracking-wide">jusqu'à 22 kW</p>
+                  </div>
+
+                  {/* Indicateur d'état */}
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full" style={{ background: "rgba(249,115,22,0.12)", border: "1px solid rgba(249,115,22,0.25)" }}>
+                    <span className="w-2 h-2 rounded-full bg-[#f97316] animate-pulse" />
+                    <span className="text-[11px] text-white/70 font-medium">En charge</span>
+                  </div>
+                </div>
+              </div>
 
                 {/* Badge flottant */}
                 <motion.div
