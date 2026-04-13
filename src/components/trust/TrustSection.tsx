@@ -56,7 +56,7 @@ export default function TrustSection({ dict }: Props) {
   void dict; // conservé pour compatibilité i18n future
 
   return (
-    <section id="confiance" className="bg-white py-24 md:py-32 overflow-hidden">
+    <section id="confiance" className="py-24 md:py-32 overflow-hidden" style={{ background: "linear-gradient(180deg, #fff7ed 0%, #ffffff 100%)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-8 xl:px-12">
 
         {/* ── En-tête ─────────────────────────────────────────────────────── */}
