@@ -189,7 +189,7 @@ export default function BornesSection({ dict }: Props) {
                   {/* Texte sous l'icône */}
                   <div className="text-center">
                     <p className="text-white/90 text-[13px] font-bold tracking-wider uppercase">Mode 3 · AC</p>
-                    <p className="text-[#f97316] text-[11px] font-medium mt-1 tracking-wide">jusqu'à 22 kW</p>
+                    <p className="text-[#f97316] text-[11px] font-medium mt-1 tracking-wide">jusqu&apos;à 22 kW</p>
                   </div>
 
                   {/* Indicateur d'état */}
@@ -198,7 +198,6 @@ export default function BornesSection({ dict }: Props) {
                     <span className="text-[11px] text-white/70 font-medium">En charge</span>
                   </div>
                 </div>
-              </div>
 
                 {/* Badge flottant */}
                 <motion.div
