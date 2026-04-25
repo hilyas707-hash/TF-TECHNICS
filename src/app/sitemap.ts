@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { getAllServiceSlugs } from "@/data/services";
 import { getAllCommuneSlugs } from "@/data/communes";
+import { ARTICLES } from "@/data/articles";
 
 const BASE_URL = "https://mon-super-site-mu.vercel.app";
 
@@ -10,6 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified:    new Date(),
     changeFrequency: "monthly" as const,
     priority:        0.9,
+  }));
+
+  const blogEntries = ARTICLES.map((article) => ({
+    url:             `${BASE_URL}/blog/${article.slug}`,
+    lastModified:    new Date(article.date),
+    changeFrequency: "monthly" as const,
+    priority:        0.7,
   }));
 
   const serviceEntries = getAllServiceSlugs().map((slug) => ({
@@ -32,6 +40,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority:        1,
     },
+    {
+      url:             `${BASE_URL}/blog`,
+      lastModified:    new Date(),
+      changeFrequency: "weekly" as const,
+      priority:        0.8,
+    },
+    ...blogEntries,
     ...communeEntries,
     ...serviceEntries,
     {
