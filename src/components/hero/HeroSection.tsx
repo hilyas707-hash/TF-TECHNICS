@@ -12,7 +12,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import type { Dictionary } from "@/i18n/dictionaries/types";
 import LocaleSwitcher from "@/components/layout/LocaleSwitcher";
 
@@ -38,6 +38,39 @@ interface HeroSectionProps { dict: Dictionary }
 export default function HeroSection({ dict }: HeroSectionProps) {
   const { hero, nav } = dict;
   const [menuOpen, setMenuOpen] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const section = sectionRef.current;
+    if (!video || !section) return;
+
+    // Attend que les métadonnées soient chargées pour connaître la durée
+    const onLoaded = () => {
+      let rafId: number;
+
+      const onScroll = () => {
+        cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          const rect = section.getBoundingClientRect();
+          const sectionH = section.offsetHeight;
+          const scrolled = -rect.top;
+          const progress = Math.min(Math.max(scrolled / sectionH, 0), 1);
+          video.currentTime = progress * video.duration;
+        });
+      };
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      return () => {
+        window.removeEventListener("scroll", onScroll);
+        cancelAnimationFrame(rafId);
+      };
+    };
+
+    video.addEventListener("loadedmetadata", onLoaded);
+    return () => video.removeEventListener("loadedmetadata", onLoaded);
+  }, []);
 
   const navLinks = [
     { label: nav.services, href: "#services"  },
@@ -157,14 +190,18 @@ export default function HeroSection({ dict }: HeroSectionProps) {
       {/* ══════════════════════════════════════════════════
           HERO — IMAGE PLEIN ÉCRAN CINÉMATOGRAPHIQUE
       ══════════════════════════════════════════════════ */}
-      <section className="relative min-h-[100dvh] overflow-hidden flex flex-col">
+      {/* Section 200dvh : la moitié haute = vidéo sticky, la moitié basse = espace de scroll */}
+      <section ref={sectionRef} className="relative h-[200dvh]">
 
-        {/* ── Vidéo de fond plein écran ── */}
+        {/* ── Conteneur sticky : reste à l'écran pendant le scroll ── */}
+        <div className="sticky top-0 h-[100dvh] overflow-hidden flex flex-col">
+
+        {/* ── Vidéo scrubbing — pause, contrôlée par le scroll ── */}
         <video
-          autoPlay
-          loop
+          ref={videoRef}
           muted
           playsInline
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/hero.mp4" type="video/mp4" />
@@ -328,6 +365,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
           </div>
         </div>
 
+        </div>{/* fin sticky */}
       </section>
     </>
   );
