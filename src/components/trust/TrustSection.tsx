@@ -67,8 +67,8 @@ export default function TrustSection({ dict }: Props) {
           transition={{ duration: 0.8, ease: SPRING }}
           className="mb-16 text-center flex flex-col items-center gap-3"
         >
-          <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#f97316]/10 border border-[#f97316]/20 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#f97316]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#f97316]" />
+          <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#dbb82d]/10 border border-[#dbb82d]/25 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#dbb82d]">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#dbb82d]" />
             Ils nous font confiance
           </span>
           <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] leading-[1.08]">
@@ -90,7 +90,10 @@ export default function TrustSection({ dict }: Props) {
               transition={{ duration: 0.7, ease: SPRING, delay: i * 0.08 }}
               className="rounded-2xl border border-[#f0f0f0] bg-[#fafafa] p-6 flex flex-col gap-1 text-center"
             >
-              <p className="text-[2.2rem] font-extrabold text-[#2b2b2b] tracking-[-0.04em] leading-none">
+              <p
+                className="text-[2.2rem] font-extrabold tracking-[-0.04em] leading-none"
+                style={{ color: stat.value === "4.9 ★" ? "#dbb82d" : "#2b2b2b" }}
+              >
                 {stat.value}
               </p>
               <p className="text-[0.82rem] text-[#6b6b6b] font-medium leading-snug mt-1">
@@ -119,10 +122,10 @@ export default function TrustSection({ dict }: Props) {
           <span className="text-[0.8rem] font-semibold text-[#2b2b2b]">Témoignages clients</span>
           <span className="flex">
             {[...Array(5)].map((_, k) => (
-              <Star key={k} size={13} fill="#f97316" stroke="none" />
+              <Star key={k} size={13} fill="#dbb82d" stroke="none" />
             ))}
           </span>
-          <span className="text-[0.8rem] font-semibold text-[#2b2b2b]">4.9 / 5</span>
+          <span className="text-[0.8rem] font-semibold text-[#dbb82d]">4.9 / 5</span>
           <span className="text-[0.75rem] text-[#6b6b6b]">(87 avis)</span>
         </motion.div>
 
@@ -139,7 +142,7 @@ export default function TrustSection({ dict }: Props) {
               {/* Étoiles */}
               <div className="flex gap-0.5">
                 {[...Array(review.rating)].map((_, k) => (
-                  <Star key={k} size={14} fill="#f97316" stroke="none" />
+                  <Star key={k} size={14} fill="#dbb82d" stroke="none" />
                 ))}
               </div>
 
@@ -150,7 +153,7 @@ export default function TrustSection({ dict }: Props) {
 
               {/* Auteur */}
               <div className="flex items-center gap-3 pt-2 border-t border-[#f0f0f0]">
-                <div className="w-8 h-8 rounded-full bg-[#f97316] flex items-center justify-center text-white text-[0.75rem] font-bold flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-[#dbb82d] flex items-center justify-center text-white text-[0.75rem] font-bold flex-shrink-0">
                   {review.avatar}
                 </div>
                 <div>
