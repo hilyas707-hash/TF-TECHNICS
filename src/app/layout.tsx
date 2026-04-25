@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import CookieBanner from "@/components/cookies/CookieBanner";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import ScrollProgress from "@/components/layout/ScrollProgress";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
@@ -62,6 +63,7 @@ export default function RootLayout({
             </Script>
           </>
         )}
+        <ScrollProgress />
         {children}
         {/* Bandeau RGPD — présent sur toutes les pages */}
         <CookieBanner />
