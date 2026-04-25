@@ -3,16 +3,10 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import {
-  Phone,
-  Clock,
-  Shield,
-  Zap,
-  ArrowUpRight,
-  MapPin,
-  Menu,
-  X,
+  Phone, Clock, Shield, Zap,
+  ArrowUpRight, MapPin, Menu, X,
 } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import type { Dictionary } from "@/i18n/dictionaries/types";
 import LocaleSwitcher from "@/components/layout/LocaleSwitcher";
 
@@ -20,17 +14,12 @@ const SPRING = [0.32, 0.72, 0, 1] as const;
 
 const stagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.25 } },
 };
-
 const fadeUp = {
-  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.9, ease: SPRING },
-  },
+  hidden:  { opacity: 0, y: 44, filter: "blur(12px)" },
+  visible: { opacity: 1, y: 0,  filter: "blur(0px)",
+             transition: { duration: 0.95, ease: SPRING } },
 };
 
 interface HeroSectionProps { dict: Dictionary }
@@ -38,49 +27,15 @@ interface HeroSectionProps { dict: Dictionary }
 export default function HeroSection({ dict }: HeroSectionProps) {
   const { hero, nav } = dict;
   const [menuOpen, setMenuOpen] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    const section = sectionRef.current;
-    if (!video || !section) return;
-
-    // Attend que les métadonnées soient chargées pour connaître la durée
-    const onLoaded = () => {
-      let rafId: number;
-
-      const onScroll = () => {
-        cancelAnimationFrame(rafId);
-        rafId = requestAnimationFrame(() => {
-          const rect = section.getBoundingClientRect();
-          const sectionH = section.offsetHeight;
-          const scrolled = -rect.top;
-          const progress = Math.min(Math.max(scrolled / sectionH, 0), 1);
-          video.currentTime = progress * video.duration;
-        });
-      };
-
-      window.addEventListener("scroll", onScroll, { passive: true });
-      return () => {
-        window.removeEventListener("scroll", onScroll);
-        cancelAnimationFrame(rafId);
-      };
-    };
-
-    video.addEventListener("loadedmetadata", onLoaded);
-    return () => video.removeEventListener("loadedmetadata", onLoaded);
-  }, []);
 
   const navLinks = [
-    { label: nav.services, href: "#services"  },
-    { label: nav.zones,    href: "#zones"     },
-    { label: nav.bornes,   href: "#bornes"    },
-    { label: "Blog",       href: "/blog"      },
-    { label: "À propos",   href: "/a-propos"  },
-    { label: nav.contact,  href: "#contact"   },
+    { label: nav.services, href: "#services" },
+    { label: nav.zones,    href: "#zones"    },
+    { label: nav.bornes,   href: "#bornes"   },
+    { label: "Blog",       href: "/blog"     },
+    { label: "À propos",   href: "/a-propos" },
+    { label: nav.contact,  href: "#contact"  },
   ];
-
   const titleLines = hero.title.split("\n");
 
   return (
@@ -96,169 +51,101 @@ export default function HeroSection({ dict }: HeroSectionProps) {
       >
         <nav className="flex items-center justify-between gap-6 w-full max-w-5xl px-5 py-0 rounded-full bg-white/85 backdrop-blur-xl ring-1 ring-black/[0.07] shadow-[0_4px_28px_rgba(43,43,43,0.09)]">
           <a href="/" className="flex items-center flex-shrink-0 select-none py-2">
-            <Image
-              src="/logo.svg"
-              alt="TF Technics — électricien Bruxelles"
-              width={148}
-              height={32}
-              priority
-              className="h-8 w-auto"
-            />
+            <Image src="/logo.svg" alt="TF Technics" width={148} height={32} priority className="h-8 w-auto" />
           </a>
 
           <div className="hidden md:flex items-center gap-5">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-[13px] font-medium text-[#6b6b6b] hover:text-[#2b2b2b] transition-colors duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]"
-              >
-                {link.label}
+            {navLinks.map((l) => (
+              <a key={l.label} href={l.href}
+                className="text-[13px] font-medium text-[#6b6b6b] hover:text-[#2b2b2b] transition-colors duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]">
+                {l.label}
               </a>
             ))}
           </div>
 
           <div className="flex items-center gap-2">
             <div className="hidden sm:block"><LocaleSwitcher /></div>
-            <a
-              href={`tel:${hero.phone.replace(/\s/g, "")}`}
-              className="group hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-[#2b2b2b] text-white text-[13px] font-semibold transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#f97316] active:scale-[0.97]"
-            >
-              <Phone size={12} strokeWidth={2.5} />
-              {nav.callNow}
+            <a href={`tel:${hero.phone.replace(/\s/g, "")}`}
+              className="group hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-[#2b2b2b] text-white text-[13px] font-semibold transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#f97316] active:scale-[0.97]">
+              <Phone size={12} strokeWidth={2.5} />{nav.callNow}
             </a>
-
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-              className="md:hidden relative w-11 h-11 rounded-full bg-[#2b2b2b]/[0.07] flex items-center justify-center transition-colors duration-300 hover:bg-[#2b2b2b]/[0.12] active:scale-[0.95]"
-            >
-              <motion.div
-                animate={{ rotate: menuOpen ? 45 : 0, opacity: menuOpen ? 0 : 1 }}
-                transition={{ duration: 0.3, ease: SPRING }}
-                className="absolute"
-              >
+            <button onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? "Fermer" : "Menu"}
+              className="md:hidden relative w-11 h-11 rounded-full bg-[#2b2b2b]/[0.07] flex items-center justify-center transition-colors hover:bg-[#2b2b2b]/[0.12] active:scale-[0.95]">
+              <motion.div animate={{ rotate: menuOpen ? 45 : 0, opacity: menuOpen ? 0 : 1 }}
+                transition={{ duration: 0.3, ease: SPRING }} className="absolute">
                 <Menu size={18} strokeWidth={2} className="text-[#2b2b2b]" />
               </motion.div>
-              <motion.div
-                animate={{ rotate: menuOpen ? 0 : -45, opacity: menuOpen ? 1 : 0 }}
-                transition={{ duration: 0.3, ease: SPRING }}
-                className="absolute"
-              >
+              <motion.div animate={{ rotate: menuOpen ? 0 : -45, opacity: menuOpen ? 1 : 0 }}
+                transition={{ duration: 0.3, ease: SPRING }} className="absolute">
                 <X size={18} strokeWidth={2} className="text-[#2b2b2b]" />
               </motion.div>
             </button>
           </div>
         </nav>
 
-        {/* Menu mobile overlay */}
+        {/* Menu mobile */}
         <motion.div
           initial={false}
           animate={menuOpen ? { opacity: 1, pointerEvents: "auto" } : { opacity: 0, pointerEvents: "none" }}
           transition={{ duration: 0.35, ease: SPRING }}
           className="absolute top-20 left-4 right-4 rounded-2xl bg-white/95 backdrop-blur-2xl ring-1 ring-black/[0.07] shadow-[0_16px_64px_rgba(43,43,43,0.14)] p-5 flex flex-col gap-1 md:hidden"
         >
-          {navLinks.map((link, i) => (
-            <motion.a
-              key={link.label}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
+          {navLinks.map((l, i) => (
+            <motion.a key={l.label} href={l.href} onClick={() => setMenuOpen(false)}
               initial={{ opacity: 0, y: 12 }}
-              animate={
-                menuOpen
-                  ? { opacity: 1, y: 0, transition: { delay: 0.06 * i, duration: 0.4, ease: SPRING } }
-                  : { opacity: 0, y: 12 }
-              }
-              className="px-4 py-3.5 rounded-xl text-[16px] font-semibold text-[#2b2b2b] hover:bg-[#2b2b2b]/[0.04] transition-colors duration-200"
-            >
-              {link.label}
+              animate={menuOpen
+                ? { opacity: 1, y: 0, transition: { delay: 0.06 * i, duration: 0.4, ease: SPRING } }
+                : { opacity: 0, y: 12 }}
+              className="px-4 py-3.5 rounded-xl text-[16px] font-semibold text-[#2b2b2b] hover:bg-[#2b2b2b]/[0.04] transition-colors">
+              {l.label}
             </motion.a>
           ))}
           <div className="px-4 py-2"><LocaleSwitcher /></div>
           <div className="mt-2 pt-3 border-t border-black/[0.06]">
-            <a
-              href={`tel:${hero.phone.replace(/\s/g, "")}`}
-              className="flex items-center justify-center gap-2 w-full px-5 py-4 rounded-full bg-[#f97316] text-white font-bold text-[16px] shadow-[0_4px_20px_rgba(249,115,22,0.35)] active:scale-[0.98] transition-transform duration-200"
-            >
-              <Phone size={16} strokeWidth={2.5} />
-              {hero.phone}
+            <a href={`tel:${hero.phone.replace(/\s/g, "")}`}
+              className="flex items-center justify-center gap-2 w-full px-5 py-4 rounded-full bg-[#f97316] text-white font-bold text-[16px] shadow-[0_4px_20px_rgba(249,115,22,0.35)] active:scale-[0.98] transition-transform">
+              <Phone size={16} strokeWidth={2.5} />{hero.phone}
             </a>
           </div>
         </motion.div>
       </motion.header>
 
       {/* ══════════════════════════════════════════════════
-          HERO — IMAGE PLEIN ÉCRAN CINÉMATOGRAPHIQUE
+          HERO — IMAGE PLEIN ÉCRAN
       ══════════════════════════════════════════════════ */}
-      {/* Section 200dvh : la moitié haute = vidéo sticky, la moitié basse = espace de scroll */}
-      <section ref={sectionRef} className="relative h-[200dvh]">
+      <section className="relative min-h-[100dvh] overflow-hidden flex flex-col">
 
-        {/* ── Conteneur sticky : reste à l'écran pendant le scroll ── */}
-        <div className="sticky top-0 h-[100dvh] overflow-hidden flex flex-col">
-
-        {/* ── Vidéo scrubbing — pause, contrôlée par le scroll ── */}
-        <video
-          ref={videoRef}
-          muted
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/hero.mp4" type="video/mp4" />
-        </video>
-
-        {/* ── Dégradés superposés pour profondeur et lisibilité ── */}
-        {/* Bas très sombre — texte lisible */}
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(to top, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.72) 30%, rgba(5,5,5,0.28) 60%, rgba(5,5,5,0.08) 100%)",
-          }}
-        />
-        {/* Vignette gauche — profondeur */}
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(5,5,5,0.55) 0%, rgba(5,5,5,0.1) 45%, transparent 100%)",
-          }}
-        />
-        {/* Halo orange subtil — signature de marque */}
-        <div
-          aria-hidden
-          className="absolute pointer-events-none"
-          style={{
-            bottom: "15%",
-            left: "5%",
-            width: "600px",
-            height: "400px",
-            background:
-              "radial-gradient(ellipse, rgba(249,115,22,0.12) 0%, transparent 65%)",
-            filter: "blur(40px)",
-          }}
+        {/* Image de fond */}
+        <Image
+          src="/hero.png"
+          alt="Électricien TF Technics en intervention à Bruxelles"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
         />
 
-        {/* ── Carte flottante — délai d'intervention (haut droite) ── */}
+        {/* Dégradés overlay */}
+        <div aria-hidden className="absolute inset-0 pointer-events-none"
+          style={{ background: "linear-gradient(to top, rgba(5,5,5,0.96) 0%, rgba(5,5,5,0.65) 30%, rgba(5,5,5,0.2) 60%, rgba(5,5,5,0.05) 100%)" }} />
+        <div aria-hidden className="absolute inset-0 pointer-events-none"
+          style={{ background: "linear-gradient(to right, rgba(5,5,5,0.5) 0%, rgba(5,5,5,0.1) 45%, transparent 100%)" }} />
+
+        {/* Carte flottante haut droite */}
         <motion.div
-          initial={{ opacity: 0, y: -16, x: 16 }}
-          animate={{ opacity: 1, y: 0, x: 0 }}
+          initial={{ opacity: 0, y: -16 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: SPRING, delay: 1.1 }}
           className="absolute top-28 right-5 md:top-32 md:right-10 z-10 hidden sm:block"
         >
           <div className="px-4 py-3.5 rounded-2xl bg-white/[0.09] backdrop-blur-xl ring-1 ring-white/[0.14] shadow-[0_8px_40px_rgba(0,0,0,0.35)]">
-            <p className="text-[26px] font-extrabold leading-none tracking-[-0.04em] text-white">
-              &lt;&nbsp;60&nbsp;min
-            </p>
-            <p className="text-[11px] text-white/50 mt-1 font-medium tracking-wide">
-              Délai d&apos;intervention
-            </p>
+            <p className="text-[26px] font-extrabold leading-none tracking-[-0.04em] text-white">&lt;&nbsp;60&nbsp;min</p>
+            <p className="text-[11px] text-white/50 mt-1 font-medium tracking-wide">Délai d&apos;intervention</p>
           </div>
         </motion.div>
 
-        {/* ── Carte flottante — interventions réalisées (milieu droit) ── */}
+        {/* Carte flottante milieu droit */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -266,26 +153,16 @@ export default function HeroSection({ dict }: HeroSectionProps) {
           className="absolute top-1/2 -translate-y-1/2 right-5 md:right-10 z-10 hidden md:block"
         >
           <div className="px-4 py-3.5 rounded-2xl bg-white/[0.09] backdrop-blur-xl ring-1 ring-white/[0.14] shadow-[0_8px_40px_rgba(0,0,0,0.35)]">
-            <p className="text-[26px] font-extrabold leading-none tracking-[-0.04em] text-white">
-              2 500<span className="text-[#f97316]">+</span>
-            </p>
-            <p className="text-[11px] text-white/50 mt-1 font-medium tracking-wide">
-              Interventions
-            </p>
+            <p className="text-[26px] font-extrabold leading-none tracking-[-0.04em] text-white">2 500<span className="text-[#f97316]">+</span></p>
+            <p className="text-[11px] text-white/50 mt-1 font-medium tracking-wide">Interventions</p>
           </div>
         </motion.div>
 
-        {/* ── Contenu ancré en bas ── */}
+        {/* Contenu ancré en bas */}
         <div className="relative z-10 mt-auto w-full">
           <div className="max-w-7xl mx-auto px-5 sm:px-8 xl:px-16 pb-14 md:pb-20">
-            <motion.div
-              variants={stagger}
-              initial="hidden"
-              animate="visible"
-              className="flex flex-col gap-5 max-w-3xl"
-            >
+            <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-5 max-w-3xl">
 
-              {/* Badge "live" */}
               <motion.div variants={fadeUp}>
                 <span className="inline-flex items-center gap-2.5 rounded-full px-4 py-1.5 bg-white/[0.1] backdrop-blur-md ring-1 ring-white/[0.15] text-[11px] uppercase tracking-[0.2em] font-semibold text-white/90">
                   <span className="relative flex h-2 w-2">
@@ -296,55 +173,35 @@ export default function HeroSection({ dict }: HeroSectionProps) {
                 </span>
               </motion.div>
 
-              {/* H1 cinématique */}
-              <motion.h1
-                variants={fadeUp}
-                className="text-[clamp(2.6rem,7.5vw,6rem)] font-extrabold leading-[1.04] tracking-[-0.035em] text-white text-wrap-balance"
-              >
-                {titleLines[0]}
-                <br />
-                {titleLines[1] && (
-                  <span className="text-[#f97316]">{titleLines[1]}</span>
-                )}
+              <motion.h1 variants={fadeUp}
+                className="text-[clamp(2.6rem,7.5vw,6rem)] font-extrabold leading-[1.04] tracking-[-0.035em] text-white text-wrap-balance">
+                {titleLines[0]}<br />
+                {titleLines[1] && <span className="text-[#f97316]">{titleLines[1]}</span>}
               </motion.h1>
 
-              {/* Sous-titre */}
-              <motion.p
-                variants={fadeUp}
-                className="text-[1rem] sm:text-[1.1rem] leading-relaxed text-white/65 max-w-[32rem]"
-              >
+              <motion.p variants={fadeUp} className="text-[1rem] sm:text-[1.1rem] leading-relaxed text-white/65 max-w-[32rem]">
                 {hero.subtitle}
               </motion.p>
 
-              {/* CTA + pilules */}
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-1">
-                {/* Bouton principal */}
-                <a
-                  href={`tel:${hero.phone.replace(/\s/g, "")}`}
-                  className="group relative flex items-center justify-between gap-3 w-full sm:w-auto sm:inline-flex pl-5 pr-2 py-3.5 sm:py-3 rounded-full bg-[#f97316] text-white font-bold text-[15px] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#ea580c] active:scale-[0.98] shadow-[0_4px_28px_rgba(249,115,22,0.5)] hover:shadow-[0_8px_36px_rgba(249,115,22,0.65)]"
-                >
+                <a href={`tel:${hero.phone.replace(/\s/g, "")}`}
+                  className="group relative flex items-center justify-between gap-3 w-full sm:w-auto sm:inline-flex pl-5 pr-2 py-3.5 sm:py-3 rounded-full bg-[#f97316] text-white font-bold text-[15px] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#ea580c] active:scale-[0.98] shadow-[0_4px_28px_rgba(249,115,22,0.5)] hover:shadow-[0_8px_36px_rgba(249,115,22,0.65)]">
                   <div className="flex items-center gap-2.5">
-                    <Phone size={15} strokeWidth={2.5} />
-                    {hero.cta}
+                    <Phone size={15} strokeWidth={2.5} />{hero.cta}
                   </div>
                   <span className="w-10 h-10 sm:w-9 sm:h-9 rounded-full bg-white/25 flex items-center justify-center flex-shrink-0 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-110">
                     <ArrowUpRight size={15} strokeWidth={2.5} />
                   </span>
                 </a>
 
-                {/* Pilules de confiance */}
                 <div className="flex flex-wrap gap-2">
                   {[
                     { icon: <Shield size={11} strokeWidth={2} />, label: hero.trust.certified },
                     { icon: <Clock  size={11} strokeWidth={2} />, label: hero.trust.available },
                     { icon: <Zap    size={11} strokeWidth={2} />, label: hero.trust.speed     },
                   ].map(({ icon, label }) => (
-                    <span
-                      key={label}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.1] backdrop-blur-md ring-1 ring-white/[0.15] text-white/80 text-[12px] font-medium"
-                    >
-                      {icon}
-                      {label}
+                    <span key={label} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.1] backdrop-blur-md ring-1 ring-white/[0.15] text-white/80 text-[12px] font-medium">
+                      {icon}{label}
                     </span>
                   ))}
                 </div>
@@ -352,7 +209,6 @@ export default function HeroSection({ dict }: HeroSectionProps) {
 
             </motion.div>
 
-            {/* Localisation bas droite */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -365,7 +221,6 @@ export default function HeroSection({ dict }: HeroSectionProps) {
           </div>
         </div>
 
-        </div>{/* fin sticky */}
       </section>
     </>
   );
