@@ -72,12 +72,12 @@ export default function OgImage() {
         </div>
 
         {/* Logo */}
-        <div style={{ display: "flex", alignItems: "baseline", gap: 4, marginBottom: 24 }}>
-          <span style={{ fontSize: 52, fontWeight: 900, color: "#f97316", lineHeight: 1 }}>
-            TF
+        <div style={{ display: "flex", alignItems: "baseline", gap: 0, marginBottom: 24 }}>
+          <span style={{ fontSize: 52, fontWeight: 900, color: "#dbb82d", lineHeight: 1 }}>
+            tf
           </span>
-          <span style={{ fontSize: 52, fontWeight: 900, color: "#2b2b2b", lineHeight: 1 }}>
-            {" "}technics
+          <span style={{ fontSize: 52, fontWeight: 900, color: "#545454", lineHeight: 1 }}>
+            -Technics
           </span>
         </div>
 

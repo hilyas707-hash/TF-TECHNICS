@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
 import type { Dictionary } from "@/i18n/dictionaries/types";
@@ -74,10 +75,15 @@ export default function Footer({ dict }: Props) {
 
           {/* Colonne marque */}
           <div className="flex flex-col gap-5">
-            <span className="font-extrabold text-[20px] tracking-tight leading-none select-none">
-              <span style={{ color: "#f97316" }}>TF</span>
-              <span className="text-white"> technics</span>
-            </span>
+            <a href="/" className="w-fit">
+              <Image
+                src="/logo.svg"
+                alt="TF Technics — électricien Bruxelles"
+                width={148}
+                height={32}
+                className="h-8 w-auto brightness-0 invert"
+              />
+            </a>
 
             <p className="text-[0.875rem] text-white/45 leading-relaxed max-w-xs">
               {footer.tagline}

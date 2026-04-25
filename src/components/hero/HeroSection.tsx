@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Image from "next/image";
 import {
   Phone,
   Zap,
@@ -112,15 +113,16 @@ export default function HeroSection({ dict }: HeroSectionProps) {
             shadow-[0_4px_28px_rgba(43,43,43,0.09)]
           "
         >
-          {/* Logo textuel TF Technics */}
-          <a
-            href="/"
-            className="flex items-center flex-shrink-0 select-none"
-          >
-            <span className="text-xl font-extrabold tracking-tight leading-none">
-              <span style={{ color: "#f97316" }}>TF</span>
-              <span style={{ color: "#2b2b2b" }}> technics</span>
-            </span>
+          {/* Logo TF Technics */}
+          <a href="/" className="flex items-center flex-shrink-0 select-none py-2">
+            <Image
+              src="/logo.svg"
+              alt="TF Technics — électricien Bruxelles"
+              width={148}
+              height={32}
+              priority
+              className="h-8 w-auto"
+            />
           </a>
 
           {/* Liens desktop */}
