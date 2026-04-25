@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/i18n";
+import { FAQ_ITEMS } from "@/data/faq";
 import HeroSection      from "@/components/hero/HeroSection";
 import ServicesSection  from "@/components/services/ServicesSection";
 import TrustSection     from "@/components/trust/TrustSection";
@@ -137,6 +138,20 @@ const jsonLd = {
   paymentAccepted: "Cash, Virement bancaire, Carte bancaire",
 };
 
+/* ── Schéma JSON-LD FAQPage ──────────────────────────────────────────────── */
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+
 export default async function Home() {
   const dict = await getDictionary("fr");
 
@@ -146,6 +161,11 @@ export default async function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* JSON-LD FAQPage — rich snippets accordéon dans les SERPs */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* 1 — Hero + Navigation flottante */}

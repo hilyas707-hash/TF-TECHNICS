@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/i18n";
+import { FAQ_ITEMS } from "@/data/faq";
 import HeroSection     from "@/components/hero/HeroSection";
 import ServicesSection from "@/components/services/ServicesSection";
 import TrustSection    from "@/components/trust/TrustSection";
@@ -131,6 +132,20 @@ const jsonLdNl = {
   currenciesAccepted: "EUR",
 };
 
+/* ── Schema FAQPage NL ───────────────────────────────────────────────────── */
+const faqJsonLdNl = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+
 export default async function NlHome() {
   const dict = await getDictionary("nl");
 
@@ -140,6 +155,11 @@ export default async function NlHome() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdNl) }}
+      />
+      {/* JSON-LD FAQPage NL */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLdNl) }}
       />
 
       {/* 1 — Hero + Navigatie */}
