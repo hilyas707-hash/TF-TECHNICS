@@ -14,10 +14,12 @@ export default function ContactSection({ dict }: Props) {
   const [sent,    setSent]    = useState(false);
   const [loading, setLoading] = useState(false);
   const [error,   setError]   = useState("");
-  const [form, setForm] = useState({ name: "", phone: "", message: "" });
+  const [form,    setForm]    = useState({ name: "", phone: "", message: "" });
+  const [honey,   setHoney]   = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (honey) return; // honeypot : bot détecté, on ignore silencieusement
     setLoading(true);
     setError("");
     try {
@@ -215,6 +217,16 @@ export default function ContactSection({ dict }: Props) {
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                    {/* Honeypot anti-spam — invisible pour les humains */}
+                    <input
+                      type="text"
+                      name="website"
+                      value={honey}
+                      onChange={(e) => setHoney(e.target.value)}
+                      tabIndex={-1}
+                      aria-hidden="true"
+                      style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none" }}
+                    />
                     {/* Nom */}
                     <div className="flex flex-col gap-1.5">
                       <label className="text-[12px] font-semibold text-[#6b6b6b] uppercase tracking-[0.1em]">

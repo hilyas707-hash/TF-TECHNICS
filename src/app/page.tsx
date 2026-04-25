@@ -138,6 +138,20 @@ const jsonLd = {
   paymentAccepted: "Cash, Virement bancaire, Carte bancaire",
 };
 
+/* ── Schéma JSON-LD AggregateRating ─────────────────────────────────────── */
+const ratingJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://mon-super-site-mu.vercel.app/#business",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "87",
+    bestRating:  "5",
+    worstRating: "1",
+  },
+};
+
 /* ── Schéma JSON-LD FAQPage ──────────────────────────────────────────────── */
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -161,6 +175,11 @@ export default async function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* JSON-LD AggregateRating — étoiles dans les SERPs Google */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ratingJsonLd) }}
       />
       {/* JSON-LD FAQPage — rich snippets accordéon dans les SERPs */}
       <script
