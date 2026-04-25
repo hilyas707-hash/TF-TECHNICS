@@ -159,15 +159,16 @@ export default function HeroSection({ dict }: HeroSectionProps) {
       ══════════════════════════════════════════════════ */}
       <section className="relative min-h-[100dvh] overflow-hidden flex flex-col">
 
-        {/* ── Image de fond plein écran ── */}
-        <Image
-          src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=2400&q=90"
-          alt="Électricien TF Technics en intervention sur tableau électrique à Bruxelles"
-          fill
-          priority
-          className="object-cover object-center scale-[1.03]"
-          sizes="100vw"
-        />
+        {/* ── Vidéo de fond plein écran ── */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
 
         {/* ── Dégradés superposés pour profondeur et lisibilité ── */}
         {/* Bas très sombre — texte lisible */}
