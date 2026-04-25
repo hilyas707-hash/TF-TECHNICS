@@ -208,10 +208,12 @@ function SelectCard({
 
 /* ─── Composant principal ────────────────────────────────────────────────── */
 export default function DevisSection() {
-  const [step, setStep]     = useState(1);
-  const [dir,  setDir]      = useState(1);   // 1 = avant, -1 = arrière
-  const [data, setData]     = useState<FormData>(INIT);
-  const [sent, setSent]     = useState(false);
+  const [step,    setStep]    = useState(1);
+  const [dir,     setDir]     = useState(1);
+  const [data,    setData]    = useState<FormData>(INIT);
+  const [sent,    setSent]    = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error,   setError]   = useState("");
 
   /* Navigation */
   function next() { setDir(1);  setStep((s) => Math.min(s + 1, 5)); }
@@ -225,10 +227,23 @@ export default function DevisSection() {
     return true;
   }
 
-  function submit(e: React.FormEvent) {
+  async function submit(e: React.FormEvent) {
     e.preventDefault();
-    /* TODO : brancher à un endpoint API */
-    setSent(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/devis", {
+        method:  "POST",
+        headers: { "Content-Type": "application/json" },
+        body:    JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Erreur");
+      setSent(true);
+    } catch {
+      setError("Une erreur est survenue. Appelez-nous directement.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   /* Variantes d'animation de slide */
@@ -696,25 +711,31 @@ export default function DevisSection() {
                       </span>
                     </button>
                   ) : (
-                    <button
-                      type="submit"
-                      form="devis-form"
-                      onClick={submit}
-                      className="
-                        group inline-flex items-center justify-between gap-3
-                        pl-5 pr-2 py-2.5 rounded-full
-                        bg-[#f97316] text-white font-bold text-[14px]
-                        transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
-                        hover:bg-[#ea580c] active:scale-[0.98]
-                        shadow-[0_4px_20px_rgba(249,115,22,0.40)]
-                        hover:shadow-[0_6px_28px_rgba(249,115,22,0.55)]
-                      "
-                    >
-                      Envoyer ma demande
-                      <span className="w-8 h-8 rounded-full bg-white/25 flex items-center justify-center transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-110">
-                        <Send size={13} strokeWidth={2.5} />
-                      </span>
-                    </button>
+                    <div className="flex flex-col items-end gap-2">
+                      {error && (
+                        <p className="text-[0.78rem] text-red-500 font-medium">{error}</p>
+                      )}
+                      <button
+                        type="submit"
+                        form="devis-form"
+                        onClick={submit}
+                        disabled={loading}
+                        className="
+                          group inline-flex items-center justify-between gap-3
+                          pl-5 pr-2 py-2.5 rounded-full
+                          bg-[#f97316] text-white font-bold text-[14px]
+                          transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
+                          hover:bg-[#ea580c] active:scale-[0.98] disabled:opacity-60 disabled:cursor-wait
+                          shadow-[0_4px_20px_rgba(249,115,22,0.40)]
+                          hover:shadow-[0_6px_28px_rgba(249,115,22,0.55)]
+                        "
+                      >
+                        {loading ? "Envoi…" : "Envoyer ma demande"}
+                        <span className="w-8 h-8 rounded-full bg-white/25 flex items-center justify-center transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-110">
+                          <Send size={13} strokeWidth={2.5} />
+                        </span>
+                      </button>
+                    </div>
                   )}
                 </div>
               )}

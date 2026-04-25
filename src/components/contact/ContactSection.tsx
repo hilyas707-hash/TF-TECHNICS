@@ -11,13 +11,28 @@ interface Props { dict: Dictionary }
 
 export default function ContactSection({ dict }: Props) {
   const { contact } = dict;
-  const [sent, setSent] = useState(false);
+  const [sent,    setSent]    = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error,   setError]   = useState("");
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    /* TODO : brancher à un endpoint (Resend / Formspree / API route) */
-    setSent(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method:  "POST",
+        headers: { "Content-Type": "application/json" },
+        body:    JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Erreur");
+      setSent(true);
+    } catch {
+      setError("Une erreur est survenue. Appelez-nous directement.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -267,19 +282,23 @@ export default function ContactSection({ dict }: Props) {
                     </div>
 
                     {/* Bouton envoi */}
+                    {error && (
+                      <p className="text-[0.82rem] text-red-500 font-medium">{error}</p>
+                    )}
                     <button
                       type="submit"
+                      disabled={loading}
                       className="
                         group mt-2 inline-flex items-center justify-between gap-3
                         pl-6 pr-2 py-3 rounded-full
                         bg-[#2b2b2b] text-white font-bold text-[15px]
                         transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
-                        hover:bg-[#f97316] active:scale-[0.98]
+                        hover:bg-[#f97316] active:scale-[0.98] disabled:opacity-60 disabled:cursor-wait
                         shadow-[0_4px_16px_rgba(43,43,43,0.20)]
                         hover:shadow-[0_4px_20px_rgba(249,115,22,0.38)]
                       "
                     >
-                      {contact.formSubmit}
+                      {loading ? "Envoi…" : contact.formSubmit}
                       <span className="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-110">
                         <Send size={14} strokeWidth={2.5} />
                       </span>
