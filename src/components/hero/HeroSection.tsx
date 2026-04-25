@@ -80,10 +80,11 @@ export default function HeroSection({ dict }: HeroSectionProps) {
 
   /* Liens de navigation */
   const navLinks = [
-    { label: nav.services, href: "#services" },
-    { label: nav.zones,    href: "#zones"    },
-    { label: nav.bornes,   href: "#bornes"   },
-    { label: nav.contact,  href: "#contact"  },
+    { label: nav.services,   href: "#services"  },
+    { label: nav.zones,      href: "#zones"     },
+    { label: nav.bornes,     href: "#bornes"    },
+    { label: "À propos",     href: "/a-propos"  },
+    { label: nav.contact,    href: "#contact"   },
   ];
 
   /* Lignes du titre (séparées par \n dans le dictionnaire) */

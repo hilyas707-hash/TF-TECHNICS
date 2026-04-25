@@ -1,9 +1,17 @@
 import { MetadataRoute } from "next";
 import { getAllServiceSlugs } from "@/data/services";
+import { getAllCommuneSlugs } from "@/data/communes";
 
 const BASE_URL = "https://mon-super-site-mu.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const communeEntries = getAllCommuneSlugs().map((slug) => ({
+    url:             `${BASE_URL}/electricien/${slug}`,
+    lastModified:    new Date(),
+    changeFrequency: "monthly" as const,
+    priority:        0.9,
+  }));
+
   const serviceEntries = getAllServiceSlugs().map((slug) => ({
     url:              `${BASE_URL}/services/${slug}`,
     lastModified:     new Date(),
@@ -24,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority:        1,
     },
+    ...communeEntries,
     ...serviceEntries,
     {
       url:             `${BASE_URL}/mentions-legales`,

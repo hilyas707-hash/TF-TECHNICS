@@ -8,7 +8,17 @@
       "Bash(python -c ':*)",
       "Bash(node -e ':*)",
       "Bash(powershell -Command 'Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\('\\\\''public/logo.png'\\\\''\\); Write-Host $img.Width $img.Height')",
-      "Bash(vercel --prod)"
+      "Bash(vercel --prod)",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(npm uninstall *)",
+      "Bash(npm list *)",
+      "Bash(gh *)",
+      "Bash(git --version)",
+      "Bash(npm --version)",
+      "Bash(vercel --version)",
+      "Bash(vercel env *)"
     ]
   }
 }

@@ -6,7 +6,7 @@ import type { Dictionary } from "@/i18n/dictionaries/types";
 
 const SPRING = [0.32, 0.72, 0, 1] as const;
 
-/* ── Avis Google fictifs mais réalistes ──────────────────────────────────── */
+/* ── Témoignages clients — à remplacer par de vrais avis Google ─────────── */
 const REVIEWS = [
   {
     name: "Sophie V.",
@@ -116,7 +116,7 @@ export default function TrustSection({ dict }: Props) {
             <path fill="#FBBC05" d="M10.4 28.7A14.6 14.6 0 0 1 9.5 24c0-1.6.3-3.2.8-4.7l-7.8-6A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.7l7.8-6z"/>
             <path fill="#34A853" d="M24 48c6.2 0 11.4-2 15.2-5.5l-7.5-5.8c-2 1.4-4.6 2.2-7.7 2.2-6.3 0-11.7-4.2-13.6-10l-7.8 6C6.6 42.6 14.6 48 24 48z"/>
           </svg>
-          <span className="text-[0.8rem] font-semibold text-[#2b2b2b]">Avis Google</span>
+          <span className="text-[0.8rem] font-semibold text-[#2b2b2b]">Témoignages clients</span>
           <span className="flex">
             {[...Array(5)].map((_, k) => (
               <Star key={k} size={13} fill="#f97316" stroke="none" />
