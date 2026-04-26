@@ -32,6 +32,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
     { label: nav.services, href: "#services" },
     { label: nav.zones,    href: "#zones"    },
     { label: nav.bornes,   href: "#bornes"   },
+    { label: "Tarifs",     href: "/tarifs"   },
     { label: "Blog",       href: "/blog"     },
     { label: "À propos",   href: "/a-propos" },
     { label: nav.contact,  href: "#contact"  },
