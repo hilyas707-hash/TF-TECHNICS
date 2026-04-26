@@ -51,3 +51,14 @@ body {
   background-color: #fdba74;
   color: #2b2b2b;
 }
+
+/* ─── Ken Burns — zoom lent sur image hero ──────────────────────────────────── */
+@keyframes ken-burns {
+  0%   { transform: scale(1)    translate(0,    0);    }
+  50%  { transform: scale(1.06) translate(-1%,  -1%);  }
+  100% { transform: scale(1)    translate(0,    0);    }
+}
+.animate-ken-burns {
+  animation: ken-burns 18s ease-in-out infinite;
+  will-change: transform;
+}
