@@ -18,7 +18,19 @@
       "Bash(git --version)",
       "Bash(npm --version)",
       "Bash(vercel --version)",
-      "Bash(vercel env *)"
+      "Bash(vercel env *)",
+      "Bash(git commit -m 'Fix : supprime import Image en double dans HeroSection *)",
+      "Bash(git commit -m 'Ajout MODE-EMPLOI.md : notice complète pour modifier et dépanner le site *)",
+      "Bash(pandoc --version)",
+      "Bash(npx md-to-pdf *)",
+      "Bash(git commit -m 'ScrollProgress : barre orange animée au scroll sur toutes les pages *)",
+      "Bash(git commit -m 'Hero : refonte cinématographique — image plein écran, typographie ancrée en bas *)",
+      "Bash(git commit -m 'TrustSection : couleur logo #dbb82d sur étoiles, badge, note, avatars *)",
+      "Bash(git commit -m 'Hero : video scrubbing — la vidéo avance avec le scroll *)",
+      "Bash(git commit -m 'Hero : image plein écran hero.png — supprime vidéo et parallax *)",
+      "Bash(git commit -m 'Page tarifs : grille de prix SEO + JSON-LD + sitemap + nav *)",
+      "Bash(git commit -m 'Hero : refonte complète — Ken Burns, barre de stats, cartes glassmorphism *)",
+      "Bash(vercel domains *)"
     ]
   }
 }
