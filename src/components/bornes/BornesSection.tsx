@@ -123,7 +123,7 @@ export default function BornesSection({ dict }: Props) {
                 style={{ borderRadius: "calc(2rem - 0.5rem)" }}
               >
                 <Image
-                  src="/electric-car-power-charging.jpg"
+                  src="/electric-car-power-charging.jfif"
                   alt="Connecteur de borne de recharge installé par TF Technics"
                   fill
                   className="object-cover object-center"
