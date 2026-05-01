@@ -52,6 +52,13 @@ body {
   color: #2b2b2b;
 }
 
+/* ─── Pulse WhatsApp — 3 anneaux verts décalés ─────────────────────────────── */
+@keyframes wa-pulse {
+  0%   { transform: scale(1);   opacity: 1; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+.wa-ring { animation: wa-pulse 2.4s ease-out infinite; }
+
 /* ─── Ken Burns — zoom lent sur image hero ──────────────────────────────────── */
 @keyframes ken-burns {
   0%   { transform: scale(1)    translate(0,    0);    }

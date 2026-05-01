@@ -21,11 +21,6 @@ const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
    Couleur : orange de marque (#f97316) à faible opacité pour rester subtil.
    pointer-events-none → aucun impact sur les clics ni sur la mise en page.
 ─────────────────────────────────────────────────────────────────────────── */
-const PULSE_RINGS = [
-  { delay: 0,   opacity: 0.45 },
-  { delay: 0.9, opacity: 0.28 },
-  { delay: 1.8, opacity: 0.14 },
-];
 
 export default function WhatsAppButton() {
   const [bubbleOpen, setBubbleOpen] = useState(false);
@@ -110,29 +105,22 @@ export default function WhatsAppButton() {
         transition={{ duration: 0.5, ease: SPRING, delay: 1.5 }}
         className="relative"
       >
-        {/* ── Anneaux de pulsation ─────────────────────────────────────────
-            Visibles uniquement quand la bulle est fermée.
-            Positionnés en absolute sur le centre du bouton (inset-0),
-            pointer-events-none pour ne jamais capturer les clics.
-        ──────────────────────────────────────────────────────────────── */}
-        {!bubbleOpen && PULSE_RINGS.map(({ delay, opacity }) => (
-          <motion.span
-            key={delay}
-            className="absolute inset-0 rounded-full pointer-events-none"
-            style={{ backgroundColor: `rgba(37,211,102,${opacity})` }}
-            animate={{
-              scale:   [1, 2.6],
-              opacity: [opacity, 0],
-            }}
-            transition={{
-              duration:    2,
-              ease:        "easeOut",
-              repeat:      Infinity,
-              delay,
-              repeatDelay: 0,
-            }}
-          />
-        ))}
+        {/* ── Anneaux de pulsation CSS — jamais démontés, pas de flash ── */}
+        <span
+          aria-hidden
+          className="wa-ring absolute inset-0 rounded-full pointer-events-none"
+          style={{ backgroundColor: "rgba(37,211,102,0.45)", animationDelay: "0s",    opacity: bubbleOpen ? 0 : undefined }}
+        />
+        <span
+          aria-hidden
+          className="wa-ring absolute inset-0 rounded-full pointer-events-none"
+          style={{ backgroundColor: "rgba(37,211,102,0.28)", animationDelay: "0.8s",  opacity: bubbleOpen ? 0 : undefined }}
+        />
+        <span
+          aria-hidden
+          className="wa-ring absolute inset-0 rounded-full pointer-events-none"
+          style={{ backgroundColor: "rgba(37,211,102,0.14)", animationDelay: "1.6s",  opacity: bubbleOpen ? 0 : undefined }}
+        />
 
         {/* Bouton WhatsApp */}
         <motion.button
