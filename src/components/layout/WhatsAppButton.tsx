@@ -22,9 +22,9 @@ const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
    pointer-events-none → aucun impact sur les clics ni sur la mise en page.
 ─────────────────────────────────────────────────────────────────────────── */
 const PULSE_RINGS = [
-  { delay: 0,   opacity: 0.30 },
-  { delay: 0.8, opacity: 0.20 },
-  { delay: 1.6, opacity: 0.12 },
+  { delay: 0,   opacity: 0.45 },
+  { delay: 0.9, opacity: 0.28 },
+  { delay: 1.8, opacity: 0.14 },
 ];
 
 export default function WhatsAppButton() {
@@ -119,7 +119,7 @@ export default function WhatsAppButton() {
           <motion.span
             key={delay}
             className="absolute inset-0 rounded-full pointer-events-none"
-            style={{ backgroundColor: `rgba(249,115,22,${opacity})` }}
+            style={{ backgroundColor: `rgba(37,211,102,${opacity})` }}
             animate={{
               scale:   [1, 2.6],
               opacity: [opacity, 0],
@@ -177,13 +177,6 @@ export default function WhatsAppButton() {
             )}
           </AnimatePresence>
 
-          {/* Indicateur de présence — petit dot blanc en haut à droite */}
-          {!bubbleOpen && (
-            <span className="absolute -top-0.5 -right-0.5 flex h-3.5 w-3.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-60" />
-              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-white border-2 border-[#25D366]" />
-            </span>
-          )}
         </motion.button>
       </motion.div>
     </div>
