@@ -108,7 +108,7 @@ export default function OgImage() {
             marginBottom: 48,
           }}
         >
-          Intervention en moins de 60 min · Agréé AREI · Bornes de recharge · Devis gratuit
+          Intervention en moins de 60 min · Assuré RC Pro · Bornes de recharge · Devis gratuit
         </p>
 
         {/* Pilules de confiance */}

@@ -4,11 +4,11 @@ import Footer from "@/components/layout/Footer";
 import AboutSection from "@/components/about/AboutSection";
 
 export const metadata: Metadata = {
-  title:       "À propos de TF Technics | Électricien Agréé AREI Bruxelles",
-  description: "TF Technics : électricien agréé AREI à Bruxelles depuis plus de 15 ans. Découvrez notre équipe, nos certifications et notre engagement qualité.",
+  title:       "À propos de TF Technics | Électricien Professionnel Bruxelles",
+  description: "TF Technics : électricien professionnel à Bruxelles, assuré RC professionnelle. Découvrez notre équipe et notre engagement qualité.",
   openGraph: {
-    title:       "À propos de TF Technics | Électricien Agréé Bruxelles",
-    description: "15 ans d'expérience, agréé AREI, assuré RC professionnelle. TF Technics, votre électricien de confiance à Bruxelles.",
+    title:       "À propos de TF Technics | Électricien Professionnel Bruxelles",
+    description: "Assuré RC professionnelle, disponible 24h/24. TF Technics, votre électricien de confiance à Bruxelles.",
     type:        "website",
     locale:      "fr_BE",
   },
@@ -25,13 +25,11 @@ export default async function AProposPage() {
     "@type":    "AboutPage",
     name:       "À propos de TF Technics",
     url:        "https://mon-super-site-mu.vercel.app/a-propos",
-    description: "TF Technics est un électricien agréé AREI opérant à Bruxelles, en Flandre et en Brabant Wallon depuis plus de 15 ans.",
+    description: "TF Technics est un électricien professionnel opérant à Bruxelles, en Flandre et en Brabant Wallon.",
     mainEntity: {
-      "@type":       "LocalBusiness",
-      "@id":         "https://mon-super-site-mu.vercel.app/#business",
-      name:          "TF Technics",
-      foundingDate:  "2009",
-      numberOfEmployees: { "@type": "QuantitativeValue", value: "5" },
+      "@type": "LocalBusiness",
+      "@id":   "https://mon-super-site-mu.vercel.app/#business",
+      name:    "TF Technics",
     },
   };
 

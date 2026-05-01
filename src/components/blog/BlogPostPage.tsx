@@ -151,7 +151,7 @@ export default function BlogPostPage({ article }: Props) {
               Retour au blog
             </Link>
             <p className="text-[0.8rem] text-[#9b9b9b]">
-              Article rédigé par TF Technics — électricien agréé AREI à Bruxelles
+              Article rédigé par TF Technics — électricien professionnel à Bruxelles
             </p>
           </div>
         </div>

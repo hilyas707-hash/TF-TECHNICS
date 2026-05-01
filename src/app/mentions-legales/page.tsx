@@ -17,7 +17,7 @@ export default function MentionsLegalesPage() {
         {
           title: "Éditeur du site",
           content:
-            "TF Technics SRL\nNuméro d'entreprise (BCE) : BE 0XXX.XXX.XXX\nSiège social : Rue de l'Électricité XX, 1000 Bruxelles, Belgique\nTéléphone : +32 XXX XX XX XX\nE-mail : info@electricien-bruxelles.be\nAgréé AREI (Règlement Général sur les Installations Électriques)",
+            "TF Technics SRL\nNuméro d'entreprise (BCE) : BE 0XXX.XXX.XXX\nSiège social : Rue de l'Électricité XX, 1000 Bruxelles, Belgique\nTéléphone : +32 XXX XX XX XX\nE-mail : info@electricien-bruxelles.be",
         },
         {
           title: "Directeur de la publication",

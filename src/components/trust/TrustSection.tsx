@@ -44,9 +44,9 @@ const REVIEWS = [
 
 /* ── Chiffres clés ───────────────────────────────────────────────────────── */
 const STATS = [
-  { value: "2 500+", label: "Interventions réalisées" },
-  { value: "15 ans", label: "D'expérience" },
-  { value: "4.9 ★",  label: "Note Google moyenne" },
+  { value: "24h/24",   label: "Disponible 7j/7" },
+  { value: "0 €",      label: "Devis gratuit" },
+  { value: "2 ans",    label: "Garantie travaux" },
   { value: "< 60 min", label: "Délai d'intervention" },
 ];
 
@@ -75,7 +75,7 @@ export default function TrustSection({ dict }: Props) {
             Ce que disent nos clients
           </h2>
           <p className="text-[0.95rem] text-[#6b6b6b] max-w-md">
-            Plus de 2 500 interventions à Bruxelles, en Flandre et en Brabant Wallon. Voici ce qu'ils en pensent.
+            Disponibles à Bruxelles, en Flandre et en Brabant Wallon. Voici ce que nos clients en pensent.
           </p>
         </motion.div>
 
@@ -92,7 +92,7 @@ export default function TrustSection({ dict }: Props) {
             >
               <p
                 className="text-[2.2rem] font-extrabold tracking-[-0.04em] leading-none"
-                style={{ color: stat.value === "4.9 ★" ? "#dbb82d" : "#2b2b2b" }}
+                style={{ color: "#2b2b2b" }}
               >
                 {stat.value}
               </p>
@@ -103,8 +103,7 @@ export default function TrustSection({ dict }: Props) {
           ))}
         </div>
 
-        {/* ── Avis Google ─────────────────────────────────────────────────── */}
-        {/* Badge Google avis */}
+        {/* ── Témoignages clients ───────────────────────────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -112,21 +111,12 @@ export default function TrustSection({ dict }: Props) {
           transition={{ duration: 0.6, ease: SPRING }}
           className="flex items-center justify-center gap-2 mb-8"
         >
-          {/* Logo Google simplifié en SVG inline */}
-          <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden>
-            <path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.2l6.7-6.7C35.7 2.3 30.2 0 24 0 14.6 0 6.6 5.4 2.6 13.3l7.8 6C12.2 13 17.7 9.5 24 9.5z"/>
-            <path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8C43.5 37.6 46.5 31.5 46.5 24.5z"/>
-            <path fill="#FBBC05" d="M10.4 28.7A14.6 14.6 0 0 1 9.5 24c0-1.6.3-3.2.8-4.7l-7.8-6A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.7l7.8-6z"/>
-            <path fill="#34A853" d="M24 48c6.2 0 11.4-2 15.2-5.5l-7.5-5.8c-2 1.4-4.6 2.2-7.7 2.2-6.3 0-11.7-4.2-13.6-10l-7.8 6C6.6 42.6 14.6 48 24 48z"/>
-          </svg>
           <span className="text-[0.8rem] font-semibold text-[#2b2b2b]">Témoignages clients</span>
           <span className="flex">
             {[...Array(5)].map((_, k) => (
               <Star key={k} size={13} fill="#dbb82d" stroke="none" />
             ))}
           </span>
-          <span className="text-[0.8rem] font-semibold text-[#dbb82d]">4.9 / 5</span>
-          <span className="text-[0.75rem] text-[#6b6b6b]">(87 avis)</span>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -173,7 +163,7 @@ export default function TrustSection({ dict }: Props) {
           transition={{ duration: 0.7, ease: SPRING, delay: 0.4 }}
           className="mt-12 text-center text-[0.85rem] text-[#9b9b9b] font-medium tracking-wide"
         >
-          Agréé AREI · Certifié · Assuré · Bruxelles — Flandre — Brabant Wallon
+          Assuré RC Pro · Devis gratuit · Bruxelles — Flandre — Brabant Wallon
         </motion.p>
 
       </div>

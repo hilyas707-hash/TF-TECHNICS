@@ -20,11 +20,10 @@ const fadeUp = {
 };
 
 const STATS = [
-  { value: "2 500+",   label: "Interventions"    },
   { value: "< 60 min", label: "Délai moyen"      },
-  { value: "4.9 ★",    label: "Avis clients",  gold: true },
-  { value: "15 ans",   label: "D'expérience"     },
   { value: "24h/24",   label: "Disponibilité"    },
+  { value: "0 €",      label: "Devis gratuit"    },
+  { value: "2 ans",    label: "Garantie",        gold: false },
 ];
 
 interface HeroSectionProps { dict: Dictionary }
@@ -147,7 +146,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
           </div>
         </motion.div>
 
-        {/* Carte milieu droite — note Google */}
+        {/* Carte milieu droite — garantie */}
         <motion.div
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
@@ -155,11 +154,8 @@ export default function HeroSection({ dict }: HeroSectionProps) {
           className="absolute top-[46%] -translate-y-1/2 right-5 md:right-10 z-10 hidden md:block"
         >
           <div className="px-4 py-3.5 rounded-2xl bg-black/40 backdrop-blur-xl ring-1 ring-white/[0.12] shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
-            <div className="flex items-center gap-1 mb-1">
-              {[...Array(5)].map((_, k) => <Star key={k} size={11} fill="#dbb82d" stroke="none" />)}
-            </div>
-            <p className="text-[22px] font-extrabold leading-none tracking-[-0.04em] text-white">4.9<span className="text-[#dbb82d] ml-0.5">★</span></p>
-            <p className="text-[11px] text-white/45 mt-1.5 font-medium tracking-wider uppercase">87 avis clients</p>
+            <p className="text-[28px] font-extrabold leading-none tracking-[-0.04em] text-white">2 ans</p>
+            <p className="text-[11px] text-white/45 mt-1.5 font-medium tracking-wider uppercase">Garantie travaux</p>
           </div>
         </motion.div>
 

@@ -123,7 +123,7 @@ export default function CommunePage({ commune }: Props) {
             className="flex flex-wrap gap-2"
           >
             {[
-              { icon: <Shield size={11} />,  label: "Agréé AREI" },
+              { icon: <Shield size={11} />,  label: "Assurés RC Pro" },
               { icon: <Clock size={11} />,   label: "24h/24 – 7j/7" },
               { icon: <Zap size={11} />,     label: "< 60 min" },
             ].map(({ icon, label }) => (
@@ -198,7 +198,7 @@ export default function CommunePage({ commune }: Props) {
             {[
               { title: "Intervention < 60 min",       desc: `Nos techniciens couvrent ${commune.name} et arrivent en moins d'une heure.` },
               { title: "Disponible 24h/24 – 7j/7",    desc: "Nuits, week-ends et jours fériés inclus. Pas de frais supplémentaires cachés." },
-              { title: "Agréé AREI & assuré",          desc: "Certification officielle belge, responsabilité civile professionnelle complète." },
+              { title: "Assuré RC professionnelle",      desc: "Couverture responsabilité civile professionnelle complète. Travaux conformes aux normes AREI." },
               { title: "Devis transparent",            desc: "Tarif communiqué avant intervention. Vous acceptez, on commence." },
               { title: "Garantie 2 ans",               desc: "Toutes nos interventions sont garanties pièces et main-d'œuvre." },
               { title: "Primes bornes de recharge",    desc: "Nous gérons les démarches pour vos primes régionales à votre place." },

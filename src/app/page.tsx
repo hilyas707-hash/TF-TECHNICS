@@ -16,14 +16,14 @@ export const metadata: Metadata = {
   title:
     "Électricien Dépanneur Bruxelles | Bornes Recharge Flandre | Conformité RGIE Brabant Wallon | TF Technics",
   description:
-    "TF Technics — électricien agréé AREI : dépannage urgence à Bruxelles en moins de 60 min 24h/24, installation bornes de recharge (wallbox) en Flandre et Brabant Wallon, mise en conformité RGIE. Devis gratuit.",
+    "TF Technics — électricien professionnel : dépannage urgence à Bruxelles en moins de 60 min 24h/24, installation bornes de recharge (wallbox) en Flandre et Brabant Wallon, mise en conformité RGIE. Devis gratuit.",
   keywords:
-    "électricien dépannage bruxelles, urgence électricien bruxelles 24h, bornes de recharge flandre, borne recharge wallbox brabant wallon, mise en conformité RGIE belgique, électricien agréé AREI bruxelles, dépannage électrique urgence nuit, installation électrique bruxelles",
+    "électricien dépannage bruxelles, urgence électricien bruxelles 24h, bornes de recharge flandre, borne recharge wallbox brabant wallon, mise en conformité RGIE belgique, dépannage électrique urgence nuit, installation électrique bruxelles",
   openGraph: {
     title:
       "Électricien Dépanneur Bruxelles | Bornes Recharge & Conformité RGIE | TF Technics",
     description:
-      "Dépannage urgence < 60 min à Bruxelles, bornes de recharge en Flandre et Brabant Wallon, mise en conformité RGIE. Agréé AREI. Devis gratuit.",
+      "Dépannage urgence < 60 min à Bruxelles, bornes de recharge en Flandre et Brabant Wallon, mise en conformité RGIE. Devis gratuit.",
     type:   "website",
     locale: "fr_BE",
     url:    "/",
@@ -46,7 +46,7 @@ const jsonLd = {
   "@id": "https://mon-super-site-mu.vercel.app/#business",
   name: "TF Technics",
   description:
-    "Électricien agréé AREI intervenant en urgence à Bruxelles, en Flandre et en Brabant Wallon. Dépannage, installation de bornes de recharge et mise en conformité RGIE.",
+    "Électricien professionnel intervenant en urgence à Bruxelles, en Flandre et en Brabant Wallon. Dépannage, installation de bornes de recharge et mise en conformité RGIE.",
   url: "https://mon-super-site-mu.vercel.app",
   telephone: "+32XXXXXXXXX",
   email: "info@electricien-bruxelles.be",
@@ -138,20 +138,6 @@ const jsonLd = {
   paymentAccepted: "Cash, Virement bancaire, Carte bancaire",
 };
 
-/* ── Schéma JSON-LD AggregateRating ─────────────────────────────────────── */
-const ratingJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://mon-super-site-mu.vercel.app/#business",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "87",
-    bestRating:  "5",
-    worstRating: "1",
-  },
-};
-
 /* ── Schéma JSON-LD FAQPage ──────────────────────────────────────────────── */
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -175,11 +161,6 @@ export default async function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      {/* JSON-LD AggregateRating — étoiles dans les SERPs Google */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(ratingJsonLd) }}
       />
       {/* JSON-LD FAQPage — rich snippets accordéon dans les SERPs */}
       <script

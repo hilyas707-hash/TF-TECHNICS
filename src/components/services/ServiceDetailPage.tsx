@@ -157,7 +157,7 @@ export default function ServiceDetailPage({ service }: Props) {
                     </div>
                     <div>
                       <p className="text-[12px] font-bold text-[#2b2b2b]">{service.title}</p>
-                      <p className="text-[11px] text-[#6b6b6b]">TF Technics · Agréé AREI</p>
+                      <p className="text-[11px] text-[#6b6b6b]">TF Technics · Assuré RC Pro</p>
                     </div>
                     <div className="ml-auto text-right">
                       <p className="text-[11px] font-extrabold text-[#f97316]">Gratuit</p>

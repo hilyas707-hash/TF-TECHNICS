@@ -32,7 +32,7 @@ const fr: Dictionary = {
     ctaSecondary: "Nos services",
     phone: "+32 XXX XX XX XX",
     trust: {
-      certified: "Agréé AREI",
+      certified: "Assurés RC Pro",
       available: "Disponible 24h/24",
       speed: "Intervention < 60 min",
     },
@@ -52,7 +52,7 @@ const fr: Dictionary = {
       borne: {
         title: "Borne de recharge",
         description:
-          "Installation de wallbox jusqu'à 22 kW à domicile ou en entreprise. Certifié pour les primes régionales.",
+          "Installation de wallbox jusqu'à 22 kW à domicile ou en entreprise. Accompagnement pour les primes régionales.",
       },
       renovation: {
         title: "Mise en conformité RGIE",
@@ -111,7 +111,7 @@ const fr: Dictionary = {
       "Installation professionnelle de wallbox pour véhicules électriques.",
     ctaInstall: "Demander un devis",
     features: {
-      certified: "Installateur certifié",
+      certified: "Technicien qualifié",
       subsidy: "Aide aux démarches pour primes",
       speed: "Installation en une journée",
     },
@@ -121,9 +121,9 @@ const fr: Dictionary = {
   trust: {
     sectionTitle: "Pourquoi nous choisir ?",
     stats: {
-      interventions: { value: "2 500+", label: "Interventions réalisées" },
-      experience:    { value: "15 ans", label: "D'expérience" },
-      satisfaction:  { value: "98 %",  label: "Clients satisfaits" },
+      interventions: { value: "24h/24",   label: "Disponible 7j/7" },
+      experience:    { value: "0 €",      label: "Devis gratuit" },
+      satisfaction:  { value: "2 ans",    label: "Garantie travaux" },
       response:      { value: "< 60 min", label: "Délai d'intervention" },
     },
   },
@@ -145,7 +145,7 @@ const fr: Dictionary = {
 
   /* ─── Pied de page ────────────────────────────────────────────────────── */
   footer: {
-    tagline: "Électricien agréé – Bruxelles, Flandre, Brabant Wallon",
+    tagline: "Électricien professionnel – Bruxelles, Flandre, Brabant Wallon",
     rights: "Tous droits réservés.",
     legal: "Mentions légales",
     privacy: "Politique de confidentialité",

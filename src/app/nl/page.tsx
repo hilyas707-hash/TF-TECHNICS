@@ -16,14 +16,14 @@ export const metadata: Metadata = {
   title:
     "Elektricien Herstellingen Brussel | Laadpalen Vlaanderen | AREI-conformiteit | TF Technics",
   description:
-    "TF Technics — erkende elektricien AREI: spoedherstellingen in Brussel binnen 60 min 24u/24, installatie laadpalen (wallbox) in Vlaanderen en Waals-Brabant, AREI-conformiteit. Gratis offerte.",
+    "TF Technics — professionele elektricien: spoedherstellingen in Brussel binnen 60 min 24u/24, installatie laadpalen (wallbox) in Vlaanderen en Waals-Brabant, AREI-conformiteit. Gratis offerte.",
   keywords:
-    "elektricien brussel, spoed elektricien brussel 24u, laadpaal installatie vlaanderen, wallbox laadpaal waals-brabant, AREI conformiteit belgie, erkende elektricien brussel, elektrische panne nacht, elektrische installatie brussel",
+    "elektricien brussel, spoed elektricien brussel 24u, laadpaal installatie vlaanderen, wallbox laadpaal waals-brabant, AREI conformiteit belgie, elektrische panne nacht, elektrische installatie brussel",
   openGraph: {
     title:
       "Elektricien Herstellingen Brussel | Laadpalen & AREI-conformiteit | TF Technics",
     description:
-      "Spoedherstellingen < 60 min in Brussel, laadpalen in Vlaanderen en Waals-Brabant, AREI-conformiteit. Erkend AREI. Gratis offerte.",
+      "Spoedherstellingen < 60 min in Brussel, laadpalen in Vlaanderen en Waals-Brabant, AREI-conformiteit. Verzekerd BA Pro. Gratis offerte.",
     type:   "website",
     locale: "nl_BE",
     url:    "/nl",
@@ -43,7 +43,7 @@ const jsonLdNl = {
   "@id": "https://mon-super-site-mu.vercel.app/nl#business",
   name: "TF Technics",
   description:
-    "Erkende AREI-elektricien voor spoedinterventies in Brussel, Vlaanderen en Waals-Brabant. Herstellingen, laadpalen en AREI-conformiteit.",
+    "Professionele elektricien voor spoedinterventies in Brussel, Vlaanderen en Waals-Brabant. Herstellingen, laadpalen en AREI-conformiteit.",
   url: "https://mon-super-site-mu.vercel.app/nl",
   telephone: "+32XXXXXXXXX",
   email: "info@electricien-bruxelles.be",

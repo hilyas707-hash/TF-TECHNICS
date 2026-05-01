@@ -19,9 +19,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Électricien Dépanneur à Bruxelles | Urgence 24h/24 – 7j/7 | TF Technics",
   description:
-    "TF Technics — électricien agréé AREI : dépannage urgence Bruxelles en moins de 60 min, bornes de recharge Flandre et Brabant Wallon, mise en conformité RGIE. Devis gratuit.",
+    "TF Technics — électricien professionnel : dépannage urgence Bruxelles en moins de 60 min, bornes de recharge Flandre et Brabant Wallon, mise en conformité RGIE. Devis gratuit.",
   keywords:
-    "électricien bruxelles, dépannage électrique urgent bruxelles, urgence électricien 24h, borne recharge voiture électrique bruxelles, borne recharge flandre, borne recharge brabant wallon, mise en conformité RGIE brabant wallon, électricien agréé AREI belgique, dépannage électrique flandre, électricien urgence brabant wallon",
+    "électricien bruxelles, dépannage électrique urgent bruxelles, urgence électricien 24h, borne recharge voiture électrique bruxelles, borne recharge flandre, borne recharge brabant wallon, mise en conformité RGIE brabant wallon, dépannage électrique flandre, électricien urgence brabant wallon",
   openGraph: {
     type:     "website",
     locale:   "fr_BE",

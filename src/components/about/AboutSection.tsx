@@ -9,25 +9,25 @@ import {
 const SPRING = [0.32, 0.72, 0, 1] as const;
 
 const VALEURS = [
-  { icon: <Shield    size={20} strokeWidth={1.8} />, title: "Agréé AREI",         desc: "Certification officielle belge — chaque installation respecte le Règlement Général sur les Installations Électriques." },
-  { icon: <Award     size={20} strokeWidth={1.8} />, title: "15 ans d'expérience", desc: "Plus de 2 500 interventions réalisées à Bruxelles, en Flandre et en Brabant Wallon depuis 2009." },
-  { icon: <Users     size={20} strokeWidth={1.8} />, title: "Équipe qualifiée",    desc: "Techniciens certifiés, formés en continu sur les nouvelles normes et technologies (bornes de recharge, domotique)." },
+  { icon: <Shield    size={20} strokeWidth={1.8} />, title: "Assurés RC Pro",       desc: "TF Technics est couvert par une assurance responsabilité civile professionnelle pour tous nos chantiers." },
+  { icon: <Award     size={20} strokeWidth={1.8} />, title: "Travaux conformes",    desc: "Chaque intervention respecte le Règlement Général sur les Installations Électriques (AREI) en vigueur en Belgique." },
+  { icon: <Users     size={20} strokeWidth={1.8} />, title: "Équipe qualifiée",     desc: "Techniciens formés sur les nouvelles normes et technologies : bornes de recharge, domotique, tableaux modernes." },
   { icon: <Clock     size={20} strokeWidth={1.8} />, title: "Disponibilité totale", desc: "Service d'urgence 24h/24 – 7j/7. Jamais de répondeur la nuit, toujours un technicien disponible." },
 ];
 
-const CERTIFICATIONS = [
-  "Agrément AREI (Belgique)",
+const ENGAGEMENTS = [
   "Assurance RC professionnelle",
-  "Installateur certifié bornes de recharge",
-  "Agréé primes Bruxelles Environnement",
-  "Agréé primes énergie Wallonie",
-  "Agréé primes énergie Flandre (VEKA)",
+  "Travaux conformes AREI",
+  "Devis gratuit et sans engagement",
+  "Garantie 2 ans pièces & main-d'œuvre",
+  "Accompagnement primes régionales",
+  "Tarifs transparents, zéro surprise",
 ];
 
 const STATS = [
-  { value: "2 500+", label: "Interventions" },
-  { value: "15 ans", label: "D'expérience" },
-  { value: "4.9 ★",  label: "Note Google" },
+  { value: "24h/24",   label: "Disponibilité" },
+  { value: "0 €",      label: "Devis gratuit" },
+  { value: "2 ans",    label: "Garantie" },
   { value: "< 60 min", label: "Délai d'arrivée" },
 ];
 
@@ -66,10 +66,10 @@ export default function AboutSection() {
                 de confiance
               </h1>
               <p className="text-[1rem] text-[#6b6b6b] leading-relaxed">
-                Depuis 2009, TF Technics intervient à Bruxelles et ses environs pour tous les besoins électriques des particuliers et des professionnels. Fondée sur des valeurs de sérieux, de transparence et de réactivité, notre entreprise s&apos;est construite sur la confiance de plus de 2 500 clients.
+                TF Technics intervient à Bruxelles et ses environs pour tous les besoins électriques des particuliers et des professionnels. Fondée sur des valeurs de sérieux, de transparence et de réactivité, notre équipe s&apos;engage à répondre à chaque urgence avec rapidité et professionnalisme.
               </p>
               <p className="text-[1rem] text-[#6b6b6b] leading-relaxed">
-                Agréé AREI, assuré en responsabilité civile professionnelle et certifié pour l&apos;installation de bornes de recharge, TF Technics vous garantit des travaux conformes, durables et couverts par une garantie de 2 ans.
+                Assuré en responsabilité civile professionnelle, TF Technics vous garantit des travaux conformes aux normes AREI, durables et couverts par une garantie de 2 ans.
               </p>
               <a
                 href="tel:+32XXXXXXXXX"
@@ -167,15 +167,15 @@ export default function AboutSection() {
             className="mb-10"
           >
             <h2 className="text-[clamp(1.7rem,3.5vw,2.5rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] mb-3">
-              Certifications &amp; agréments
+              Nos engagements
             </h2>
             <p className="text-[0.95rem] text-[#6b6b6b] max-w-lg">
-              TF Technics est agréé et certifié pour opérer en toute légalité en Belgique et vous permettre d&apos;accéder aux primes régionales.
+              Chaque intervention TF Technics est réalisée dans le respect des normes AREI, avec transparence sur les tarifs et garantie sur les travaux.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {CERTIFICATIONS.map((cert, i) => (
+            {ENGAGEMENTS.map((cert, i) => (
               <motion.div
                 key={cert}
                 initial={{ opacity: 0, y: 16 }}

@@ -10,9 +10,9 @@ export const FAQ_ITEMS: FaqItem[] = [
       "Nous intervenons en moins de 60 minutes sur Bruxelles et ses environs, 24h/24 et 7j/7, y compris les week-ends et jours fériés. Pour les zones plus éloignées en Brabant Wallon ou Flamand, comptez 60 à 90 minutes maximum.",
   },
   {
-    question: "Êtes-vous agréés AREI et assurés ?",
+    question: "Êtes-vous assurés ?",
     answer:
-      "Oui. TF Technics est agréé selon le Règlement Général sur les Installations Électriques (AREI) en Belgique. Nous sommes également couverts par une assurance responsabilité civile professionnelle pour tous nos chantiers, qu'il s'agisse de particuliers ou de professionnels.",
+      "Oui. TF Technics est couvert par une assurance responsabilité civile professionnelle pour tous nos chantiers, qu'il s'agisse de particuliers ou de professionnels. Tous nos travaux respectent le Règlement Général sur les Installations Électriques (AREI) en vigueur en Belgique.",
   },
   {
     question: "Intervenez-vous le week-end et la nuit ?",

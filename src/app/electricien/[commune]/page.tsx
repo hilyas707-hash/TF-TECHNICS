@@ -66,13 +66,6 @@ export default async function ElectricienCommunePage(
       opens:       "00:00",
       closes:      "23:59",
     },
-    aggregateRating: {
-      "@type":       "AggregateRating",
-      ratingValue:   "4.9",
-      reviewCount:   "87",
-      bestRating:    "5",
-      worstRating:   "1",
-    },
   };
 
   return (

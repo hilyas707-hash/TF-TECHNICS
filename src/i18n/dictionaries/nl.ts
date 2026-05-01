@@ -32,7 +32,7 @@ const nl: Dictionary = {
     ctaSecondary: "Onze diensten",
     phone: "+32 XXX XX XX XX",
     trust: {
-      certified: "Erkend AREI",
+      certified: "Verzekerd BA Prof.",
       available: "Beschikbaar 24u/24",
       speed: "Interventie < 60 min",
     },
@@ -52,7 +52,7 @@ const nl: Dictionary = {
       borne: {
         title: "Laadpaal",
         description:
-          "Installatie van wallboxen tot 22 kW thuis of op kantoor. Gecertificeerd voor regionale premies.",
+          "Installatie van wallboxen tot 22 kW thuis of op kantoor. Wij begeleiden u bij de aanvraag van regionale premies.",
       },
       renovation: {
         title: "AREI-conformiteit",
@@ -111,7 +111,7 @@ const nl: Dictionary = {
       "Professionele installatie van wallboxen voor elektrische voertuigen.",
     ctaInstall: "Offerte aanvragen",
     features: {
-      certified: "Gecertificeerd installateur",
+      certified: "Vakkundige installateur",
       subsidy: "Hulp bij premieaanvragen",
       speed: "Installatie op één dag",
     },
@@ -121,9 +121,9 @@ const nl: Dictionary = {
   trust: {
     sectionTitle: "Waarom ons kiezen?",
     stats: {
-      interventions: { value: "2.500+", label: "Uitgevoerde interventies" },
-      experience:    { value: "15 jaar", label: "Ervaring" },
-      satisfaction:  { value: "98 %",   label: "Tevreden klanten" },
+      interventions: { value: "24u/24",   label: "Beschikbaar 7d/7" },
+      experience:    { value: "0 €",      label: "Gratis offerte" },
+      satisfaction:  { value: "2 jaar",   label: "Garantie werken" },
       response:      { value: "< 60 min", label: "Reactietijd" },
     },
   },
@@ -145,7 +145,7 @@ const nl: Dictionary = {
 
   /* ─── Voettekst ───────────────────────────────────────────────────────── */
   footer: {
-    tagline: "Erkende elektricien – Brussel, Vlaanderen, Waals-Brabant",
+    tagline: "Elektricien – Brussel, Vlaanderen, Waals-Brabant",
     rights: "Alle rechten voorbehouden.",
     legal: "Juridische vermeldingen",
     privacy: "Privacybeleid",

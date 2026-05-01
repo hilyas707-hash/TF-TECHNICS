@@ -54,7 +54,7 @@ export const SERVICES_DATA: ServiceData[] = [
       { title: "Disponible 24h/24 – 7j/7",  description: "Weekends, nuits, jours fériés inclus. Une ligne d'urgence dédiée, réponse immédiate garantie." },
       { title: "Diagnostic inclus",          description: "Nous identifions l'origine exacte de la panne avant toute intervention, sans frais de diagnostic cachés." },
       { title: "Matériel embarqué",          description: "Nos camionnettes sont équipées du matériel courant pour résoudre 95 % des pannes en une seule visite." },
-      { title: "Agréé AREI & assuré",        description: "Chaque intervention respecte le Règlement Général sur les Installations Électriques. Couverture RC professionnelle complète." },
+      { title: "Assuré RC professionnelle",   description: "Couverture RC professionnelle complète. Chaque intervention respecte le Règlement Général sur les Installations Électriques (AREI)." },
       { title: "Devis transparent",          description: "Tarif communiqué avant intervention. Pas de mauvaise surprise sur la facture." },
     ],
     steps: [
@@ -71,7 +71,7 @@ export const SERVICES_DATA: ServiceData[] = [
     ],
     seo: {
       title:       "Dépannage Électrique Urgence Bruxelles | < 60 min | TF Technics",
-      description: "Électricien dépanneur d'urgence à Bruxelles, Brabant Wallon et Flamand. Intervention en moins de 60 min, 24h/24 – 7j/7. Agréé AREI. Appelez maintenant.",
+      description: "Électricien dépanneur d'urgence à Bruxelles, Brabant Wallon et Flamand. Intervention en moins de 60 min, 24h/24 – 7j/7. Assuré RC Pro. Appelez maintenant.",
     },
   },
 
@@ -108,7 +108,7 @@ export const SERVICES_DATA: ServiceData[] = [
     ],
     seo: {
       title:       "Installation Électrique Bruxelles | Tableau, Prises, Éclairage | TF Technics",
-      description: "Installation électrique complète à Bruxelles : tableau électrique, prises, câblage, éclairage. Agréé AREI, rapport de conformité inclus. Devis gratuit.",
+      description: "Installation électrique complète à Bruxelles : tableau électrique, prises, câblage, éclairage. Conforme AREI, rapport de conformité inclus. Devis gratuit.",
     },
   },
 
@@ -122,10 +122,10 @@ export const SERVICES_DATA: ServiceData[] = [
     heroSubtitle: "Wallbox jusqu'à 22 kW, compatible toutes marques. TF Technics installe votre borne de recharge en une journée et vous accompagne pour les primes régionales.",
     image:    "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Borne de recharge wallbox installée par TF Technics pour véhicule électrique à Bruxelles",
-    intro:    "Passer à l'électrique commence à la maison. Une wallbox bien installée vous permet de recharger votre véhicule jusqu'à 10× plus vite qu'une prise domestique standard. TF Technics est installateur certifié, agréé pour les aides régionales en Belgique.",
+    intro:    "Passer à l'électrique commence à la maison. Une wallbox bien installée vous permet de recharger votre véhicule jusqu'à 10× plus vite qu'une prise domestique standard. TF Technics vous accompagne de l'installation au dossier de primes régionales.",
     benefits: [
       { title: "Jusqu'à 22 kW",              description: "Bornes monophasées (3,7–7,4 kW) ou triphasées (11–22 kW) selon votre véhicule et votre installation." },
-      { title: "Installateur certifié",       description: "Certification obligatoire pour bénéficier des primes. TF Technics est agréé par les organismes régionaux." },
+      { title: "Technicien qualifié",          description: "Installation soignée et conforme aux normes AREI. Dossier de primes constitué et soumis par nos soins." },
       { title: "Primes & subsides",           description: "Nous gérons les démarches pour les primes Bruxelles Environnement, primes énergie Wallonie et Flandre à votre place." },
       { title: "Compatible toutes marques",   description: "Wallbox pour Tesla, Renault, Volkswagen, Kia, Hyundai, BMW, Peugeot, et tous autres véhicules électriques." },
       { title: "Installation en 1 journée",   description: "De la pose des gaines au test de charge final, nos techniciens finalisent tout en une seule visite." },
@@ -145,7 +145,7 @@ export const SERVICES_DATA: ServiceData[] = [
     ],
     seo: {
       title:       "Installation Borne Recharge Bruxelles | Wallbox Véhicule Électrique | TF Technics",
-      description: "Installation de bornes de recharge (wallbox) à Bruxelles par installateur certifié. Jusqu'à 22 kW, primes incluses, installation en 1 journée. Devis gratuit.",
+      description: "Installation de bornes de recharge (wallbox) à Bruxelles. Jusqu'à 22 kW, accompagnement pour les primes régionales, installation en 1 journée. Devis gratuit.",
     },
   },
 
@@ -182,7 +182,7 @@ export const SERVICES_DATA: ServiceData[] = [
     ],
     seo: {
       title:       "Mise en Conformité Électrique AREI Bruxelles | TF Technics",
-      description: "Mise en conformité électrique AREI à Bruxelles. Rénovation installation, remplacement tableau, rapport de conformité. Agréé AREI. Devis gratuit.",
+      description: "Mise en conformité électrique AREI à Bruxelles. Rénovation installation, remplacement tableau, rapport de conformité. Devis gratuit.",
     },
   },
 

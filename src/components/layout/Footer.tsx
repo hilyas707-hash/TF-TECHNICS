@@ -37,7 +37,7 @@ export default function Footer({ dict }: Props) {
       title: "Entreprise",
       links: [
         { label: "À propos de TF Technics", href: "#"        },
-        { label: "Certifications AREI",      href: "#"        },
+        { label: "Nos engagements",           href: "#confiance"},
         { label: "Avis clients",             href: "#confiance"},
         { label: nav.contact,                href: "#contact"  },
       ],
@@ -150,7 +150,7 @@ export default function Footer({ dict }: Props) {
         </div>
 
         <p className="mt-4 text-center text-[0.72rem] text-white/20">
-          TF Technics SRL · BCE BE 0XXX.XXX.XXX · Agréé AREI · Installateur certifié bornes de recharge
+          TF Technics SRL · BCE BE 0XXX.XXX.XXX · Assuré RC professionnelle · Devis gratuit sans engagement
         </p>
 
       </motion.div>

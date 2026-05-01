@@ -6,10 +6,10 @@ import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title:       "Blog Électricité Bruxelles | Conseils & Guides | TF Technics",
-  description: "Conseils d'électricien agréé AREI : guides sur les pannes, la conformité RGIE, les primes bornes de recharge et la sécurité électrique en Belgique.",
+  description: "Guides sur les pannes électriques, la conformité RGIE, les primes bornes de recharge et la sécurité électrique en Belgique. Par TF Technics, Bruxelles.",
   openGraph: {
     title:       "Blog Électricité | TF Technics Bruxelles",
-    description: "Conseils pratiques, guides AREI et primes bornes de recharge par TF Technics, électricien agréé à Bruxelles.",
+    description: "Guides pratiques, conformité AREI et primes bornes de recharge par TF Technics, électricien professionnel à Bruxelles.",
     type:        "website",
     locale:      "fr_BE",
   },
