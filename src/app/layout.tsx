@@ -5,6 +5,7 @@ import "./globals.css";
 import CookieBanner from "@/components/cookies/CookieBanner";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import ScrollProgress from "@/components/layout/ScrollProgress";
+import ScrollToTop from "@/components/layout/ScrollToTop";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
@@ -63,6 +64,7 @@ export default function RootLayout({
             </Script>
           </>
         )}
+        <ScrollToTop />
         <ScrollProgress />
         {children}
         {/* Bandeau RGPD — présent sur toutes les pages */}
