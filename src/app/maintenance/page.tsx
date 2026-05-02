@@ -17,7 +17,7 @@ export default function MaintenancePage() {
           alt="TF Technics"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-top scale-75 origin-top"
           sizes="100vw"
         />
         {/* Overlay sombre pour lisibilité */}
