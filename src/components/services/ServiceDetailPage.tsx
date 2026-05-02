@@ -191,7 +191,7 @@ export default function ServiceDetailPage({ service }: Props) {
             <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold tracking-[-0.03em] text-white leading-[1.08]">
               Ces situations vous parlent&nbsp;?
             </h2>
-            <p className="text-[0.95rem] text-white/50 max-w-lg leading-relaxed">
+            <p className="text-[0.95rem] text-white/75 max-w-lg leading-relaxed">
               Vous n&apos;êtes pas seul. Voici les cas les plus fréquents pour lesquels nos clients font appel à TF Technics.
             </p>
           </motion.div>
@@ -213,7 +213,7 @@ export default function ServiceDetailPage({ service }: Props) {
                     </div>
                     <h3 className="text-[0.95rem] font-bold text-white leading-snug">{problem.title}</h3>
                   </div>
-                  <p className="text-[0.85rem] text-white/50 leading-relaxed pl-9">{problem.desc}</p>
+                  <p className="text-[0.85rem] text-white/75 leading-relaxed pl-9">{problem.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -372,7 +372,7 @@ export default function ServiceDetailPage({ service }: Props) {
                     </span>
                     <div className="flex flex-col gap-2">
                       <h3 className="text-[0.95rem] font-bold text-white leading-tight">{step.title}</h3>
-                      <p className="text-[0.83rem] text-white/50 leading-relaxed">{step.description}</p>
+                      <p className="text-[0.83rem] text-white/75 leading-relaxed">{step.description}</p>
                     </div>
                   </div>
                 </div>

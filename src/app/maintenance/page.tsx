@@ -70,7 +70,7 @@ export default function MaintenancePage() {
             <br />
             <span className="text-[#f97316]">d&apos;amélioration</span>
           </h1>
-          <p className="text-[1rem] text-white/50 leading-relaxed max-w-sm mx-auto">
+          <p className="text-[1rem] text-white/75 leading-relaxed max-w-sm mx-auto">
             Nous travaillons pour vous offrir une meilleure expérience. De retour très bientôt.
           </p>
         </motion.div>
@@ -105,7 +105,7 @@ export default function MaintenancePage() {
           transition={{ duration: 0.7, ease: SPRING, delay: 0.5 }}
           className="w-full max-w-sm rounded-2xl bg-white/[0.06] backdrop-blur-sm ring-1 ring-white/[0.10] p-5 flex flex-col gap-3"
         >
-          <p className="text-[0.78rem] text-white/40 uppercase tracking-[0.15em] font-semibold">
+          <p className="text-[0.78rem] text-white/65 uppercase tracking-[0.15em] font-semibold">
             Urgence électrique ?
           </p>
           <a href="tel:+32483480496" className="flex items-center gap-3 group">
@@ -113,18 +113,18 @@ export default function MaintenancePage() {
               <Phone size={15} strokeWidth={2.5} />
             </div>
             <div className="text-left">
-              <p className="text-[0.75rem] text-white/40">Appelez-nous 24h/24</p>
+              <p className="text-[0.75rem] text-white/65">Appelez-nous 24h/24</p>
               <p className="text-[0.95rem] font-bold text-white group-hover:text-[#f97316] transition-colors duration-300">
                 +32 483 48 04 96
               </p>
             </div>
           </a>
           <a href="mailto:info@tftechnics.be" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 rounded-xl bg-white/[0.06] flex items-center justify-center text-white/40 group-hover:bg-white/10 group-hover:text-white transition-all duration-300">
+            <div className="w-9 h-9 rounded-xl bg-white/[0.06] flex items-center justify-center text-white/65 group-hover:bg-white/10 group-hover:text-white transition-all duration-300">
               <Mail size={15} strokeWidth={2.5} />
             </div>
             <div className="text-left">
-              <p className="text-[0.75rem] text-white/40">Par email</p>
+              <p className="text-[0.75rem] text-white/65">Par email</p>
               <p className="text-[0.95rem] font-bold text-white/70 group-hover:text-white transition-colors duration-300">
                 info@tftechnics.be
               </p>

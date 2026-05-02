@@ -169,7 +169,7 @@ export default function ServicesSection({ dict }: Props) {
                       <p
                         className={`
                           text-[0.9rem] leading-relaxed
-                          ${isFeatured ? "text-white/60" : "text-[#6b6b6b]"}
+                          ${isFeatured ? "text-white/80" : "text-[#6b6b6b]"}
                           ${isWide ? "max-w-xl" : ""}
                         `}
                       >

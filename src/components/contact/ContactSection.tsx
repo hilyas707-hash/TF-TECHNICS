@@ -93,7 +93,7 @@ export default function ContactSection({ dict }: Props) {
                 <h2 className="text-[clamp(1.7rem,3.5vw,2.6rem)] font-extrabold tracking-[-0.03em] text-white leading-[1.1]">
                   {contact.urgencyTitle}
                 </h2>
-                <p className="text-[0.95rem] text-white/55 max-w-md leading-relaxed">
+                <p className="text-[0.95rem] text-white/80 max-w-md leading-relaxed">
                   {contact.urgencySubtitle}
                 </p>
               </div>

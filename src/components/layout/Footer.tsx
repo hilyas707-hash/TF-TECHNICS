@@ -59,7 +59,7 @@ export default function Footer({ dict }: Props) {
                 <li key={s.href}>
                   <Link
                     href={s.href}
-                    className="text-[0.85rem] text-white/50 hover:text-white/90 transition-colors duration-300 font-medium"
+                    className="text-[0.85rem] text-white/70 hover:text-white/95 transition-colors duration-300 font-medium"
                   >
                     {s.label}
                   </Link>

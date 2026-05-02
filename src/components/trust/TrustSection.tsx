@@ -148,7 +148,7 @@ export default function TrustSection({ dict }: Props) {
                 </div>
                 <div>
                   <p className="text-[0.82rem] font-semibold text-[#2b2b2b]">{review.name}</p>
-                  <p className="text-[0.75rem] text-[#9b9b9b]">{review.location} · {review.date}</p>
+                  <p className="text-[0.75rem] text-[#6b6b6b]">{review.location} · {review.date}</p>
                 </div>
               </div>
             </motion.div>
@@ -161,7 +161,7 @@ export default function TrustSection({ dict }: Props) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: SPRING, delay: 0.4 }}
-          className="mt-12 text-center text-[0.85rem] text-[#9b9b9b] font-medium tracking-wide"
+          className="mt-12 text-center text-[0.85rem] text-[#6b6b6b] font-medium tracking-wide"
         >
           Assuré RC Pro · Devis gratuit · Bruxelles — Flandre — Brabant Wallon
         </motion.p>

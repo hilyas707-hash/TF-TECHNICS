@@ -142,7 +142,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
         >
           <div className="px-4 py-3.5 rounded-2xl bg-black/40 backdrop-blur-xl ring-1 ring-white/[0.12] shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
             <p className="text-[28px] font-extrabold leading-none tracking-[-0.04em] text-white">&lt;&nbsp;60&nbsp;min</p>
-            <p className="text-[11px] text-white/45 mt-1.5 font-medium tracking-wider uppercase">Délai d&apos;intervention</p>
+            <p className="text-[11px] text-white/80 mt-1.5 font-medium tracking-wider uppercase">Délai d&apos;intervention</p>
           </div>
         </motion.div>
 
@@ -155,7 +155,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
         >
           <div className="px-4 py-3.5 rounded-2xl bg-black/40 backdrop-blur-xl ring-1 ring-white/[0.12] shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
             <p className="text-[28px] font-extrabold leading-none tracking-[-0.04em] text-white">2 ans</p>
-            <p className="text-[11px] text-white/45 mt-1.5 font-medium tracking-wider uppercase">Garantie travaux</p>
+            <p className="text-[11px] text-white/80 mt-1.5 font-medium tracking-wider uppercase">Garantie travaux</p>
           </div>
         </motion.div>
 
@@ -188,7 +188,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
               </motion.h1>
 
               {/* Sous-titre */}
-              <motion.p variants={fadeUp} className="text-[1rem] sm:text-[1.1rem] leading-relaxed text-white/55 max-w-[30rem]">
+              <motion.p variants={fadeUp} className="text-[1rem] sm:text-[1.1rem] leading-relaxed text-white/80 max-w-[30rem]">
                 {hero.subtitle}
               </motion.p>
 
@@ -209,7 +209,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
                     { icon: <Clock  size={11} strokeWidth={2} />, label: hero.trust.available },
                     { icon: <Zap    size={11} strokeWidth={2} />, label: hero.trust.speed     },
                   ].map(({ icon, label }) => (
-                    <span key={label} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.08] backdrop-blur-md ring-1 ring-white/[0.12] text-white/75 text-[12px] font-medium">
+                    <span key={label} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.12] backdrop-blur-md ring-1 ring-white/[0.18] text-white/90 text-[12px] font-medium">
                       {icon}{label}
                     </span>
                   ))}
@@ -233,14 +233,14 @@ export default function HeroSection({ dict }: HeroSectionProps) {
                     <span className={`text-[1.1rem] font-extrabold tracking-[-0.03em] leading-none ${s.gold ? "text-[#dbb82d]" : "text-white"}`}>
                       {s.value}
                     </span>
-                    <span className="text-[10px] text-white/40 font-medium uppercase tracking-wider whitespace-nowrap">
+                    <span className="text-[10px] text-white/65 font-medium uppercase tracking-wider whitespace-nowrap">
                       {s.label}
                     </span>
                   </div>
                 ))}
                 <div className="hidden lg:flex items-center justify-center px-6 py-4 flex-1 gap-1.5">
-                  <MapPin size={11} strokeWidth={2} className="text-white/30" />
-                  <span className="text-[11px] text-white/35 font-medium whitespace-nowrap">
+                  <MapPin size={11} strokeWidth={2} className="text-white/60" />
+                  <span className="text-[11px] text-white/65 font-medium whitespace-nowrap">
                     Bruxelles · Flandre · Brabant Wallon
                   </span>
                 </div>
