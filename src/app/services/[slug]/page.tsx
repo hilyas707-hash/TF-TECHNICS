@@ -1,7 +1,9 @@
-import { notFound } from "next/navigation";
+import { notFound }    from "next/navigation";
 import type { Metadata } from "next";
 import { getServiceBySlug, getAllServiceSlugs } from "@/data/services";
 import ServiceDetailPage from "@/components/services/ServiceDetailPage";
+
+const BASE_URL = "https://tftechnics.be";
 
 /* Pré-génère toutes les routes statiques au build */
 export function generateStaticParams() {
@@ -19,11 +21,16 @@ export async function generateMetadata(
   return {
     title:       service.seo.title,
     description: service.seo.description,
+    alternates: {
+      canonical: `${BASE_URL}/services/${slug}`,
+    },
     openGraph: {
       title:       service.seo.title,
       description: service.seo.description,
       type:        "website",
       locale:      "fr_BE",
+      url:         `/services/${slug}`,
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, type: "image/png" }],
     },
   };
 }
@@ -35,5 +42,56 @@ export default async function ServicePage(
   const service = getServiceBySlug(slug);
   if (!service) notFound();
 
-  return <ServiceDetailPage service={service} />;
+  /* ── JSON-LD Service + FAQPage ────────────────────────────────────────── */
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${BASE_URL}/services/${slug}#service`,
+        name: service.title,
+        description: service.seo.description,
+        url: `${BASE_URL}/services/${slug}`,
+        provider: {
+          "@type": "LocalBusiness",
+          "@id": `${BASE_URL}/#business`,
+          name: "TF Technics",
+          telephone: "+32483480496",
+          url: BASE_URL,
+        },
+        areaServed: [
+          { "@type": "City", name: "Bruxelles" },
+          { "@type": "AdministrativeArea", name: "Brabant Wallon" },
+          { "@type": "AdministrativeArea", name: "Brabant Flamand" },
+        ],
+        serviceType: service.badge,
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: service.faq.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: { "@type": "Answer", text: f.answer },
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Accueil", item: BASE_URL },
+          { "@type": "ListItem", position: 2, name: "Services", item: `${BASE_URL}/services` },
+          { "@type": "ListItem", position: 3, name: service.title, item: `${BASE_URL}/services/${slug}` },
+        ],
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ServiceDetailPage service={service} />
+    </>
+  );
 }

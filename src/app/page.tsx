@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     url:    "/",
   },
   alternates: {
+    canonical: "https://tftechnics.be",
     languages: {
       fr: "/",
       nl: "/nl",

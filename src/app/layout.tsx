@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     type:     "website",
     locale:   "fr_BE",
     siteName: "TF Technics — Électricien Dépanneur",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, type: "image/png" }],
   },
   alternates: {
     languages: {
