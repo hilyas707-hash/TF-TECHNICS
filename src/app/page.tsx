@@ -48,7 +48,7 @@ const jsonLd = {
   description:
     "Électricien professionnel intervenant en urgence à Bruxelles, en Flandre et en Brabant Wallon. Dépannage, installation de bornes de recharge et mise en conformité RGIE.",
   url: "https://mon-super-site-mu.vercel.app",
-  telephone: "+32XXXXXXXXX",
+  telephone: "+32483480496",
   email: "info@electricien-bruxelles.be",
   logo: "https://mon-super-site-mu.vercel.app/logo.png",
   image: "https://mon-super-site-mu.vercel.app/logo.png",

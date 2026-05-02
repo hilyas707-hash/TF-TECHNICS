@@ -29,7 +29,7 @@ export default async function Tarifs() {
       "@type": "LocalBusiness",
       name: "TF Technics",
       url: "https://mon-super-site-mu.vercel.app",
-      telephone: "+32XXXXXXXXX",
+      telephone: "+32483480496",
       areaServed: ["Bruxelles", "Flandre", "Brabant Wallon"],
     },
     offers: [

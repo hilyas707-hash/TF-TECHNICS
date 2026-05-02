@@ -167,7 +167,7 @@ export default function BlogPostPage({ article }: Props) {
             TF Technics intervient en moins de 60 min, 24h/24 – 7j/7. Devis gratuit.
           </p>
           <a
-            href="tel:+32XXXXXXXXX"
+            href="tel:+32483480496"
             className="
               group inline-flex items-center justify-between gap-3
               pl-6 pr-2 py-3 rounded-full

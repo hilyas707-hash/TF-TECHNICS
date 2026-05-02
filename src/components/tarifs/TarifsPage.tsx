@@ -219,7 +219,7 @@ export default function TarifsPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="tel:+32XXXXXXXXX"
+              href="tel:+32483480496"
               className="group inline-flex items-center justify-between gap-3 pl-5 pr-2 py-3 rounded-full bg-[#f97316] text-white font-bold text-[15px] shadow-[0_4px_20px_rgba(249,115,22,0.38)] hover:bg-[#ea580c] active:scale-[0.98] transition-all duration-500"
             >
               <div className="flex items-center gap-2.5">

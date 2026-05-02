@@ -342,7 +342,7 @@ export default function DevisSection() {
                       </p>
                     </div>
                     <a
-                      href="tel:+32XXXXXXXXX"
+                      href="tel:+32483480496"
                       className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#f97316] text-white font-bold text-[14px] shadow-[0_4px_16px_rgba(249,115,22,0.35)] hover:bg-[#ea580c] transition-colors duration-300"
                     >
                       <Phone size={14} strokeWidth={2.5} />

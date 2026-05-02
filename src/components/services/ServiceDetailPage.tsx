@@ -29,7 +29,7 @@ const ICON_MAP_LG = {
   scan:    <ScanSearch      size={28} strokeWidth={1.6} />,
 };
 
-const PHONE = "+32 XXX XX XX XX";
+const PHONE = "+32 483 48 04 96";
 
 interface Props { service: ServiceData }
 

@@ -56,7 +56,7 @@ export default function FaqSection() {
 
             {/* CTA téléphone */}
             <a
-              href="tel:+32XXXXXXXXX"
+              href="tel:+32483480496"
               className="
                 group inline-flex items-center gap-3 w-fit
                 px-5 py-3 rounded-full

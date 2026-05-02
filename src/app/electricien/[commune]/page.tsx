@@ -51,7 +51,7 @@ export default async function ElectricienCommunePage(
     name:       "TF Technics",
     description: commune.intro,
     url:         `https://mon-super-site-mu.vercel.app/electricien/${slug}`,
-    telephone:   "+32XXXXXXXXX",
+    telephone:   "+32483480496",
     areaServed:  [
       { "@type": "City", name: commune.name },
       ...commune.postalCodes.map((pc) => ({

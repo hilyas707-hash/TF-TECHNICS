@@ -72,7 +72,7 @@ export default function AboutSection() {
                 Assuré en responsabilité civile professionnelle, TF Technics vous garantit des travaux conformes aux normes AREI, durables et couverts par une garantie de 2 ans.
               </p>
               <a
-                href="tel:+32XXXXXXXXX"
+                href="tel:+32483480496"
                 className="
                   group inline-flex items-center justify-between gap-3 w-fit
                   pl-5 pr-2 py-3 rounded-full
@@ -202,7 +202,7 @@ export default function AboutSection() {
             <p className="text-white/55 text-[0.9rem]">Devis gratuit, réponse sous 2 heures.</p>
           </div>
           <a
-            href="tel:+32XXXXXXXXX"
+            href="tel:+32483480496"
             className="
               group flex-shrink-0 inline-flex items-center justify-between gap-3
               pl-6 pr-2 py-2.5 rounded-full

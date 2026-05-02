@@ -10,7 +10,7 @@ const SPRING = [0.32, 0.72, 0, 1] as const;
  * ⚠️  REMPLACE CE NUMÉRO par ton vrai numéro WhatsApp Business
  * Format : indicatif pays sans + ni 0 → ex. 32477123456 pour +32 477 12 34 56
  */
-const WA_NUMBER  = "32XXXXXXXXX";
+const WA_NUMBER  = "32483480496";
 const WA_MESSAGE = encodeURIComponent(
   "Bonjour TF Technics, je souhaite obtenir des informations sur vos services électriques."
 );

@@ -83,7 +83,7 @@ export default function CommunePage({ commune }: Props) {
             className="flex flex-col sm:flex-row gap-3"
           >
             <a
-              href="tel:+32XXXXXXXXX"
+              href="tel:+32483480496"
               className="
                 group inline-flex items-center justify-between gap-3
                 pl-5 pr-2 py-3 rounded-full
@@ -238,7 +238,7 @@ export default function CommunePage({ commune }: Props) {
             </p>
           </div>
           <a
-            href="tel:+32XXXXXXXXX"
+            href="tel:+32483480496"
             className="
               group flex-shrink-0 inline-flex items-center justify-between gap-3
               pl-6 pr-2 py-2.5 rounded-full

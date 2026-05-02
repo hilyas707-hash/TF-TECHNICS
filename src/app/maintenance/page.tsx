@@ -91,13 +91,13 @@ export default function MaintenancePage() {
           <p className="text-[0.78rem] text-white/40 uppercase tracking-[0.15em] font-semibold">
             Urgence électrique ?
           </p>
-          <a href="tel:+32XXXXXXXXX" className="flex items-center gap-3 group">
+          <a href="tel:+32483480496" className="flex items-center gap-3 group">
             <div className="w-9 h-9 rounded-xl bg-[#f97316]/15 flex items-center justify-center text-[#f97316] group-hover:bg-[#f97316] group-hover:text-white transition-all duration-300">
               <Phone size={15} strokeWidth={2.5} />
             </div>
             <div className="text-left">
               <p className="text-[0.75rem] text-white/40">Appelez-nous 24h/24</p>
-              <p className="text-[0.95rem] font-bold text-white group-hover:text-[#f97316] transition-colors duration-300">+32 XXX XX XX XX</p>
+              <p className="text-[0.95rem] font-bold text-white group-hover:text-[#f97316] transition-colors duration-300">+32 483 48 04 96</p>
             </div>
           </a>
           <a href="mailto:info@tftechnics.be" className="flex items-center gap-3 group">

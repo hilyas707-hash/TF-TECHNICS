@@ -52,7 +52,7 @@ export default function NotFound() {
             Retour à l&apos;accueil
           </Link>
           <a
-            href="tel:+32XXXXXXXXX"
+            href="tel:+32483480496"
             className="
               flex items-center justify-center gap-2
               px-5 py-3 rounded-full

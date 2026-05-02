@@ -56,7 +56,7 @@ export const ARTICLES: Article[] = [
       ]},
       { type: "h2", text: "Le coût d'une intervention à Bruxelles" },
       { type: "p", text: "Le tarif d'un électricien pour ce type d'intervention dépend de plusieurs facteurs : l'heure (jour/nuit), le type de panne et la durée de l'intervention. Chez TF Technics, le déplacement est inclus et le tarif est communiqué avant toute intervention. Pas de mauvaise surprise." },
-      { type: "cta", label: "Appeler TF Technics — intervention < 60 min", href: "tel:+32XXXXXXXXX" },
+      { type: "cta", label: "Appeler TF Technics — intervention < 60 min", href: "tel:+32483480496" },
       { type: "h2", text: "Prévenir les pannes futures" },
       { type: "p", text: "Un tableau électrique moderne avec disjoncteurs différentiels de type A ou F, un parafoudre et une mise à la terre conforme réduisent considérablement les risques. Si votre installation date d'avant 2000, un diagnostic électrique complet est fortement recommandé — notamment avant la vente de votre bien." },
     ],

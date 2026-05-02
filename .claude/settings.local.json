@@ -30,7 +30,10 @@
       "Bash(git commit -m 'Hero : image plein écran hero.png — supprime vidéo et parallax *)",
       "Bash(git commit -m 'Page tarifs : grille de prix SEO + JSON-LD + sitemap + nav *)",
       "Bash(git commit -m 'Hero : refonte complète — Ken Burns, barre de stats, cartes glassmorphism *)",
-      "Bash(vercel domains *)"
+      "Bash(vercel domains *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(xargs sed *)"
     ]
   }
 }

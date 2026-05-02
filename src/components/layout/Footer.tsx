@@ -41,7 +41,7 @@ export default function Footer({ dict }: Props) {
               Électricien dépanneur à Bruxelles, Flandre et Brabant Wallon.
             </p>
             <a
-              href="tel:+32XXXXXXXXX"
+              href="tel:+32483480496"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f97316] text-white font-bold text-[13px] w-fit shadow-[0_4px_16px_rgba(249,115,22,0.35)] hover:bg-[#ea580c] transition-all duration-300"
             >
               <Phone size={13} strokeWidth={2.5} />

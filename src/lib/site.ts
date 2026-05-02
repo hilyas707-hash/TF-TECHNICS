@@ -1,14 +1,21 @@
-/* ─── Configuration globale du site ────────────────────────────────────────
-   Source unique de vérité pour le téléphone, l'email et l'URL de base.
-   Modifiez ces valeurs ici → répercussion automatique sur tout le site.
-──────────────────────────────────────────────────────────────────────────── */
-
 export const SITE = {
-  /* ⚠️  REMPLACEZ PAR LE VRAI NUMÉRO AVANT MISE EN PRODUCTION */
-  phone:    "+32 XXX XX XX XX",
-  phoneTel: "+32XXXXXXXXX",          // format href:tel (sans espaces)
+  phone:    "+32 483 48 04 96",
+  phoneTel: "+32483480496",
 
   email:    "info@tftechnics.be",
-  baseUrl:  "https://mon-super-site-mu.vercel.app",
+  baseUrl:  "https://tftechnics.be",
   name:     "TF Technics",
+
+  address: {
+    street:  "Avenue Reine Astrid 49 / 1780",
+    city:    "Wemmel",
+    zip:     "1780",
+    country: "Belgique",
+    full:    "Avenue Reine Astrid 49 / 1780, 1780 Wemmel",
+  },
+
+  company: {
+    legal: "TF Technics SRL",
+    vat:   "BE1037.492.402",
+  },
 } as const;

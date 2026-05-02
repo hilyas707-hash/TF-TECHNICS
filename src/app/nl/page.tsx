@@ -45,7 +45,7 @@ const jsonLdNl = {
   description:
     "Professionele elektricien voor spoedinterventies in Brussel, Vlaanderen en Waals-Brabant. Herstellingen, laadpalen en AREI-conformiteit.",
   url: "https://mon-super-site-mu.vercel.app/nl",
-  telephone: "+32XXXXXXXXX",
+  telephone: "+32483480496",
   email: "info@electricien-bruxelles.be",
   logo: "https://mon-super-site-mu.vercel.app/logo.png",
   image: "https://mon-super-site-mu.vercel.app/logo.png",
