@@ -43,27 +43,28 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "Electrician"],
-  "@id": "https://mon-super-site-mu.vercel.app/#business",
+  "@id": "https://tftechnics.be/#business",
   name: "TF Technics",
   description:
     "Électricien professionnel intervenant en urgence à Bruxelles, en Flandre et en Brabant Wallon. Dépannage, installation de bornes de recharge et mise en conformité RGIE.",
-  url: "https://mon-super-site-mu.vercel.app",
+  url: "https://tftechnics.be",
   telephone: "+32483480496",
-  email: "info@electricien-bruxelles.be",
-  logo: "https://mon-super-site-mu.vercel.app/logo.png",
-  image: "https://mon-super-site-mu.vercel.app/logo.png",
+  email: "info@tftechnics.be",
+  logo: "https://tftechnics.be/logo.svg",
+  image: "https://tftechnics.be/hero.png",
   priceRange: "€€",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Bruxelles",
-    addressRegion: "Région de Bruxelles-Capitale",
-    postalCode: "1000",
+    streetAddress: "Avenue Reine Astrid 49, Boîte 1780",
+    addressLocality: "Wemmel",
+    addressRegion: "Brabant Flamand",
+    postalCode: "1780",
     addressCountry: "BE",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 50.8503,
-    longitude: 4.3517,
+    latitude: 50.9012,
+    longitude: 4.3082,
   },
   areaServed: [
     { "@type": "AdministrativeArea", "name": "Région de Bruxelles-Capitale" },
@@ -104,7 +105,7 @@ const jsonLd = {
         itemOffered: {
           "@type": "Service",
           name: "Installation de bornes de recharge",
-          description: "Wallbox jusqu'à 22 kW, certifié pour les primes régionales en Flandre et Brabant Wallon",
+          description: "Wallbox jusqu'à 22 kW, accompagnement pour les primes régionales en Flandre et Brabant Wallon",
         },
       },
       {

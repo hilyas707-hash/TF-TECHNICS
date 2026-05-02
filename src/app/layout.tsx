@@ -18,6 +18,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tftechnics.be"),
   title: "Électricien Dépanneur à Bruxelles | Urgence 24h/24 – 7j/7 | TF Technics",
   description:
     "TF Technics — électricien professionnel : dépannage urgence Bruxelles en moins de 60 min, bornes de recharge Flandre et Brabant Wallon, mise en conformité RGIE. Devis gratuit.",

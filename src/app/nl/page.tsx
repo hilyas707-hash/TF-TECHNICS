@@ -40,27 +40,28 @@ export const metadata: Metadata = {
 const jsonLdNl = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "Electrician"],
-  "@id": "https://mon-super-site-mu.vercel.app/nl#business",
+  "@id": "https://tftechnics.be/nl#business",
   name: "TF Technics",
   description:
     "Professionele elektricien voor spoedinterventies in Brussel, Vlaanderen en Waals-Brabant. Herstellingen, laadpalen en AREI-conformiteit.",
-  url: "https://mon-super-site-mu.vercel.app/nl",
+  url: "https://tftechnics.be/nl",
   telephone: "+32483480496",
-  email: "info@electricien-bruxelles.be",
-  logo: "https://mon-super-site-mu.vercel.app/logo.png",
-  image: "https://mon-super-site-mu.vercel.app/logo.png",
+  email: "info@tftechnics.be",
+  logo: "https://tftechnics.be/logo.svg",
+  image: "https://tftechnics.be/hero.png",
   priceRange: "€€",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Brussel",
-    addressRegion: "Brussels Hoofdstedelijk Gewest",
-    postalCode: "1000",
+    streetAddress: "Avenue Reine Astrid 49, Boîte 1780",
+    addressLocality: "Wemmel",
+    addressRegion: "Vlaams-Brabant",
+    postalCode: "1780",
     addressCountry: "BE",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 50.8503,
-    longitude: 4.3517,
+    latitude: 50.9012,
+    longitude: 4.3082,
   },
   areaServed: [
     { "@type": "AdministrativeArea", "name": "Brussels Hoofdstedelijk Gewest" },
@@ -99,7 +100,7 @@ const jsonLdNl = {
         itemOffered: {
           "@type": "Service",
           name: "Installatie laadpalen",
-          description: "Wallbox tot 22 kW, gecertificeerd voor regionale premies in Vlaanderen en Waals-Brabant",
+          description: "Wallbox tot 22 kW, begeleiding voor regionale premies in Vlaanderen en Waals-Brabant",
         },
       },
       {

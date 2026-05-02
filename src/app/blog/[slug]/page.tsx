@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: article.date,
     },
     alternates: {
-      canonical: `https://mon-super-site-mu.vercel.app/blog/${article.slug}`,
+      canonical: `https://tftechnics.be/blog/${article.slug}`,
     },
   };
 }
@@ -51,19 +51,19 @@ export default async function BlogSlugPage({ params }: Props) {
     author: {
       "@type": "Organization",
       name: "TF Technics",
-      url: "https://mon-super-site-mu.vercel.app",
+      url: "https://tftechnics.be",
     },
     publisher: {
       "@type": "Organization",
       name: "TF Technics",
       logo: {
         "@type": "ImageObject",
-        url: "https://mon-super-site-mu.vercel.app/opengraph-image",
+        url: "https://tftechnics.be/opengraph-image",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://mon-super-site-mu.vercel.app/blog/${article.slug}`,
+      "@id": `https://tftechnics.be/blog/${article.slug}`,
     },
   };
 

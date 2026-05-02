@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     locale:      "fr_BE",
   },
   alternates: {
-    canonical: "https://mon-super-site-mu.vercel.app/blog",
+    canonical: "https://tftechnics.be/blog",
   },
 };
 

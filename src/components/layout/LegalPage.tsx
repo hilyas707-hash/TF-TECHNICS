@@ -69,8 +69,8 @@ export default function LegalPage({ title, subtitle, lastUpdated, sections }: Le
           </p>
           <p className="text-[0.875rem] text-[#6b6b6b]">
             Pour toute question relative aux présentes informations légales, contactez-nous à :{" "}
-            <a href="mailto:info@electricien-bruxelles.be" className="text-[#f97316] font-semibold hover:underline">
-              info@electricien-bruxelles.be
+            <a href="mailto:info@tftechnics.be" className="text-[#f97316] font-semibold hover:underline">
+              info@tftechnics.be
             </a>
           </p>
         </div>

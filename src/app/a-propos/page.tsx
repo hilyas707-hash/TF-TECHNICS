@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     locale:      "fr_BE",
   },
   alternates: {
-    canonical: "https://mon-super-site-mu.vercel.app/a-propos",
+    canonical: "https://tftechnics.be/a-propos",
   },
 };
 
@@ -24,11 +24,11 @@ export default async function AProposPage() {
     "@context": "https://schema.org",
     "@type":    "AboutPage",
     name:       "À propos de TF Technics",
-    url:        "https://mon-super-site-mu.vercel.app/a-propos",
+    url:        "https://tftechnics.be/a-propos",
     description: "TF Technics est un électricien professionnel opérant à Bruxelles, en Flandre et en Brabant Wallon.",
     mainEntity: {
       "@type": "LocalBusiness",
-      "@id":   "https://mon-super-site-mu.vercel.app/#business",
+      "@id":   "https://tftechnics.be/#business",
       name:    "TF Technics",
     },
   };

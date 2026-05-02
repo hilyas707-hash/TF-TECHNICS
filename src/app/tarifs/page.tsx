@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     locale:      "fr_BE",
   },
   alternates: {
-    canonical: "https://mon-super-site-mu.vercel.app/tarifs",
+    canonical: "https://tftechnics.be/tarifs",
   },
 };
 
@@ -28,7 +28,7 @@ export default async function Tarifs() {
     provider: {
       "@type": "LocalBusiness",
       name: "TF Technics",
-      url: "https://mon-super-site-mu.vercel.app",
+      url: "https://tftechnics.be",
       telephone: "+32483480496",
       areaServed: ["Bruxelles", "Flandre", "Brabant Wallon"],
     },

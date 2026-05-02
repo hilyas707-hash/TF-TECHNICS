@@ -16,7 +16,7 @@ export async function generateMetadata(
   const commune = getCommuneBySlug(slug);
   if (!commune) return { title: "Commune introuvable | TF Technics" };
 
-  const BASE_URL = "https://mon-super-site-mu.vercel.app";
+  const BASE_URL = "https://tftechnics.be";
 
   return {
     title:       commune.seoTitle,
@@ -47,10 +47,10 @@ export default async function ElectricienCommunePage(
   const jsonLd = {
     "@context": "https://schema.org",
     "@type":    ["LocalBusiness", "Electrician"],
-    "@id":      `https://mon-super-site-mu.vercel.app/electricien/${slug}#business`,
+    "@id":      `https://tftechnics.be/electricien/${slug}#business`,
     name:       "TF Technics",
     description: commune.intro,
-    url:         `https://mon-super-site-mu.vercel.app/electricien/${slug}`,
+    url:         `https://tftechnics.be/electricien/${slug}`,
     telephone:   "+32483480496",
     areaServed:  [
       { "@type": "City", name: commune.name },
