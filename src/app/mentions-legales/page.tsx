@@ -17,7 +17,7 @@ export default function MentionsLegalesPage() {
         {
           title: "Éditeur du site",
           content:
-            "TF Technics SRL\nNuméro d'entreprise (BCE) : BE1037.492.402\nSiège social : Avenue Reine Astrid 49 / 1780, 1780 Wemmel, Belgique\nTéléphone : +32 483 48 04 96\nE-mail : info@tftechnics.be",
+            "TF Technics SRL\nNuméro d'entreprise (BCE) : BE1037.492.402\nSiège social : Avenue Reine Astrid 49, Boîte 1780, 1780 Wemmel, Belgique\nTéléphone : +32 483 48 04 96\nE-mail : info@tftechnics.be",
         },
         {
           title: "Directeur de la publication",
@@ -27,7 +27,7 @@ export default function MentionsLegalesPage() {
         {
           title: "Hébergement",
           content:
-            "Ce site est hébergé par Netlify Inc.\n2325 3rd Street, Suite 296, San Francisco, CA 94107, États-Unis\nSite web : https://www.netlify.com",
+            "Ce site est hébergé par Vercel Inc.\n440 N Barranca Ave #4133, Covina, CA 91723, États-Unis\nSite web : https://vercel.com",
         },
         {
           title: "Propriété intellectuelle",

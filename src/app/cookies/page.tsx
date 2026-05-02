@@ -67,7 +67,7 @@ export default function CookiesPage() {
         {
           title: "Contact",
           content:
-            "Pour toute question relative à notre utilisation des cookies : info@electricien-bruxelles.be\nAutorité de Protection des Données (APD) : www.autoriteprotectiondonnees.be",
+            "Pour toute question relative à notre utilisation des cookies : info@tftechnics.be\nAutorité de Protection des Données (APD) : www.autoriteprotectiondonnees.be",
         },
       ]}
     />

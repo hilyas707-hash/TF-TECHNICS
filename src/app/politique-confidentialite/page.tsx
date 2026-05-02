@@ -17,7 +17,7 @@ export default function PolitiqueConfidentialitePage() {
         {
           title: "Responsable du traitement",
           content:
-            "TF Technics SRL\nBCE : BE 0XXX.XXX.XXX\nRue de l'Électricité XX, 1000 Bruxelles\nContact DPO : info@electricien-bruxelles.be",
+            "TF Technics SRL\nBCE : BE1037.492.402\nSiège social : Avenue Reine Astrid 49, Boîte 1780, 1780 Wemmel, Belgique\nContact : info@tftechnics.be",
         },
         {
           title: "Données collectées",
@@ -49,7 +49,7 @@ export default function PolitiqueConfidentialitePage() {
         {
           title: "Destinataires des données",
           content:
-            "Vos données sont destinées exclusivement à TF Technics SRL. Elles peuvent être transmises à :\n• Nos sous-traitants techniques (hébergeur Vercel — DPA conforme au RGPD, serveurs en UE).\n• Les autorités légales, sur réquisition judiciaire.\nVos données ne sont jamais vendues ni cédées à des tiers à des fins commerciales.",
+            "Vos données sont destinées exclusivement à TF Technics SRL. Elles peuvent être transmises à :\n• Nos sous-traitants techniques (hébergeur Vercel Inc. — DPA conforme au RGPD, serveurs en UE).\n• Les autorités légales, sur réquisition judiciaire.\nVos données ne sont jamais vendues ni cédées à des tiers à des fins commerciales.",
         },
         {
           title: "Vos droits (RGPD)",
@@ -66,7 +66,7 @@ export default function PolitiqueConfidentialitePage() {
         {
           title: "Exercice de vos droits",
           content:
-            "Pour exercer vos droits, contactez-nous par e-mail : info@electricien-bruxelles.be\nNous répondrons dans un délai maximum de 30 jours.\nVous avez également le droit d'introduire une réclamation auprès de l'Autorité de Protection des Données (APD) belge : www.autoriteprotectiondonnees.be",
+            "Pour exercer vos droits, contactez-nous par e-mail : info@tftechnics.be\nNous répondrons dans un délai maximum de 30 jours.\nVous avez également le droit d'introduire une réclamation auprès de l'Autorité de Protection des Données (APD) belge : www.autoriteprotectiondonnees.be",
         },
         {
           title: "Sécurité des données",
