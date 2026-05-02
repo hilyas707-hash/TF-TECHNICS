@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const MAINTENANCE = process.env.NEXT_PUBLIC_MAINTENANCE === "true";
+const MAINTENANCE = false; // ← change en true pour activer, false pour désactiver
 
 export function middleware(request: NextRequest) {
   if (!MAINTENANCE) return NextResponse.next();
