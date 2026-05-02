@@ -175,7 +175,7 @@ export const ARTICLES: Article[] = [
     readTime: 4,
     category: "Sécurité",
     seoTitle: "10 Signaux d'Alerte Électrique à Faire Vérifier | TF Technics Bruxelles",
-    seoDesc:  "Tableau vieillissant, prises chaudes, odeur de brûlé : 10 signaux qui indiquent qu'il faut appeler un électricien professionnel à Bruxelles. Diagnostic gratuit.",
+    seoDesc:  "Tableau vieillissant, prises chaudes, odeur de brûlé : 10 signaux qui imposent d'appeler un électricien à Bruxelles. Diagnostic gratuit.",
     content: [
       { type: "p", text: "Les accidents électriques représentent la deuxième cause d'incendie domestique en Belgique. Dans la grande majorité des cas, des signes avant-coureurs existaient bien avant le sinistre — mais ils ont été ignorés ou sous-estimés. Voici les 10 signaux qui doivent vous conduire à appeler un électricien sans attendre." },
       { type: "h2", text: "1. Votre tableau électrique a plus de 25 ans" },

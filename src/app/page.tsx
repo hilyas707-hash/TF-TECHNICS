@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title:
     "Électricien Dépanneur Bruxelles | Bornes Recharge Flandre | Conformité RGIE Brabant Wallon | TF Technics",
   description:
-    "TF Technics — électricien professionnel : dépannage urgence à Bruxelles en moins de 60 min 24h/24, installation bornes de recharge (wallbox) en Flandre et Brabant Wallon, mise en conformité RGIE. Devis gratuit.",
+    "Électricien dépanneur à Bruxelles : urgence < 60 min 24h/24, bornes de recharge wallbox, conformité AREI. Assuré RC Pro. Devis gratuit.",
   keywords:
     "électricien dépannage bruxelles, urgence électricien bruxelles 24h, bornes de recharge flandre, borne recharge wallbox brabant wallon, mise en conformité RGIE belgique, dépannage électrique urgence nuit, installation électrique bruxelles",
   openGraph: {

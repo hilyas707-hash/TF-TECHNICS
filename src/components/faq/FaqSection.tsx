@@ -97,9 +97,11 @@ export default function FaqSection() {
                     }
                   `}
                 >
-                  {/* Bouton question */}
+                  {/* Bouton question — h3 pour la hiérarchie SEO, contents = invisible visuellement */}
+                  <h3 className="contents">
                   <button
                     onClick={() => toggle(i)}
+                    aria-expanded={isOpen}
                     className="
                       w-full flex items-center justify-between gap-4
                       px-5 py-4 text-left
@@ -135,6 +137,7 @@ export default function FaqSection() {
                       }
                     </span>
                   </button>
+                  </h3>
 
                   {/* Réponse animée */}
                   <AnimatePresence initial={false}>
