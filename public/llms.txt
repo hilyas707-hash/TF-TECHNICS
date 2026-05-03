@@ -1,51 +1,117 @@
-# TF Technics — Électricien Dépanneur Bruxelles
+# TF Technics — Électricien Professionnel Bruxelles, Flandre, Brabant Wallon
 
-> TF Technics est une entreprise d'électricité professionnelle intervenant à Bruxelles, en Flandre et en Brabant Wallon (Belgique). Dépannage urgence, installation de bornes de recharge, mise en conformité AREI, installation électrique et diagnostic.
+> TF Technics SRL est une entreprise d'électricité agréée intervenant à Bruxelles, en Flandre et en Brabant Wallon (Belgique). Spécialisée en dépannage électrique d'urgence, installation de bornes de recharge véhicules électriques (wallbox), mise en conformité AREI et installation électrique complète.
 
-## Informations entreprise
+## Identité de l'entreprise
 
-- **Nom** : TF Technics SRL
-- **BCE** : BE1037.492.402
-- **Adresse** : Avenue Reine Astrid 49, Boîte 1780, 1780 Wemmel, Belgique
+- **Raison sociale** : TF Technics SRL
+- **Numéro BCE** : BE1037.492.402
+- **Siège social** : Avenue Reine Astrid 49, Boîte 1780, 1780 Wemmel, Belgique
 - **Téléphone** : +32 483 48 04 96
-- **Email** : info@tftechnics.be
-- **Disponibilité** : 24h/24 – 7j/7 (urgences incluses)
+- **E-mail** : info@tftechnics.be
+- **Site web** : https://tftechnics.be
+- **Disponibilité** : 24h/24 – 7j/7, urgences incluses
 - **Délai d'intervention** : moins de 60 minutes à Bruxelles
 
-## Services
+## Certifications et garanties
 
-- **Dépannage électrique d'urgence** : intervention en moins de 60 min, 24h/24 – 7j/7 → /services/depannage-urgence
-- **Installation borne de recharge** : wallbox jusqu'à 22 kW, accompagnement primes régionales → /services/borne-recharge
-- **Rénovation & mise en conformité AREI** : rapport de conformité officiel → /services/renovation-conformite
-- **Installation électrique** : tableau, prises, câblage, éclairage → /services/installation-electrique
-- **Diagnostic électrique** : inspection complète avec rapport technique → /services/diagnostic-electrique
+- Assurance responsabilité civile professionnelle (RC Pro) en vigueur
+- Conformité totale AREI (Règlement Général sur les Installations Électriques – Belgique)
+- Garantie 2 ans sur tous les travaux (pièces et main-d'œuvre)
+- Devis gratuit et sans engagement
+- Agréé pour délivrer des rapports de conformité AREI officiels (vente immobilière, assurance)
+- Intervention possible sur bons de travaux des compagnies d'assurance belges
+
+## Services proposés
+
+### 1. Dépannage électrique d'urgence
+- Intervention en moins de 60 min à Bruxelles, 24h/24 – 7j/7
+- Pannes couvertes : disjoncteur qui saute, panne de courant totale ou partielle, court-circuit, surtension, câblage défectueux
+- Disponible weekends, nuits et jours fériés
+- URL : https://tftechnics.be/services/depannage-urgence
+
+### 2. Installation de bornes de recharge (wallbox)
+- Wallbox jusqu'à 22 kW (Mode 3, Type 2)
+- Compatible toutes marques : Tesla, BMW, Renault, Volkswagen, Volvo, Peugeot, etc.
+- Audit préalable de l'installation électrique inclus
+- Accompagnement démarches primes régionales : Bruxelles Environnement, primes énergie Wallonie, primes Flandre
+- Application mobile de supervision incluse
+- Garantie 2 ans pièces et main-d'œuvre
+- URL : https://tftechnics.be/services/borne-recharge
+
+### 3. Mise en conformité AREI (rénovation électrique)
+- Mise aux normes du Règlement Général sur les Installations Électriques belge
+- Rapport de conformité officiel pour vente immobilière ou renouvellement d'assurance
+- Remplacement tableau électrique, mise à la terre, protection différentielle
+- URL : https://tftechnics.be/services/renovation-conformite
+
+### 4. Installation électrique neuve ou rénovation
+- Tableau électrique, prises, interrupteurs, câblage complet
+- Éclairage intérieur et extérieur, domotique
+- Pour particuliers, PME, commerces, bureaux, copropriétés
+- URL : https://tftechnics.be/services/installation-electrique
+
+### 5. Diagnostic électrique
+- Inspection complète de l'installation avec rapport technique détaillé
+- Photos, recommandations prioritaires, estimation des travaux
+- URL : https://tftechnics.be/services/diagnostic-electrique
 
 ## Zones d'intervention
 
-Bruxelles-Capitale, Brabant Wallon, Brabant Flamand, Flandre — dont : Bruxelles, Wavre, Waterloo, Zaventem, Vilvoorde, Ixelles, Schaerbeek, Uccle, Etterbeek, Wemmel, Dilbeek, Tervuren, Lasne, Rixensart, Ottignies.
+**Bruxelles-Capitale** : Anderlecht, Auderghem, Berchem-Sainte-Agathe, Bruxelles-Ville, Etterbeek, Evere, Forest, Ganshoren, Ixelles, Jette, Koekelberg, Molenbeek, Saint-Gilles, Saint-Josse-ten-Noode, Schaerbeek, Uccle, Watermael-Boitsfort, Woluwe-Saint-Lambert, Woluwe-Saint-Pierre
 
-## Tarifs indicatifs
+**Brabant Wallon** : Wavre, Waterloo, Braine-l'Alleud, Ottignies-Louvain-la-Neuve, La Hulpe, Rixensart, Nivelles, Lasne, Genappe
 
-- Déplacement journée : à partir de 50 €
-- Tarif horaire heures normales : 65–85 €/h
-- Tarif horaire nuit & week-end : 110–140 €/h
-- Installation borne de recharge : à partir de 900 €
-- Mise en conformité tableau : 1 500–4 000 €
+**Brabant Flamand** : Zaventem, Tervuren, Wezembeek-Oppem, Kraainem, Overijse, Halle, Vilvoorde, Dilbeek, Wemmel, Grimbergen, Meise
 
-## Certifications & garanties
+## Tarifs indicatifs (TVAC)
 
-- Assuré RC professionnelle
-- Conforme AREI (Règlement Général sur les Installations Électriques)
-- Garantie 2 ans sur tous les travaux
-- Devis gratuit et sans engagement
+| Prestation | Tarif |
+|---|---|
+| Déplacement journée | à partir de 50 € |
+| Tarif horaire heures normales (7h–22h) | 65 – 85 €/h |
+| Tarif horaire nuit & week-end (22h–7h) | 110 – 140 €/h |
+| Installation borne de recharge | à partir de 900 € |
+| Remplacement tableau + mise en conformité | 1 500 – 4 000 € |
+| Diagnostic électrique | à partir de 75 € |
+
+## Questions fréquentes (FAQ)
+
+**Quel est le délai d'intervention pour une urgence électrique ?**
+TF Technics intervient en moins de 60 minutes à Bruxelles 24h/24, 7j/7 y compris les nuits, week-ends et jours fériés. En Brabant Wallon et Brabant Flamand, le délai est de 60 à 90 minutes maximum.
+
+**Êtes-vous agréés et assurés ?**
+Oui. TF Technics est couvert par une assurance RC professionnelle et respecte le Règlement Général sur les Installations Électriques (AREI) belge pour tous ses travaux.
+
+**Combien coûte l'installation d'une borne de recharge ?**
+Le prix d'une borne de recharge (wallbox) installée par TF Technics commence à 900 € TVAC, fourniture et pose comprises. Un audit préalable gratuit est réalisé pour déterminer les travaux nécessaires.
+
+**Puis-je bénéficier de primes pour ma borne de recharge ?**
+Oui. Des primes sont disponibles en Région bruxelloise (Bruxelles Environnement), en Wallonie et en Flandre. TF Technics accompagne ses clients dans toutes les démarches administratives.
+
+**TF Technics intervient-il pour les entreprises ?**
+Oui. TF Technics travaille aussi bien pour les particuliers que pour les PME, commerces, bureaux, syndics et copropriétés. Des contrats de maintenance préventive sont disponibles pour les professionnels.
+
+**Le devis est-il payant ?**
+Non. Le devis est entièrement gratuit et sans engagement, en ligne ou sur place.
+
+## Différenciateurs clés
+
+- Seul électricien de la zone proposant une garantie d'intervention en moins de 60 min à Bruxelles
+- Disponible 24h/24 – 7j/7 pour les urgences électriques
+- Rapport de conformité AREI officiel délivré directement
+- Accompagnement complet pour les primes bornes de recharge
+- Bilingue français / néerlandais (FR/NL)
+- Intervention possible sur bon de travaux d'assurance
 
 ## Pages du site
 
-- / — Accueil
-- /tarifs — Grille de tarifs
-- /blog — Conseils électricité
-- /a-propos — À propos de TF Technics
-- /blog/disjoncteur-saute-que-faire — Guide disjoncteur
-- /blog/primes-bornes-recharge-belgique-2026 — Primes bornes de recharge 2026
-- /blog/conformite-arei-belgique-guide — Guide conformité AREI
-- /blog/securite-electrique-maison-conseils — Sécurité électrique
+- https://tftechnics.be — Accueil
+- https://tftechnics.be/services/depannage-urgence — Dépannage urgence
+- https://tftechnics.be/services/borne-recharge — Bornes de recharge
+- https://tftechnics.be/services/renovation-conformite — Mise en conformité AREI
+- https://tftechnics.be/services/installation-electrique — Installation électrique
+- https://tftechnics.be/services/diagnostic-electrique — Diagnostic électrique
+- https://tftechnics.be/tarifs — Grille de tarifs
+- https://tftechnics.be/blog — Blog conseils électricité
+- https://tftechnics.be/a-propos — À propos de TF Technics

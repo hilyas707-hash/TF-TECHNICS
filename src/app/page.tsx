@@ -52,6 +52,32 @@ const jsonLd = {
   logo: "https://tftechnics.be/logo.svg",
   image: "https://tftechnics.be/hero.png",
   priceRange: "€€",
+  foundingDate: "2020",
+  numberOfEmployees: { "@type": "QuantitativeValue", value: 3 },
+  knowsAbout: [
+    "Dépannage électrique d'urgence",
+    "Installation de bornes de recharge véhicules électriques",
+    "Mise en conformité AREI",
+    "Installation électrique résidentielle et commerciale",
+    "Diagnostic électrique",
+    "Règlement Général sur les Installations Électriques belge",
+    "Wallbox Mode 3 Type 2",
+    "Primes énergie Belgique",
+  ],
+  hasCredential: [
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Certification professionnelle",
+      name: "Conformité AREI — Règlement Général sur les Installations Électriques",
+      recognizedBy: { "@type": "Organization", name: "AREI Belgique" },
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Assurance professionnelle",
+      name: "Responsabilité Civile Professionnelle",
+    },
+  ],
+  slogan: "Électricien disponible 24h/24 – Intervention en moins de 60 min à Bruxelles",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Avenue Reine Astrid 49, Boîte 1780",
