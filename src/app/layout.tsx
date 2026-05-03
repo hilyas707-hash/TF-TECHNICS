@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import { GoogleTagManager } from '@next/third-parties/google'; // Importation du module
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 import CookieBanner from "@/components/cookies/CookieBanner";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import ScrollProgress from "@/components/layout/ScrollProgress";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GA_ID = "G-PXZWN1GEG0";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -57,8 +57,8 @@ export default function RootLayout({
       lang="fr"
       className={`${plusJakarta.variable} h-full antialiased`}
     >
-      {/* Google Tag Manager inséré ici */}
       <GoogleTagManager gtmId="GTM-5GSLL4S5" />
+      <GoogleAnalytics gaId={GA_ID} />
 
       <body className="min-h-full bg-white text-[#2b2b2b]">
         <ScrollToTop />
