@@ -1,0 +1,51 @@
+# TF Technics — Électricien Dépanneur Bruxelles
+
+> TF Technics est une entreprise d'électricité professionnelle intervenant à Bruxelles, en Flandre et en Brabant Wallon (Belgique). Dépannage urgence, installation de bornes de recharge, mise en conformité AREI, installation électrique et diagnostic.
+
+## Informations entreprise
+
+- **Nom** : TF Technics SRL
+- **BCE** : BE1037.492.402
+- **Adresse** : Avenue Reine Astrid 49, Boîte 1780, 1780 Wemmel, Belgique
+- **Téléphone** : +32 483 48 04 96
+- **Email** : info@tftechnics.be
+- **Disponibilité** : 24h/24 – 7j/7 (urgences incluses)
+- **Délai d'intervention** : moins de 60 minutes à Bruxelles
+
+## Services
+
+- **Dépannage électrique d'urgence** : intervention en moins de 60 min, 24h/24 – 7j/7 → /services/depannage-urgence
+- **Installation borne de recharge** : wallbox jusqu'à 22 kW, accompagnement primes régionales → /services/borne-recharge
+- **Rénovation & mise en conformité AREI** : rapport de conformité officiel → /services/renovation-conformite
+- **Installation électrique** : tableau, prises, câblage, éclairage → /services/installation-electrique
+- **Diagnostic électrique** : inspection complète avec rapport technique → /services/diagnostic-electrique
+
+## Zones d'intervention
+
+Bruxelles-Capitale, Brabant Wallon, Brabant Flamand, Flandre — dont : Bruxelles, Wavre, Waterloo, Zaventem, Vilvoorde, Ixelles, Schaerbeek, Uccle, Etterbeek, Wemmel, Dilbeek, Tervuren, Lasne, Rixensart, Ottignies.
+
+## Tarifs indicatifs
+
+- Déplacement journée : à partir de 50 €
+- Tarif horaire heures normales : 65–85 €/h
+- Tarif horaire nuit & week-end : 110–140 €/h
+- Installation borne de recharge : à partir de 900 €
+- Mise en conformité tableau : 1 500–4 000 €
+
+## Certifications & garanties
+
+- Assuré RC professionnelle
+- Conforme AREI (Règlement Général sur les Installations Électriques)
+- Garantie 2 ans sur tous les travaux
+- Devis gratuit et sans engagement
+
+## Pages du site
+
+- / — Accueil
+- /tarifs — Grille de tarifs
+- /blog — Conseils électricité
+- /a-propos — À propos de TF Technics
+- /blog/disjoncteur-saute-que-faire — Guide disjoncteur
+- /blog/primes-bornes-recharge-belgique-2026 — Primes bornes de recharge 2026
+- /blog/conformite-arei-belgique-guide — Guide conformité AREI
+- /blog/securite-electrique-maison-conseils — Sécurité électrique

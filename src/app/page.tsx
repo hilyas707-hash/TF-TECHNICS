@@ -13,17 +13,15 @@ import Footer           from "@/components/layout/Footer";
 
 /* ── Métadonnées SEO — page d'accueil FR ───────────────────────────────────── */
 export const metadata: Metadata = {
-  title:
-    "Électricien Dépanneur Bruxelles | Bornes Recharge Flandre | Conformité RGIE Brabant Wallon | TF Technics",
+  title: "TF Technics – Électricien Dépanneur Bruxelles 24h/24",
   description:
-    "Électricien dépanneur à Bruxelles : urgence < 60 min 24h/24, bornes de recharge wallbox, conformité AREI. Assuré RC Pro. Devis gratuit.",
+    "Électricien à Bruxelles : dépannage urgence < 60 min, borne de recharge wallbox, conformité AREI. Assuré RC Pro. Devis gratuit.",
   keywords:
-    "électricien dépannage bruxelles, urgence électricien bruxelles 24h, bornes de recharge flandre, borne recharge wallbox brabant wallon, mise en conformité RGIE belgique, dépannage électrique urgence nuit, installation électrique bruxelles",
+    "électricien bruxelles, dépannage électrique bruxelles, urgence électricien 24h, borne de recharge bruxelles, wallbox, mise en conformité AREI, installation électrique bruxelles",
   openGraph: {
-    title:
-      "Électricien Dépanneur Bruxelles | Bornes Recharge & Conformité RGIE | TF Technics",
+    title: "TF Technics – Électricien Dépanneur Bruxelles 24h/24",
     description:
-      "Dépannage urgence < 60 min à Bruxelles, bornes de recharge en Flandre et Brabant Wallon, mise en conformité RGIE. Devis gratuit.",
+      "Dépannage urgence < 60 min à Bruxelles, bornes de recharge en Flandre et Brabant Wallon, mise en conformité AREI. Devis gratuit.",
     type:   "website",
     locale: "fr_BE",
     url:    "/",
@@ -138,6 +136,12 @@ const jsonLd = {
   knowsLanguage: ["fr", "nl"],
   currenciesAccepted: "EUR",
   paymentAccepted: "Cash, Virement bancaire, Carte bancaire",
+  sameAs: [
+    "https://www.facebook.com/tftechnics",
+    "https://www.instagram.com/tftechnics",
+    "https://www.linkedin.com/company/tftechnics",
+    "https://g.co/kgs/tftechnics",
+  ],
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",

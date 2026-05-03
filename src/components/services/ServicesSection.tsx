@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Zap,
@@ -122,12 +123,12 @@ export default function ServicesSection({ dict }: Props) {
                       ${IMG_HEIGHT[i]}
                     `}>
                       {visual.img ? (
-                        <img
+                        <Image
                           src={visual.img}
                           alt={item.title}
-                          loading="lazy"
-                          decoding="async"
-                          className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105 will-change-transform"
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                          className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105 will-change-transform"
                         />
                       ) : (
                         <div
