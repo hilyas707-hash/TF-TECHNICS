@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import Script from "next/script";
+import { GoogleTagManager } from '@next/third-parties/google'; // Importation du module
 import "./globals.css";
 import CookieBanner from "@/components/cookies/CookieBanner";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
@@ -9,7 +9,6 @@ import ScrollToTop from "@/components/layout/ScrollToTop";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
-/* ── Police premium — Plus Jakarta Sans (autorisée par le skill high-end-visual-design) ── */
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -33,10 +32,10 @@ export const metadata: Metadata = {
     apple:    { url: "/icon", type: "image/png", sizes: "512x512" },
   },
   openGraph: {
-    type:        "website",
-    locale:      "fr_BE",
-    siteName:    "TF Technics",
-    title:       "TF Technics | Électricien Dépanneur Bruxelles – Urgence 24h/24",
+    type:         "website",
+    locale:       "fr_BE",
+    siteName:     "TF Technics",
+    title:        "TF Technics | Électricien Dépanneur Bruxelles – Urgence 24h/24",
     description: "TF Technics — électricien professionnel : dépannage urgence Bruxelles en moins de 60 min, bornes de recharge, mise en conformité RGIE. Devis gratuit.",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, type: "image/png" }],
   },
@@ -58,30 +57,14 @@ export default function RootLayout({
       lang="fr"
       className={`${plusJakarta.variable} h-full antialiased`}
     >
+      {/* Google Tag Manager inséré ici */}
+      <GoogleTagManager gtmId="GTM-5GSLL4S5" />
+
       <body className="min-h-full bg-white text-[#2b2b2b]">
-        {/* Google Analytics 4 — chargé uniquement si NEXT_PUBLIC_GA_ID est défini */}
-        {GA_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga4-init" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_ID}', { page_path: window.location.pathname });
-              `}
-            </Script>
-          </>
-        )}
         <ScrollToTop />
         <ScrollProgress />
         {children}
-        {/* Bandeau RGPD — présent sur toutes les pages */}
         <CookieBanner />
-        {/* Bouton WhatsApp flottant — présent sur toutes les pages */}
         <WhatsAppButton />
       </body>
     </html>
