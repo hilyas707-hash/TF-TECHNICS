@@ -1,7 +1,8 @@
 ﻿"use client";
 
 import { motion } from "framer-motion";
-import { Star, ChevronDown } from "lucide-react";
+import { Star } from "lucide-react";
+import SectionBridge from "@/components/ui/SectionBridge";
 import type { Dictionary } from "@/i18n/dictionaries/types";
 
 const SPRING = [0.32, 0.72, 0, 1] as const;
@@ -67,10 +68,6 @@ export default function TrustSection({ dict }: Props) {
           transition={{ duration: 0.8, ease: SPRING }}
           className="mb-16 text-center flex flex-col items-center gap-3"
         >
-          <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#dbb82d]/10 border border-[#dbb82d]/25 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#dbb82d]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#dbb82d]" />
-            02 — Ils nous font confiance
-          </span>
           <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] leading-[1.08]">
             Ce que disent nos clients
           </h2>
@@ -163,17 +160,11 @@ export default function TrustSection({ dict }: Props) {
           Assuré RC Pro · Devis gratuit · Bruxelles — Flandre — Brabant Wallon
         </motion.p>
 
-        {/* ── Bridge → section suivante ── */}
-        <div className="mt-20 flex flex-col items-center gap-5 text-center">
-          <div className="w-px h-12 bg-gradient-to-b from-black/10 to-[#f97316]/50" />
-          <p className="text-[1rem] text-[#2b2b2b] font-medium max-w-lg leading-relaxed">
-            Nous intervenons probablement dans votre commune — vérifiez en un coup d'œil.
-          </p>
-          <a href="#zones" className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2b2b2b] text-white text-[13px] font-bold transition-all duration-300 hover:bg-[#f97316] hover:shadow-[0_4px_16px_rgba(249,115,22,0.35)] active:scale-[0.98]">
-            Voir nos zones d'intervention
-            <ChevronDown size={14} strokeWidth={2.5} className="transition-transform duration-300 group-hover:translate-y-0.5" />
-          </a>
-        </div>
+        <SectionBridge
+          text="Nous intervenons probablement dans votre commune — vérifiez en un coup d'œil."
+          cta="Voir nos zones d'intervention"
+          href="#zones"
+        />
 
       </div>
     </section>

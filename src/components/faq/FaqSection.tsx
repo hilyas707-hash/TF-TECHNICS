@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, HelpCircle, ChevronDown } from "lucide-react";
+import { Plus, Minus, HelpCircle } from "lucide-react";
+import SectionBridge from "@/components/ui/SectionBridge";
 import { FAQ_ITEMS } from "@/data/faq";
 
 const SPRING = [0.32, 0.72, 0, 1] as const;
@@ -36,10 +37,6 @@ export default function FaqSection() {
             transition={{ duration: 0.8, ease: SPRING }}
             className="lg:col-span-2 lg:sticky lg:top-32 flex flex-col gap-5"
           >
-            <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-orange-50 border border-orange-100 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#f97316] w-fit">
-              <HelpCircle size={11} strokeWidth={2.5} />
-              06 — Encore une question ?
-            </span>
             <h2 className="text-[clamp(2rem,4.5vw,3.2rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] leading-[1.07]">
               Questions sur votre
               <br />
@@ -159,17 +156,11 @@ export default function FaqSection() {
 
         </div>
 
-        {/* ── Bridge → section suivante ── */}
-        <div className="mt-20 flex flex-col items-center gap-5 text-center">
-          <div className="w-px h-12 bg-gradient-to-b from-black/10 to-[#f97316]/50" />
-          <p className="text-[1rem] text-[#2b2b2b] font-medium max-w-lg leading-relaxed">
-            Prêt à nous confier votre projet ? On est disponibles maintenant — même ce soir.
-          </p>
-          <a href="#contact" className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2b2b2b] text-white text-[13px] font-bold transition-all duration-300 hover:bg-[#f97316] hover:shadow-[0_4px_16px_rgba(249,115,22,0.35)] active:scale-[0.98]">
-            Nous contacter directement
-            <ChevronDown size={14} strokeWidth={2.5} className="transition-transform duration-300 group-hover:translate-y-0.5" />
-          </a>
-        </div>
+        <SectionBridge
+          text="Prêt à nous confier votre projet ? On est disponibles maintenant — même ce soir."
+          cta="Nous contacter directement"
+          href="#contact"
+        />
 
       </div>
     </section>

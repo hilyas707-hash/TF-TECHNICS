@@ -114,3 +114,25 @@ body {
 @media (max-width: 768px) {
   .animate-ken-burns { animation: none; }
 }
+
+/* ─── Bridge shimmer — balayage orange permanent sur le texte de transition ── */
+@keyframes bridge-shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.bridge-shimmer {
+  background: linear-gradient(
+    90deg,
+    #2b2b2b 0%,
+    #2b2b2b 18%,
+    #f97316 50%,
+    #2b2b2b 82%,
+    #2b2b2b 100%
+  );
+  background-size: 250% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: bridge-shimmer 4.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}

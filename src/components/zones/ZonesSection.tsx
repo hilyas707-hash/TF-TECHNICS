@@ -1,7 +1,8 @@
 ﻿"use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import SectionBridge from "@/components/ui/SectionBridge";
 import { useState } from "react";
 import type { Dictionary } from "@/i18n/dictionaries/types";
 
@@ -43,10 +44,6 @@ export default function ZonesSection({ dict }: Props) {
           transition={{ duration: 0.8, ease: SPRING }}
           className="mb-12 md:mb-16 flex flex-col gap-3 max-w-xl"
         >
-          <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-orange-50 border border-orange-100 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#f97316] w-fit">
-            <MapPin size={11} strokeWidth={2.5} />
-            03 — Nous venons chez vous
-          </span>
           <h2 className="text-[clamp(2rem,4.5vw,3.2rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] leading-[1.07]">
             {zones.sectionTitle}
           </h2>
@@ -179,17 +176,11 @@ export default function ZonesSection({ dict }: Props) {
           </p>
         </motion.div>
 
-        {/* ── Bridge → section suivante ── */}
-        <div className="mt-20 flex flex-col items-center gap-5 text-center">
-          <div className="w-px h-12 bg-gradient-to-b from-black/10 to-[#f97316]/50" />
-          <p className="text-[1rem] text-[#2b2b2b] font-medium max-w-lg leading-relaxed">
-            Vous avez un véhicule électrique — ou vous y pensez ? On installe votre borne de recharge.
-          </p>
-          <a href="#bornes" className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2b2b2b] text-white text-[13px] font-bold transition-all duration-300 hover:bg-[#f97316] hover:shadow-[0_4px_16px_rgba(249,115,22,0.35)] active:scale-[0.98]">
-            Découvrir nos bornes de recharge
-            <ChevronDown size={14} strokeWidth={2.5} className="transition-transform duration-300 group-hover:translate-y-0.5" />
-          </a>
-        </div>
+        <SectionBridge
+          text="Vous avez un véhicule électrique — ou vous y pensez ? On installe votre borne de recharge."
+          cta="Découvrir nos bornes de recharge"
+          href="#bornes"
+        />
 
       </div>
     </section>

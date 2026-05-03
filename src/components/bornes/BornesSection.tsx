@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { BatteryCharging, CheckCircle2, ArrowUpRight, Zap, ChevronDown } from "lucide-react";
+import { BatteryCharging, CheckCircle2, ArrowUpRight, Zap } from "lucide-react";
+import SectionBridge from "@/components/ui/SectionBridge";
 import type { Dictionary } from "@/i18n/dictionaries/types";
 
 const SPRING = [0.32, 0.72, 0, 1] as const;
@@ -46,11 +47,6 @@ export default function BornesSection({ dict }: Props) {
             transition={{ duration: 0.9, ease: SPRING }}
             className="flex flex-col gap-7"
           >
-            <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#f97316]/12 border border-[#f97316]/20 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#f97316] w-fit">
-              <BatteryCharging size={11} strokeWidth={2.5} />
-              04 — Et demain ?
-            </span>
-
             <h2 className="text-[clamp(2rem,4.5vw,3.2rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] leading-[1.07]">
               {bornes.sectionTitle}
             </h2>
@@ -160,17 +156,11 @@ export default function BornesSection({ dict }: Props) {
 
         </div>
 
-        {/* ── Bridge → section suivante ── */}
-        <div className="mt-20 flex flex-col items-center gap-5 text-center">
-          <div className="w-px h-12 bg-gradient-to-b from-black/10 to-[#f97316]/50" />
-          <p className="text-[1rem] text-[#2b2b2b] font-medium max-w-lg leading-relaxed">
-            Vous voulez savoir combien ça coûte exactement ? Obtenez votre estimation en 2 minutes.
-          </p>
-          <a href="#devis" className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2b2b2b] text-white text-[13px] font-bold transition-all duration-300 hover:bg-[#f97316] hover:shadow-[0_4px_16px_rgba(249,115,22,0.35)] active:scale-[0.98]">
-            Demander un devis gratuit
-            <ChevronDown size={14} strokeWidth={2.5} className="transition-transform duration-300 group-hover:translate-y-0.5" />
-          </a>
-        </div>
+        <SectionBridge
+          text="Vous voulez savoir combien ça coûte exactement ? Obtenez votre estimation en 2 minutes."
+          cta="Demander un devis gratuit"
+          href="#devis"
+        />
 
       </div>
     </section>
