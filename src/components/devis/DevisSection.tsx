@@ -248,9 +248,9 @@ export default function DevisSection() {
 
   /* Variantes d'animation de slide */
   const variants = {
-    enter:  (d: number) => ({ opacity: 0, x: d > 0 ? 48 : -48, filter: "blur(4px)" }),
-    center: { opacity: 1, x: 0, filter: "blur(0px)" },
-    exit:   (d: number) => ({ opacity: 0, x: d > 0 ? -48 : 48, filter: "blur(4px)" }),
+    enter:  (d: number) => ({ opacity: 0, x: d > 0 ? 48 : -48 }),
+    center: { opacity: 1, x: 0 },
+    exit:   (d: number) => ({ opacity: 0, x: d > 0 ? -48 : 48 }),
   };
 
   /* Service sélectionné (pour affichage récap) */
@@ -275,8 +275,8 @@ export default function DevisSection() {
 
         {/* En-tête */}
         <motion.div
-          initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: SPRING }}
           className="mb-12 md:mb-16 flex flex-col gap-3 items-center text-center"

@@ -15,9 +15,8 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.09, delayChildren: 0.2 } },
 };
 const fadeUp = {
-  hidden:  { opacity: 0, y: 48, filter: "blur(12px)" },
-  visible: { opacity: 1, y: 0,  filter: "blur(0px)",
-             transition: { duration: 1, ease: SPRING } },
+  hidden:  { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: SPRING } },
 };
 
 const STATS = [
@@ -195,7 +194,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
           style={{ background: "linear-gradient(105deg, rgba(4,4,4,0.65) 0%, rgba(4,4,4,0.15) 50%, transparent 100%)" }} />
         {/* Halo orange bas-gauche — signature marque */}
         <div aria-hidden className="absolute pointer-events-none bottom-0 left-0 w-[700px] h-[400px]"
-          style={{ background: "radial-gradient(ellipse at 20% 100%, rgba(249,115,22,0.14) 0%, transparent 60%)", filter: "blur(30px)" }} />
+          style={{ background: "radial-gradient(ellipse at 20% 100%, rgba(249,115,22,0.10) 0%, transparent 55%)" }} />
 
         {/* Carte haut droite — délai */}
         <motion.div

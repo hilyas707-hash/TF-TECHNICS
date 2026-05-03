@@ -41,8 +41,8 @@ export default function BornesSection({ dict }: Props) {
 
           {/* ── GAUCHE — Contenu ── */}
           <motion.div
-            initial={{ opacity: 0, x: -32, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, x: -32 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: SPRING }}
             className="flex flex-col gap-7"
@@ -103,8 +103,8 @@ export default function BornesSection({ dict }: Props) {
 
           {/* ── DROITE — Image ── */}
           <motion.div
-            initial={{ opacity: 0, x: 32, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, x: 32 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.0, ease: SPRING, delay: 0.1 }}
             className="relative w-full"

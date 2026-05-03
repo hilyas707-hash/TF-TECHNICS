@@ -56,8 +56,8 @@ export default function ContactSection({ dict }: Props) {
 
         {/* Bandeau urgence — fond anthracite */}
         <motion.div
-          initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.85, ease: SPRING }}
           className="
@@ -127,8 +127,8 @@ export default function ContactSection({ dict }: Props) {
 
           {/* Infos de contact */}
           <motion.div
-            initial={{ opacity: 0, x: -24, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: SPRING }}
             className="lg:col-span-2 flex flex-col gap-6"
@@ -191,8 +191,8 @@ export default function ContactSection({ dict }: Props) {
 
           {/* Formulaire */}
           <motion.div
-            initial={{ opacity: 0, x: 24, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: SPRING, delay: 0.1 }}
             className="lg:col-span-3"

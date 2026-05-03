@@ -38,8 +38,8 @@ export default function ZonesSection({ dict }: Props) {
 
         {/* En-tête */}
         <motion.div
-          initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: SPRING }}
           className="mb-12 md:mb-16 flex flex-col gap-3 max-w-xl"
@@ -126,8 +126,8 @@ export default function ZonesSection({ dict }: Props) {
             return (
               <motion.div
                 key={region.name}
-                initial={{ opacity: 0, y: 36, filter: "blur(6px)" }}
-                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                initial={{ opacity: 0, y: 36 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.75, ease: SPRING, delay: i * 0.1 }}
               >

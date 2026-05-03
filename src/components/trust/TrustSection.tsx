@@ -61,8 +61,8 @@ export default function TrustSection({ dict }: Props) {
 
         {/* ── En-tête ─────────────────────────────────────────────────────── */}
         <motion.div
-          initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: SPRING }}
           className="mb-16 text-center flex flex-col items-center gap-3"
@@ -84,8 +84,8 @@ export default function TrustSection({ dict }: Props) {
           {STATS.map((stat, i) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: SPRING, delay: i * 0.08 }}
               className="rounded-2xl border border-[#f0f0f0] bg-[#fafafa] p-6 flex flex-col gap-1 text-center"
@@ -123,8 +123,8 @@ export default function TrustSection({ dict }: Props) {
           {REVIEWS.map((review, i) => (
             <motion.div
               key={review.name}
-              initial={{ opacity: 0, y: 32, filter: "blur(6px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.72, ease: SPRING, delay: i * 0.09 }}
               className="rounded-2xl border border-[#f0f0f0] bg-white p-6 flex flex-col gap-4 shadow-[0_2px_16px_rgba(43,43,43,0.05)] hover:shadow-[0_6px_28px_rgba(43,43,43,0.09)] transition-shadow duration-300"

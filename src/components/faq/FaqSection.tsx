@@ -34,8 +34,8 @@ export default function FaqSection() {
 
           {/* ── Gauche : En-tête sticky ── */}
           <motion.div
-            initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: SPRING }}
             className="lg:col-span-2 lg:sticky lg:top-32 flex flex-col gap-5"
