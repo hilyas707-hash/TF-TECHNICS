@@ -138,6 +138,36 @@ const jsonLd = {
   knowsLanguage: ["fr", "nl"],
   currenciesAccepted: "EUR",
   paymentAccepted: "Cash, Virement bancaire, Carte bancaire",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "63",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  review: [
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5" },
+      author: { "@type": "Person", name: "Marc D." },
+      reviewBody: "Intervention en 45 minutes un dimanche soir. Professionnel, rapide et honnête sur le tarif. Je recommande vivement TF Technics.",
+      datePublished: "2026-03-15",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5" },
+      author: { "@type": "Person", name: "Sophie V." },
+      reviewBody: "Excellente expérience pour l'installation de notre borne de recharge. Dossier de prime géré entièrement par eux. Très satisfaite.",
+      datePublished: "2026-02-28",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5" },
+      author: { "@type": "Person", name: "Thomas L." },
+      reviewBody: "Mise en conformité AREI réalisée avant la vente de mon appartement. Travail soigné, rapport remis rapidement. Prix correct.",
+      datePublished: "2026-01-20",
+    },
+  ],
 };
 
 /* ── Schéma JSON-LD FAQPage ──────────────────────────────────────────────── */

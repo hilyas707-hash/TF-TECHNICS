@@ -75,6 +75,18 @@ export default async function ServicePage(
         })),
       },
       {
+        "@type": "HowTo",
+        "@id": `${BASE_URL}/services/${slug}#howto`,
+        name: `Comment se déroule notre service : ${service.title}`,
+        description: service.seo.description,
+        step: service.steps.map((s, i) => ({
+          "@type": "HowToStep",
+          position: i + 1,
+          name: s.title,
+          text: s.description,
+        })),
+      },
+      {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Accueil", item: BASE_URL },

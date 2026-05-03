@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ARTICLES } from "@/data/articles";
+import { ARTICLES, DEFAULT_AUTHOR } from "@/data/articles";
 import { getDictionary } from "@/i18n";
 import BlogPostPage from "@/components/blog/BlogPostPage";
 import Footer from "@/components/layout/Footer";
@@ -50,9 +50,16 @@ export default async function BlogSlugPage({ params }: Props) {
     datePublished: article.date,
     dateModified: article.date,
     author: {
-      "@type": "Organization",
-      name: "TF Technics",
-      url: "https://tftechnics.be",
+      "@type": "Person",
+      name: (article.author ?? DEFAULT_AUTHOR).name,
+      jobTitle: (article.author ?? DEFAULT_AUTHOR).jobTitle,
+      description: (article.author ?? DEFAULT_AUTHOR).description,
+      url: (article.author ?? DEFAULT_AUTHOR).url,
+      worksFor: {
+        "@type": "Organization",
+        name: "TF Technics",
+        url: "https://tftechnics.be",
+      },
     },
     publisher: {
       "@type": "Organization",

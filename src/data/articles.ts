@@ -1,3 +1,17 @@
+export interface ArticleAuthor {
+  name:        string;
+  jobTitle:    string;
+  description: string;
+  url:         string;
+}
+
+export const DEFAULT_AUTHOR: ArticleAuthor = {
+  name:        "TF Technics — Équipe technique",
+  jobTitle:    "Électriciens agréés AREI",
+  description: "Équipe d'électriciens professionnels certifiés, opérant à Bruxelles, en Flandre et en Brabant Wallon. Assuré RC Pro. Expertise en dépannage urgence, bornes de recharge et conformité AREI.",
+  url:         "https://tftechnics.be/a-propos",
+};
+
 export interface Article {
   slug:        string;
   title:       string;
@@ -7,6 +21,7 @@ export interface Article {
   category:    string;
   seoTitle:    string;
   seoDesc:     string;
+  author?:     ArticleAuthor;
   content:     ArticleBlock[];
 }
 
