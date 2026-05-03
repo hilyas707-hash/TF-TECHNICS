@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,7 +8,7 @@ import {
   Briefcase, Store, Clock, CalendarDays,
   CalendarClock, Leaf, User, Phone, Mail,
   Sun, Sunset, Moon, ChevronRight, ChevronLeft,
-  CheckCircle2, Send, FileText,
+  CheckCircle2, Send, FileText, ChevronDown,
 } from "lucide-react";
 
 const SPRING = [0.32, 0.72, 0, 1] as const;
@@ -741,12 +741,14 @@ export default function DevisSection() {
         </motion.div>
 
         {/* ── Bridge → section suivante ── */}
-        <div className="mt-16 pt-8 border-t border-black/[0.05] text-center">
-          <p className="text-[0.88rem] text-[#6b6b6b] mb-2.5">
-            Une dernière hésitation ? Voici les réponses aux questions les plus fréquentes.
+        <div className="mt-20 flex flex-col items-center gap-5 text-center">
+          <div className="w-px h-12 bg-gradient-to-b from-black/10 to-[#f97316]/50" />
+          <p className="text-[1rem] text-[#2b2b2b] font-medium max-w-lg leading-relaxed">
+            Une dernière hésitation ? Toutes les réponses sont juste en dessous.
           </p>
-          <a href="#faq" className="inline-flex items-center gap-1.5 text-[0.88rem] font-bold text-[#f97316] hover:gap-3 transition-all duration-300">
-            Consulter la FAQ <span aria-hidden="true">↓</span>
+          <a href="#faq" className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2b2b2b] text-white text-[13px] font-bold transition-all duration-300 hover:bg-[#f97316] hover:shadow-[0_4px_16px_rgba(249,115,22,0.35)] active:scale-[0.98]">
+            Consulter la FAQ
+            <ChevronDown size={14} strokeWidth={2.5} className="transition-transform duration-300 group-hover:translate-y-0.5" />
           </a>
         </div>
 

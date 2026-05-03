@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, ChevronDown } from "lucide-react";
@@ -180,12 +180,14 @@ export default function ZonesSection({ dict }: Props) {
         </motion.div>
 
         {/* ── Bridge → section suivante ── */}
-        <div className="mt-16 pt-8 border-t border-black/[0.05] text-center">
-          <p className="text-[0.88rem] text-[#6b6b6b] mb-2.5">
+        <div className="mt-20 flex flex-col items-center gap-5 text-center">
+          <div className="w-px h-12 bg-gradient-to-b from-black/10 to-[#f97316]/50" />
+          <p className="text-[1rem] text-[#2b2b2b] font-medium max-w-lg leading-relaxed">
             Vous avez un véhicule électrique — ou vous y pensez ? On installe votre borne de recharge.
           </p>
-          <a href="#bornes" className="inline-flex items-center gap-1.5 text-[0.88rem] font-bold text-[#f97316] hover:gap-3 transition-all duration-300">
-            Découvrir nos bornes de recharge <span aria-hidden="true">↓</span>
+          <a href="#bornes" className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2b2b2b] text-white text-[13px] font-bold transition-all duration-300 hover:bg-[#f97316] hover:shadow-[0_4px_16px_rgba(249,115,22,0.35)] active:scale-[0.98]">
+            Découvrir nos bornes de recharge
+            <ChevronDown size={14} strokeWidth={2.5} className="transition-transform duration-300 group-hover:translate-y-0.5" />
           </a>
         </div>
 
