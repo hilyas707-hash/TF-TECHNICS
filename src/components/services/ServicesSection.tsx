@@ -32,7 +32,7 @@ const SERVICE_SLUGS: Record<string, string> = {
 
 /* Image ou dégradé par service */
 const SERVICE_VISUALS: Record<string, { img?: string; gradient: string }> = {
-  depannage:    { img: "/DepannageElectrique.jpg",          gradient: "linear-gradient(135deg,#1e1e1e 0%,#2b2b2b 100%)" },
+  depannage:    { img: "/depannageelectrique.png",           gradient: "linear-gradient(135deg,#1e1e1e 0%,#2b2b2b 100%)" },
   borne:        { img: "/electric-car-power-charging_1.jpg", gradient: "linear-gradient(135deg,#0f2027 0%,#203a43 50%,#2c5364 100%)" },
   renovation:   { gradient: "linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)" },
   installation: { gradient: "linear-gradient(135deg,#2b2b2b 0%,#3d2c1e 50%,#f97316 100%)" },
