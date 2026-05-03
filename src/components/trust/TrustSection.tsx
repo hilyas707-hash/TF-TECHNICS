@@ -69,7 +69,7 @@ export default function TrustSection({ dict }: Props) {
         >
           <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#dbb82d]/10 border border-[#dbb82d]/25 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#dbb82d]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#dbb82d]" />
-            Ils nous font confiance
+            02 — Ils nous font confiance
           </span>
           <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] leading-[1.08]">
             Ce que disent nos clients
@@ -162,6 +162,16 @@ export default function TrustSection({ dict }: Props) {
         >
           Assuré RC Pro · Devis gratuit · Bruxelles — Flandre — Brabant Wallon
         </motion.p>
+
+        {/* ── Bridge → section suivante ── */}
+        <div className="mt-16 pt-8 border-t border-black/[0.05] text-center">
+          <p className="text-[0.88rem] text-[#6b6b6b] mb-2.5">
+            Nous intervenons probablement dans votre commune — vérifiez en un coup d&apos;œil.
+          </p>
+          <a href="#zones" className="inline-flex items-center gap-1.5 text-[0.88rem] font-bold text-[#f97316] hover:gap-3 transition-all duration-300">
+            Voir nos zones d&apos;intervention <span aria-hidden="true">↓</span>
+          </a>
+        </div>
 
       </div>
     </section>

@@ -38,7 +38,7 @@ export default function FaqSection() {
           >
             <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-orange-50 border border-orange-100 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#f97316] w-fit">
               <HelpCircle size={11} strokeWidth={2.5} />
-              Questions fréquentes
+              06 — Encore une question ?
             </span>
             <h2 className="text-[clamp(2rem,4.5vw,3.2rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] leading-[1.07]">
               Questions sur votre
@@ -158,6 +158,17 @@ export default function FaqSection() {
           </motion.div>
 
         </div>
+
+        {/* ── Bridge → section suivante ── */}
+        <div className="mt-16 pt-8 border-t border-black/[0.05] text-center">
+          <p className="text-[0.88rem] text-[#6b6b6b] mb-2.5">
+            Prêt à nous confier votre projet ? On est disponibles maintenant — même ce soir.
+          </p>
+          <a href="#contact" className="inline-flex items-center gap-1.5 text-[0.88rem] font-bold text-[#f97316] hover:gap-3 transition-all duration-300">
+            Nous contacter directement <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+
       </div>
     </section>
   );

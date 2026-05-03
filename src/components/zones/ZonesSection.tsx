@@ -45,7 +45,7 @@ export default function ZonesSection({ dict }: Props) {
         >
           <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-orange-50 border border-orange-100 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#f97316] w-fit">
             <MapPin size={11} strokeWidth={2.5} />
-            Où intervenons-nous
+            03 — Nous venons chez vous
           </span>
           <h2 className="text-[clamp(2rem,4.5vw,3.2rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] leading-[1.07]">
             {zones.sectionTitle}
@@ -178,6 +178,17 @@ export default function ZonesSection({ dict }: Props) {
             — nous étudions chaque demande.
           </p>
         </motion.div>
+
+        {/* ── Bridge → section suivante ── */}
+        <div className="mt-16 pt-8 border-t border-black/[0.05] text-center">
+          <p className="text-[0.88rem] text-[#6b6b6b] mb-2.5">
+            Vous avez un véhicule électrique — ou vous y pensez ? On installe votre borne de recharge.
+          </p>
+          <a href="#bornes" className="inline-flex items-center gap-1.5 text-[0.88rem] font-bold text-[#f97316] hover:gap-3 transition-all duration-300">
+            Découvrir nos bornes de recharge <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+
       </div>
     </section>
   );
