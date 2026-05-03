@@ -22,6 +22,15 @@ export const metadata: Metadata = {
 export default async function Tarifs() {
   const dict = await getDictionary("fr");
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://tftechnics.be" },
+      { "@type": "ListItem", position: 2, name: "Tarifs",  item: "https://tftechnics.be/tarifs" },
+    ],
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -117,10 +126,8 @@ export default async function Tarifs() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
       <TarifsPage />
       <Footer dict={dict} />

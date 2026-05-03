@@ -42,6 +42,16 @@ export default async function BlogSlugPage({ params }: Props) {
 
   const dict = await getDictionary("fr");
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://tftechnics.be" },
+      { "@type": "ListItem", position: 2, name: "Blog",    item: "https://tftechnics.be/blog" },
+      { "@type": "ListItem", position: 3, name: article.title, item: `https://tftechnics.be/blog/${article.slug}` },
+    ],
+  };
+
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -77,10 +87,8 @@ export default async function BlogSlugPage({ params }: Props) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <Navbar />
       <BlogPostPage article={article} />
       <Footer dict={dict} />

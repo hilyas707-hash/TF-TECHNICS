@@ -174,6 +174,37 @@ const jsonLd = {
   ],
 };
 
+/* ── Schéma JSON-LD WebSite — active la SearchBox dans les SERPs ────────── */
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://tftechnics.be/#website",
+      url: "https://tftechnics.be",
+      name: "TF Technics",
+      description: "Électricien professionnel à Bruxelles, Flandre et Brabant Wallon",
+      inLanguage: "fr-BE",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: { "@type": "EntryPoint", urlTemplate: "https://tftechnics.be/?q={search_term_string}" },
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Accueil",              item: "https://tftechnics.be" },
+        { "@type": "ListItem", position: 2, name: "Nos services",         item: "https://tftechnics.be/#services" },
+        { "@type": "ListItem", position: 3, name: "Zones d'intervention", item: "https://tftechnics.be/#zones" },
+        { "@type": "ListItem", position: 4, name: "Tarifs",               item: "https://tftechnics.be/tarifs" },
+        { "@type": "ListItem", position: 5, name: "Blog",                 item: "https://tftechnics.be/blog" },
+        { "@type": "ListItem", position: 6, name: "Contact",              item: "https://tftechnics.be/#contact" },
+      ],
+    },
+  ],
+};
+
 /* ── Schéma JSON-LD FAQPage ──────────────────────────────────────────────── */
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -193,16 +224,9 @@ export default async function Home() {
 
   return (
     <>
-      {/* JSON-LD LocalBusiness — données structurées pour Google */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      {/* JSON-LD FAQPage — rich snippets accordéon dans les SERPs */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
 
       {/* 1 — Hero + Navigation flottante */}
       <HeroSection dict={dict} />

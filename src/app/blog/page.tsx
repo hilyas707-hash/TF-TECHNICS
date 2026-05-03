@@ -19,10 +19,20 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: "https://tftechnics.be" },
+    { "@type": "ListItem", position: 2, name: "Blog",    item: "https://tftechnics.be/blog" },
+  ],
+};
+
 export default async function BlogPage() {
   const dict = await getDictionary("fr");
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <Navbar />
       <BlogListPage articles={ARTICLES} />
       <Footer dict={dict} />

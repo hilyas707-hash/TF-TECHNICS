@@ -21,6 +21,15 @@ export const metadata: Metadata = {
 export default async function AProposPage() {
   const dict = await getDictionary("fr");
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil",   item: "https://tftechnics.be" },
+      { "@type": "ListItem", position: 2, name: "À propos",  item: "https://tftechnics.be/a-propos" },
+    ],
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type":    "AboutPage",
@@ -36,10 +45,8 @@ export default async function AProposPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
       <AboutSection />
       <Footer dict={dict} />

@@ -44,6 +44,17 @@ export default async function ElectricienCommunePage(
 
   const dict = await getDictionary("fr");
 
+  /* ── JSON-LD BreadcrumbList ── */
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil",                      item: "https://tftechnics.be" },
+      { "@type": "ListItem", position: 2, name: "Électricien à Bruxelles",      item: "https://tftechnics.be/#zones" },
+      { "@type": "ListItem", position: 3, name: `Électricien ${commune.name}`,  item: `https://tftechnics.be/electricien/${slug}` },
+    ],
+  };
+
   /* ── JSON-LD LocalBusiness hyperlocal ── */
   const jsonLd = {
     "@context": "https://schema.org",
@@ -71,10 +82,8 @@ export default async function ElectricienCommunePage(
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
       <CommunePage commune={commune} />
       <Footer dict={dict} />
