@@ -164,9 +164,9 @@ export default function ServiceDetailPage({ service }: Props) {
                   style={{ background: "radial-gradient(ellipse, rgba(249,115,22,0.10) 0%, transparent 70%)" }}
                 />
                 <img
-                  src="/panneelectrique.svg"
+                  src="/DepannageElectrique.jpg"
                   alt="Électricien TF Technics en intervention d'urgence"
-                  className="w-full h-auto drop-shadow-xl"
+                  className="w-full h-auto rounded-3xl shadow-[0_24px_64px_rgba(43,43,43,0.18)]"
                   draggable={false}
                 />
               </div>
