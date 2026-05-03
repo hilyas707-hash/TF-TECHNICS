@@ -45,21 +45,20 @@ const BENTO_SPAN = [
   "col-span-12 lg:col-span-5",
   "col-span-12 md:col-span-6",
   "col-span-12 md:col-span-6",
-  "col-span-12",
 ];
 
 /* Hauteur de la zone image par card */
-const IMG_HEIGHT = ["h-56", "h-52", "h-48", "h-48", "md:h-64 h-52"];
+const IMG_HEIGHT = ["h-56", "h-52", "h-48", "h-48"];
 
 interface Props { dict: Dictionary }
 
 export default function ServicesSection({ dict }: Props) {
   const { services } = dict;
 
-  const items = Object.entries(services.items) as [
+  const items = (Object.entries(services.items) as [
     keyof typeof SERVICE_ICONS,
     { title: string; description: string }
-  ][];
+  ][]).filter(([key]) => key !== "diagnostic");
 
   return (
     <section id="services" className="relative bg-white py-24 md:py-32 overflow-hidden">
@@ -141,8 +140,17 @@ export default function ServicesSection({ dict }: Props) {
                         </div>
                       )}
 
+                      {/* Filtre orange urgence + pulse — dépannage uniquement */}
+                      {key === "depannage" && (
+                        <>
+                          <div className="absolute inset-0 bg-[#f97316]/20 mix-blend-multiply pointer-events-none z-[1]" />
+                          <div className="absolute inset-0 pointer-events-none z-[1] animate-[urgence-pulse_2.2s_ease-in-out_infinite]"
+                            style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(249,115,22,0.40) 0%, transparent 68%)" }} />
+                        </>
+                      )}
+
                       {/* Badge icône en overlay */}
-                      <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-[#f97316] text-white flex items-center justify-center shadow-[0_4px_14px_rgba(249,115,22,0.50)] transition-transform duration-500 group-hover:scale-110">
+                      <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-[#f97316] text-white flex items-center justify-center shadow-[0_4px_14px_rgba(249,115,22,0.50)] transition-transform duration-500 group-hover:scale-110 z-[2]">
                         <Icon size={18} strokeWidth={2} />
                       </div>
                     </div>
