@@ -92,7 +92,7 @@ export default function ServiceDetailPage({ service }: Props) {
           className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f0f0f0] to-transparent"
         />
 
-        <div className={`relative z-10 max-w-6xl mx-auto px-4 sm:px-8 xl:px-12 ${service.slug === "depannage-urgence" ? "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" : ""}`}>
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 xl:px-12">
           <motion.div
             initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -148,30 +148,6 @@ export default function ServiceDetailPage({ service }: Props) {
             </div>
           </motion.div>
 
-          {/* ── Illustration dépannage ── */}
-          {service.slug === "depannage-urgence" && (
-            <motion.div
-              initial={{ opacity: 0, x: 40, filter: "blur(8px)" }}
-              animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-              transition={{ duration: 1.1, ease: SPRING, delay: 0.2 }}
-              className="hidden lg:flex items-center justify-center"
-            >
-              <div className="relative w-full max-w-[520px]">
-                {/* Halo décoratif derrière l'illustration */}
-                <div
-                  aria-hidden
-                  className="absolute inset-0 -m-8 rounded-full pointer-events-none"
-                  style={{ background: "radial-gradient(ellipse, rgba(249,115,22,0.10) 0%, transparent 70%)" }}
-                />
-                <img
-                  src="/DepannageElectrique.jpg"
-                  alt="Électricien TF Technics en intervention d'urgence"
-                  className="w-full h-auto rounded-3xl shadow-[0_24px_64px_rgba(43,43,43,0.18)]"
-                  draggable={false}
-                />
-              </div>
-            </motion.div>
-          )}
         </div>
       </section>
 
