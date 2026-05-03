@@ -33,7 +33,7 @@ export default function BornesSection({ dict }: Props) {
       <div
         aria-hidden
         className="pointer-events-none absolute -bottom-32 -right-32 w-[700px] h-[700px] rounded-full"
-        style={{ background: "radial-gradient(circle, rgba(249,115,22,0.10) 0%, transparent 65%)" }}
+        className="halo-circle"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 xl:px-12">
@@ -112,7 +112,7 @@ export default function BornesSection({ dict }: Props) {
             <div
               aria-hidden
               className="absolute inset-4 rounded-[2rem] bg-[#f97316]/20 blur-2xl -z-10"
-              style={{ transform: "translateY(16px)" }}
+              className="translate-y-4"
             />
 
             {/* Outer shell */}
@@ -120,7 +120,7 @@ export default function BornesSection({ dict }: Props) {
               {/* Image */}
               <div
                 className="relative overflow-hidden aspect-[4/5] sm:aspect-[3/4]"
-                style={{ borderRadius: "calc(2rem - 0.5rem)" }}
+                className="rounded-inner"
               >
                 <Image
                   src="/electric-car-power-charging_1.jpg"
@@ -133,7 +133,7 @@ export default function BornesSection({ dict }: Props) {
                 {/* Overlay bas */}
                 <div
                   className="absolute inset-0 pointer-events-none"
-                  style={{ background: "linear-gradient(to top, rgba(249,115,22,0.25) 0%, transparent 55%)" }}
+                  className="halo-bottom-orange"
                 />
 
                 {/* Badge flottant */}

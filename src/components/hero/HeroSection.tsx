@@ -188,13 +188,10 @@ export default function HeroSection({ dict }: HeroSectionProps) {
         </div>
 
         {/* Overlay multicouche */}
-        <div aria-hidden className="absolute inset-0 pointer-events-none"
-          style={{ background: "linear-gradient(to top, rgba(4,4,4,0.97) 0%, rgba(4,4,4,0.7) 28%, rgba(4,4,4,0.25) 58%, rgba(4,4,4,0.08) 100%)" }} />
-        <div aria-hidden className="absolute inset-0 pointer-events-none"
-          style={{ background: "linear-gradient(105deg, rgba(4,4,4,0.65) 0%, rgba(4,4,4,0.15) 50%, transparent 100%)" }} />
+        <div aria-hidden className="hero-overlay-top absolute inset-0 pointer-events-none" />
+        <div aria-hidden className="hero-overlay-side absolute inset-0 pointer-events-none" />
         {/* Halo orange bas-gauche — signature marque */}
-        <div aria-hidden className="absolute pointer-events-none bottom-0 left-0 w-[700px] h-[400px]"
-          style={{ background: "radial-gradient(ellipse at 20% 100%, rgba(249,115,22,0.10) 0%, transparent 55%)" }} />
+        <div aria-hidden className="hero-halo absolute pointer-events-none bottom-0 left-0 w-[700px] h-[400px]" />
 
         {/* Carte haut droite — délai */}
         <motion.div

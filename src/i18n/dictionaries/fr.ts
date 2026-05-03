@@ -40,9 +40,9 @@ const fr: Dictionary = {
 
   /* ─── Services ────────────────────────────────────────────────────────── */
   services: {
-    sectionTitle: "Nos services",
+    sectionTitle: "Nos services électriques",
     sectionSubtitle:
-      "Des interventions rapides et soignées pour particuliers et professionnels.",
+      "Dépannage électrique, installation de bornes de recharge et mise en conformité AREI — à Bruxelles, en Flandre et en Brabant Wallon.",
     items: {
       depannage: {
         title: "Dépannage d'urgence",
@@ -74,9 +74,11 @@ const fr: Dictionary = {
 
   /* ─── Zones d'intervention ────────────────────────────────────────────── */
   zones: {
-    sectionTitle: "Zones d'intervention",
+    sectionTitle: "Électricien à Bruxelles, Flandre et Brabant Wallon",
     sectionSubtitle:
-      "Nous couvrons Bruxelles et ses environs en Flandre et en Brabant Wallon.",
+      "Dépannage et installation électrique disponibles 24h/24 dans toute la région de Bruxelles et ses environs.",
+    description:
+      "Basés à Wemmel, nos électriciens qualifiés interviennent dans tout le Grand Bruxelles et ses alentours. À Bruxelles-Capitale, nous prenons en charge les dépannages électriques urgents : disjoncteur défaillant, panne de courant totale ou partielle, court-circuit. En Brabant Wallon, nous installons des bornes de recharge wallbox à Wavre, Waterloo et Braine-l'Alleud, et réalisons des mises en conformité AREI pour les transactions immobilières. En Brabant Flamand, nous intervenons à Zaventem, Vilvoorde et Tervuren pour toutes vos installations électriques. Assurés RC professionnelle, nos techniciens se déplacent 24h/24 et 7j/7 pour les urgences.",
     regions: {
       bruxelles: {
         name: "Bruxelles-Capitale",
@@ -106,9 +108,9 @@ const fr: Dictionary = {
 
   /* ─── Bornes de recharge ──────────────────────────────────────────────── */
   bornes: {
-    sectionTitle: "Bornes de recharge",
+    sectionTitle: "Bornes de recharge à Bruxelles",
     sectionSubtitle:
-      "Installation professionnelle de wallbox pour véhicules électriques.",
+      "Installation de wallbox jusqu'à 22 kW à domicile ou en entreprise, à Bruxelles, en Flandre et en Brabant Wallon.",
     ctaInstall: "Demander un devis",
     features: {
       certified: "Technicien qualifié",
@@ -119,7 +121,7 @@ const fr: Dictionary = {
 
   /* ─── Confiance / Preuves sociales ───────────────────────────────────── */
   trust: {
-    sectionTitle: "Pourquoi nous choisir ?",
+    sectionTitle: "Votre électricien de confiance à Bruxelles",
     stats: {
       interventions: { value: "24h/24",   label: "Disponible 7j/7" },
       experience:    { value: "0 €",      label: "Devis gratuit" },

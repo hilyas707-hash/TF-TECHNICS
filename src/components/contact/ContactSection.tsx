@@ -45,11 +45,7 @@ export default function ContactSection({ dict }: Props) {
       {/* Décoration */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-0 left-0 w-[700px] h-[500px]"
-        style={{
-          background:
-            "radial-gradient(ellipse at 0% 0%, rgba(249,115,22,0.06) 0%, transparent 65%)",
-        }}
+        className="halo-tl pointer-events-none absolute top-0 left-0 w-[700px] h-[500px]"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 xl:px-12">
@@ -77,11 +73,7 @@ export default function ContactSection({ dict }: Props) {
             {/* Reflet orange */}
             <div
               aria-hidden
-              className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full"
-              style={{
-                background:
-                  "radial-gradient(ellipse, rgba(249,115,22,0.15) 0%, transparent 65%)",
-              }}
+              className="halo-center-lg pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full"
             />
 
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
@@ -225,7 +217,7 @@ export default function ContactSection({ dict }: Props) {
                       onChange={(e) => setHoney(e.target.value)}
                       tabIndex={-1}
                       aria-hidden="true"
-                      style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none" }}
+                      className="absolute left-[-9999px] opacity-0 pointer-events-none"
                     />
                     {/* Nom */}
                     <div className="flex flex-col gap-1.5">

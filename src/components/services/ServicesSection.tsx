@@ -65,8 +65,7 @@ export default function ServicesSection({ dict }: Props) {
     <section id="services" className="relative bg-white py-24 md:py-32 overflow-hidden">
 
       {/* Décoration ambiante */}
-      <div aria-hidden className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[300px]"
-        style={{ background: "radial-gradient(ellipse, rgba(249,115,22,0.05) 0%, transparent 70%)" }} />
+      <div aria-hidden className="halo-center pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[300px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 xl:px-12">
 
@@ -147,8 +146,7 @@ export default function ServicesSection({ dict }: Props) {
                       {key === "depannage" && (
                         <>
                           <div className="absolute inset-0 bg-[#f97316]/20 mix-blend-multiply pointer-events-none z-[1]" />
-                          <div className="absolute inset-0 pointer-events-none z-[1] animate-[urgence-pulse_2.2s_ease-in-out_infinite]"
-                            style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(249,115,22,0.40) 0%, transparent 68%)" }} />
+                          <div className="halo-urgence absolute inset-0 pointer-events-none z-[1] animate-[urgence-pulse_2.2s_ease-in-out_infinite]" />
                         </>
                       )}
 

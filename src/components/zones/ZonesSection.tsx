@@ -30,8 +30,7 @@ export default function ZonesSection({ dict }: Props) {
       {/* Décoration */}
       <div
         aria-hidden
-        className="pointer-events-none absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full"
-        style={{ background: "radial-gradient(circle at 80% 80%, rgba(249,115,22,0.05) 0%, transparent 65%)" }}
+        className="halo-br pointer-events-none absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 xl:px-12">
@@ -53,6 +52,9 @@ export default function ZonesSection({ dict }: Props) {
           </h2>
           <p className="text-[1.05rem] text-[#6b6b6b] leading-relaxed">
             {zones.sectionSubtitle}
+          </p>
+          <p className="text-[0.95rem] text-[#6b6b6b] leading-relaxed mt-2">
+            {zones.description}
           </p>
         </motion.div>
 

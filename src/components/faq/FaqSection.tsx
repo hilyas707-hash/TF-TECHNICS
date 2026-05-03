@@ -22,11 +22,7 @@ export default function FaqSection() {
       {/* Décoration */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 -translate-y-1/2 right-0 w-[600px] h-[600px] rounded-full"
-        style={{
-          background:
-            "radial-gradient(circle at 80% 50%, rgba(249,115,22,0.05) 0%, transparent 65%)",
-        }}
+        className="halo-br-md pointer-events-none absolute top-1/2 -translate-y-1/2 right-0 w-[600px] h-[600px] rounded-full"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 xl:px-12">
@@ -45,9 +41,9 @@ export default function FaqSection() {
               Questions fréquentes
             </span>
             <h2 className="text-[clamp(2rem,4.5vw,3.2rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] leading-[1.07]">
-              Tout ce que vous
+              Questions sur votre
               <br />
-              <span className="text-[#f97316]">voulez savoir</span>
+              <span className="text-[#f97316]">électricien à Bruxelles</span>
             </h2>
             <p className="text-[1rem] text-[#6b6b6b] leading-relaxed max-w-sm">
               Vous ne trouvez pas la réponse à votre question ? Appelez-nous ou
@@ -148,7 +144,7 @@ export default function FaqSection() {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.38, ease: SPRING }}
-                        style={{ overflow: "hidden" }}
+                        className="overflow-hidden"
                       >
                         <p className="px-5 pb-5 text-[0.875rem] text-[#6b6b6b] leading-relaxed">
                           {item.answer}

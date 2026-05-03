@@ -35,7 +35,14 @@
       "Bash(git push *)",
       "Bash(xargs sed *)",
       "Bash(node -e ' *)",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(sed -i 's/style={{ background: \"radial-gradient\\(ellipse, rgba\\(249,115,22,0.05\\) 0%, transparent 70%\\)\" }}/className=\"halo-center\"/' services/ServicesSection.tsx)",
+      "Bash(sed -i 's/style={{ background: \"radial-gradient\\(ellipse at 50% 50%, rgba\\(249,115,22,0.40\\) 0%, transparent 68%\\)\" }}/className=\"halo-urgence\"/' services/ServicesSection.tsx)",
+      "Bash(sed -i 's/style={{ background: \"radial-gradient\\(circle at 80% 80%, rgba\\(249,115,22,0.05\\) 0%, transparent 65%\\)\" }}/className=\"halo-br\"/' zones/ZonesSection.tsx)",
+      "Bash(sed -i 's/style={{ background: \"radial-gradient\\(circle, rgba\\(249,115,22,0.10\\) 0%, transparent 65%\\)\" }}/className=\"halo-circle\"/' bornes/BornesSection.tsx)",
+      "Bash(sed -i 's/style={{ transform: \"translateY\\(16px\\)\" }}/className=\"translate-y-4\"/' bornes/BornesSection.tsx)"
     ]
   }
 }

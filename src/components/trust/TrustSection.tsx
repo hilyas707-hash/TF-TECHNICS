@@ -56,7 +56,7 @@ export default function TrustSection({ dict }: Props) {
   void dict; // conservé pour compatibilité i18n future
 
   return (
-    <section id="confiance" className="py-24 md:py-32 overflow-hidden" style={{ background: "linear-gradient(180deg, #fff7ed 0%, #ffffff 100%)" }}>
+    <section id="confiance" className="bg-bornes-gradient py-24 md:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 xl:px-12">
 
         {/* ── En-tête ─────────────────────────────────────────────────────── */}
@@ -74,8 +74,8 @@ export default function TrustSection({ dict }: Props) {
           <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] leading-[1.08]">
             Ce que disent nos clients
           </h2>
-          <p className="text-[0.95rem] text-[#6b6b6b] max-w-md">
-            Disponibles à Bruxelles, en Flandre et en Brabant Wallon. Voici ce que nos clients en pensent.
+          <p className="text-[0.95rem] text-[#6b6b6b] max-w-lg">
+            Électricien agréé et assuré RC professionnelle, TF Technics intervient à Bruxelles, en Flandre et en Brabant Wallon pour les dépannages électriques urgents, les installations de bornes de recharge wallbox et les mises en conformité AREI. Nos clients nous font confiance depuis des années.
           </p>
         </motion.div>
 
@@ -90,10 +90,7 @@ export default function TrustSection({ dict }: Props) {
               transition={{ duration: 0.7, ease: SPRING, delay: i * 0.08 }}
               className="rounded-2xl border border-[#f0f0f0] bg-[#fafafa] p-6 flex flex-col gap-1 text-center"
             >
-              <p
-                className="text-[2.2rem] font-extrabold tracking-[-0.04em] leading-none"
-                style={{ color: "#2b2b2b" }}
-              >
+              <p className="text-[2.2rem] font-extrabold tracking-[-0.04em] leading-none text-[#2b2b2b]">
                 {stat.value}
               </p>
               <p className="text-[0.82rem] text-[#6b6b6b] font-medium leading-snug mt-1">

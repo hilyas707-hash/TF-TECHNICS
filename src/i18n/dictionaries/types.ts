@@ -45,6 +45,7 @@ export interface Dictionary {
   zones: {
     sectionTitle: string;
     sectionSubtitle: string;
+    description: string;
     regions: {
       bruxelles:    { name: string; cities: string[] };
       brabantWallon:{ name: string; cities: string[] };

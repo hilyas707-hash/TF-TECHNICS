@@ -40,9 +40,9 @@ const nl: Dictionary = {
 
   /* ─── Diensten ────────────────────────────────────────────────────────── */
   services: {
-    sectionTitle: "Onze diensten",
+    sectionTitle: "Onze elektrische diensten",
     sectionSubtitle:
-      "Snelle en vakkundige interventies voor particulieren en bedrijven.",
+      "Elektrische herstellingen, laadpaalinstallaties en AREI-conformiteit — in Brussel, Vlaanderen en Waals-Brabant.",
     items: {
       depannage: {
         title: "Spoedherstellingen",
@@ -74,9 +74,11 @@ const nl: Dictionary = {
 
   /* ─── Werkgebied ──────────────────────────────────────────────────────── */
   zones: {
-    sectionTitle: "Werkgebied",
+    sectionTitle: "Elektricien in Brussel, Vlaanderen en Waals-Brabant",
     sectionSubtitle:
-      "Wij dekken Brussel en omgeving in Vlaanderen en Waals-Brabant.",
+      "Elektrische herstellingen en installaties beschikbaar 24u/24 in het Brussels Gewest en omgeving.",
+    description:
+      "Gevestigd in Wemmel, zijn onze vakkundige elektriciens actief in heel Groot-Brussel. In het Brussels Hoofdstedelijk Gewest staan wij in voor dringende elektrische herstellingen: defecte zekering, stroomonderbreking of kortsluiting. In Waals-Brabant installeren wij wallboxen in Waver, Waterloo en Eigenbrakel en voeren wij AREI-conformiteitsrapporten uit voor vastgoedverkoop. In Vlaams-Brabant werken wij in Zaventem, Vilvoorde en Tervuren. Onze BA-verzekerde techniciens zijn 24u/24 en 7d/7 beschikbaar voor spoedgevallen.",
     regions: {
       bruxelles: {
         name: "Brussels Hoofdstedelijk Gewest",
@@ -106,9 +108,9 @@ const nl: Dictionary = {
 
   /* ─── Laadpalen ───────────────────────────────────────────────────────── */
   bornes: {
-    sectionTitle: "Laadpalen",
+    sectionTitle: "Laadpalen in Brussel",
     sectionSubtitle:
-      "Professionele installatie van wallboxen voor elektrische voertuigen.",
+      "Installatie van wallboxen tot 22 kW thuis of op kantoor, in Brussel, Vlaanderen en Waals-Brabant.",
     ctaInstall: "Offerte aanvragen",
     features: {
       certified: "Vakkundige installateur",
@@ -119,7 +121,7 @@ const nl: Dictionary = {
 
   /* ─── Vertrouwen / Sociale bewijzen ──────────────────────────────────── */
   trust: {
-    sectionTitle: "Waarom ons kiezen?",
+    sectionTitle: "Uw vertrouwde elektricien in Brussel",
     stats: {
       interventions: { value: "24u/24",   label: "Beschikbaar 7d/7" },
       experience:    { value: "0 €",      label: "Gratis offerte" },

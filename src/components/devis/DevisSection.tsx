@@ -264,11 +264,7 @@ export default function DevisSection() {
       {/* Décoration */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% -10%, rgba(249,115,22,0.07) 0%, transparent 55%)",
-        }}
+        className="halo-top-md pointer-events-none absolute inset-0"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 xl:px-12">
