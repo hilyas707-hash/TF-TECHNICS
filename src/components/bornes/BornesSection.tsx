@@ -32,8 +32,7 @@ export default function BornesSection({ dict }: Props) {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-32 -right-32 w-[700px] h-[700px] rounded-full"
-        className="halo-circle"
+        className="halo-circle pointer-events-none absolute -bottom-32 -right-32 w-[700px] h-[700px] rounded-full"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 xl:px-12">
@@ -111,16 +110,14 @@ export default function BornesSection({ dict }: Props) {
           >
             <div
               aria-hidden
-              className="absolute inset-4 rounded-[2rem] bg-[#f97316]/20 blur-2xl -z-10"
-              className="translate-y-4"
+              className="absolute inset-4 translate-y-4 rounded-[2rem] bg-[#f97316]/20 blur-2xl -z-10"
             />
 
             {/* Outer shell */}
             <div className="relative rounded-[2rem] p-2 bg-[#f97316]/10 ring-1 ring-[#f97316]/20 shadow-[0_8px_48px_rgba(249,115,22,0.15)]">
               {/* Image */}
               <div
-                className="relative overflow-hidden aspect-[4/5] sm:aspect-[3/4]"
-                className="rounded-inner"
+                className="rounded-inner relative overflow-hidden aspect-[4/5] sm:aspect-[3/4]"
               >
                 <Image
                   src="/electric-car-power-charging_1.jpg"
@@ -132,8 +129,7 @@ export default function BornesSection({ dict }: Props) {
                 />
                 {/* Overlay bas */}
                 <div
-                  className="absolute inset-0 pointer-events-none"
-                  className="halo-bottom-orange"
+                  className="halo-bottom-orange absolute inset-0 pointer-events-none"
                 />
 
                 {/* Badge flottant */}
