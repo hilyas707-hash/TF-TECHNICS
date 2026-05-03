@@ -28,6 +28,12 @@
   --shadow-hero:  0 8px 48px 0 rgba(43, 43, 43, 0.10);
 }
 
+/* ─── Performance : rendu différé des sections hors écran ──────────────────── */
+#services, #zones, #bornes, #devis, #faq, #contact {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
+}
+
 /* ─── Reset & base ──────────────────────────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -75,4 +81,7 @@ body {
   animation: ken-burns 20s ease-in-out infinite;
   will-change: transform;
   transform: translateZ(0);
+}
+@media (max-width: 768px) {
+  .animate-ken-burns { animation: none; }
 }
