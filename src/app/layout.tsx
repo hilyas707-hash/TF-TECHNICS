@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     "électricien bruxelles, dépannage électrique urgent bruxelles, urgence électricien 24h, borne recharge voiture électrique bruxelles, borne recharge flandre, borne recharge brabant wallon, mise en conformité RGIE brabant wallon, dépannage électrique flandre, électricien urgence brabant wallon",
   icons: {
     icon: [
-      { url: "/icon", type: "image/png", sizes: "96x96" },
+      { url: "/icon", type: "image/png", sizes: "512x512" },
       { url: "/icon.svg", type: "image/svg+xml" },
     ],
     shortcut: { url: "/icon", type: "image/png" },
-    apple:    { url: "/icon", type: "image/png", sizes: "96x96" },
+    apple:    { url: "/icon", type: "image/png", sizes: "512x512" },
   },
   openGraph: {
     type:        "website",
