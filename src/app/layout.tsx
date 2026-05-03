@@ -57,11 +57,6 @@ export default function RootLayout({
       lang="fr"
       className={`${plusJakarta.variable} h-full antialiased`}
     >
-      <head>
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-      </head>
       <GoogleTagManager gtmId="GTM-5GSLL4S5" />
       <GoogleAnalytics gaId={GA_ID} />
 
