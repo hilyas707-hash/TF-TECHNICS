@@ -4,6 +4,7 @@ import { ARTICLES } from "@/data/articles";
 import { getDictionary } from "@/i18n";
 import BlogPostPage from "@/components/blog/BlogPostPage";
 import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -73,6 +74,7 @@ export default async function BlogSlugPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      <Navbar />
       <BlogPostPage article={article} />
       <Footer dict={dict} />
     </>

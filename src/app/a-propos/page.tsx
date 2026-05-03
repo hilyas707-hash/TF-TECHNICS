@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary } from "@/i18n";
 import Footer from "@/components/layout/Footer";
 import AboutSection from "@/components/about/AboutSection";
+import Navbar from "@/components/layout/Navbar";
 
 export const metadata: Metadata = {
   title:       "À propos de TF Technics | Électricien Professionnel Bruxelles",
@@ -39,6 +40,7 @@ export default async function AProposPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Navbar />
       <AboutSection />
       <Footer dict={dict} />
     </>

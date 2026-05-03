@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import Navbar from "@/components/layout/Navbar";
 
 interface Section {
   title: string;
@@ -16,8 +17,9 @@ interface LegalPageProps {
 export default function LegalPage({ title, subtitle, lastUpdated, sections }: LegalPageProps) {
   return (
     <div className="min-h-screen bg-white">
+      <Navbar />
       {/* En-tête */}
-      <div className="bg-[#2b2b2b] pt-16 pb-14">
+      <div className="bg-[#2b2b2b] pt-28 pb-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-8">
           <Link
             href="/"

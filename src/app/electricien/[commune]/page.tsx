@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getCommuneBySlug, getAllCommuneSlugs } from "@/data/communes";
 import CommunePage from "@/components/communes/CommunePage";
 import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
 import { getDictionary } from "@/i18n";
 
 export function generateStaticParams() {
@@ -74,6 +75,7 @@ export default async function ElectricienCommunePage(
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Navbar />
       <CommunePage commune={commune} />
       <Footer dict={dict} />
     </>

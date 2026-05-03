@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary } from "@/i18n";
 import TarifsPage from "@/components/tarifs/TarifsPage";
 import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
 
 export const metadata: Metadata = {
   title: "Tarifs Électricien Bruxelles | Prix Dépannage & Installation | TF Technics",
@@ -63,6 +64,7 @@ export default async function Tarifs() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Navbar />
       <TarifsPage />
       <Footer dict={dict} />
     </>

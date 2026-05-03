@@ -3,6 +3,7 @@ import { getDictionary } from "@/i18n";
 import { ARTICLES } from "@/data/articles";
 import BlogListPage from "@/components/blog/BlogListPage";
 import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
 
 export const metadata: Metadata = {
   title:       "Blog Électricité Bruxelles | Conseils & Guides | TF Technics",
@@ -22,6 +23,7 @@ export default async function BlogPage() {
   const dict = await getDictionary("fr");
   return (
     <>
+      <Navbar />
       <BlogListPage articles={ARTICLES} />
       <Footer dict={dict} />
     </>
