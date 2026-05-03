@@ -45,29 +45,29 @@ const nl: Dictionary = {
       "Elektrische herstellingen, laadpaalinstallaties en AREI-conformiteit — in Brussel, Vlaanderen en Waals-Brabant.",
     items: {
       depannage: {
-        title: "Spoedherstellingen",
+        title: "Elektrische spoedherstellingen",
         description:
-          "Stroomuitval, kortsluiting, zekering die springt? Wij interveniëren dag en nacht.",
+          "Differentiaalschakelaar 30 mA die springt, kortsluiting, stroomuitval? Interventie binnen 60 min, 24u/24 en 7d/7 — inclusief weekends en feestdagen.",
       },
       borne: {
-        title: "Laadpaal",
+        title: "Laadpaal wallbox",
         description:
-          "Installatie van wallboxen tot 22 kW thuis of op kantoor. Wij begeleiden u bij de aanvraag van regionale premies.",
+          "Installatie van laadpalen modus 3 type 2 tot 22 kW. Synergrid-aangifte, AREI-keuring en begeleiding voor Vlaamse en Brussels premies inbegrepen.",
       },
       renovation: {
         title: "AREI-conformiteit",
         description:
-          "Aanpassing aan de AREI-normen. Officieel conformiteitsrapport voor verzekering en verkoop.",
+          "Eendraadschema, equipotentiaalverbinding, differentiaalschakelaar 300 mA: volledige normalisatie met officieel conformiteitsrapport voor verzekering en vastgoedverkoop.",
       },
       installation: {
         title: "Elektrische installatie",
         description:
-          "Zekeringkast, stopcontacten, verlichting: alle soorten installaties voor uw woning of kantoor.",
+          "Verdeelinrichting, kabels sectie 2,5 mm², stopcontacten, verlichting: alle installaties voor particulieren en bedrijven conform de geldende AREI-normen.",
       },
       diagnostic: {
         title: "Elektrische diagnose",
         description:
-          "Volledige controle van uw installatie met gedetailleerd technisch rapport en prioriteitsaanbevelingen.",
+          "Volledige controle van uw installatie: meting van lekstromen, verificatie van IP-indices, gedetailleerd technisch rapport en prioriteitsaanbevelingen.",
       },
     },
   },

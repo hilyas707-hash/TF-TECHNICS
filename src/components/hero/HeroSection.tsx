@@ -276,6 +276,15 @@ export default function HeroSection({ dict }: HeroSectionProps) {
                 </div>
               </motion.div>
 
+              {/* Phrase d'engagement — texte plein pour crawlers IA et voix */}
+              <motion.p variants={fadeUp} className="text-[0.75rem] leading-relaxed text-white/55 max-w-[34rem]">
+                TF Technics intervient pour tout dépannage électrique urgent à Bruxelles,
+                en Brabant Wallon et en Flandre dans un délai maximum de 60 minutes.
+                Disponible 24h/24 et 7j/7 au{" "}
+                <span className="font-semibold text-white/75">{hero.phone}</span>
+                {" "}— y compris les week-ends et jours fériés belges.
+              </motion.p>
+
             </motion.div>
           </div>
 

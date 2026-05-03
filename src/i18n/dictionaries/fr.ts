@@ -42,32 +42,32 @@ const fr: Dictionary = {
   services: {
     sectionTitle: "Nos services électriques",
     sectionSubtitle:
-      "Dépannage électrique, installation de bornes de recharge et mise en conformité AREI — à Bruxelles, en Flandre et en Brabant Wallon.",
+      "Dépannage électrique d'urgence, installation de bornes de recharge wallbox et mise en conformité RGIE/AREI — à Bruxelles, en Flandre et en Brabant Wallon.",
     items: {
       depannage: {
-        title: "Dépannage d'urgence",
+        title: "Dépannage électrique d'urgence",
         description:
-          "Panne de courant, court-circuit, disjoncteur qui saute ? Nous intervenons en urgence, de jour comme de nuit.",
+          "Disjoncteur différentiel 30 mA qui saute, court-circuit, panne de courant totale ou partielle ? Intervention en moins de 60 min, 24h/24 et 7j/7 — week-ends et jours fériés inclus.",
       },
       borne: {
-        title: "Borne de recharge",
+        title: "Borne de recharge wallbox",
         description:
-          "Installation de wallbox jusqu'à 22 kW à domicile ou en entreprise. Accompagnement pour les primes régionales.",
+          "Installation de bornes de recharge mode 3 type 2 jusqu'à 22 kW. Déclaration Synergrid, contrôle RGIE et accompagnement pour les primes Bruxelles Environnement inclus.",
       },
       renovation: {
-        title: "Mise en conformité RGIE",
+        title: "Mise en conformité RGIE/AREI",
         description:
-          "Mise aux normes AREI/RGIE de votre installation. Rapport de conformité officiel pour assurance et vente.",
+          "Schéma unifilaire, liaison équipotentielle, différentiel 300 mA : mise aux normes complète avec rapport de conformité officiel pour assurance et vente immobilière.",
       },
       installation: {
         title: "Installation électrique",
         description:
-          "Tableau électrique, prises, éclairage : tous types d'installations pour votre habitation ou bureau.",
+          "Tableau de répartition, câbles VV-U et EXVB section 2,5 mm², prises, éclairage : toutes installations pour particuliers et professionnels selon les normes AREI en vigueur.",
       },
       diagnostic: {
         title: "Diagnostic électrique",
         description:
-          "Contrôle complet de votre installation avec rapport technique détaillé et recommandations prioritaires.",
+          "Contrôle complet de votre installation : mesure des courants de fuite, vérification des indices IP, rapport technique détaillé et recommandations prioritaires.",
       },
     },
   },
@@ -134,7 +134,7 @@ const fr: Dictionary = {
   contact: {
     sectionTitle: "Contactez-nous",
     urgencyTitle: "Urgence électrique ?",
-    urgencySubtitle: "Appelez-nous immédiatement, nous intervenons en moins de 60 minutes.",
+    urgencySubtitle: "TF Technics intervient pour tout dépannage électrique urgent à Bruxelles et en Brabant Wallon dans un délai maximum de 60 minutes. Disponible 24h/24 et 7j/7 au +32 483 48 04 96 — y compris les week-ends et jours fériés.",
     phone: "+32 483 48 04 96",
     email: "info@tftechnics.be",
     hours: "Disponible 24h/24 – 7j/7",
