@@ -27,7 +27,7 @@ export default function WhatsAppButton() {
 
   return (
     /* ── Conteneur fixe — bas droite ── */
-    <div className="fixed bottom-10 right-8 z-[80] flex flex-col items-end gap-3">
+    <div className="fixed bottom-24 right-8 z-[80] flex flex-col items-end gap-3">
 
       {/* ── Bulle de message ── */}
       <AnimatePresence>
