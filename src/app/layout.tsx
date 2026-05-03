@@ -19,7 +19,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tftechnics.be"),
-  title: "Électricien Dépanneur à Bruxelles | Urgence 24h/24 – 7j/7 | TF Technics",
+  title: "TF Technics | Électricien Dépanneur Bruxelles – Urgence 24h/24",
   description:
     "TF Technics — électricien professionnel : dépannage urgence Bruxelles en moins de 60 min, bornes de recharge Flandre et Brabant Wallon, mise en conformité RGIE. Devis gratuit.",
   keywords:
@@ -33,9 +33,11 @@ export const metadata: Metadata = {
     apple:    { url: "/icon", type: "image/png", sizes: "96x96" },
   },
   openGraph: {
-    type:     "website",
-    locale:   "fr_BE",
-    siteName: "TF Technics — Électricien Dépanneur",
+    type:        "website",
+    locale:      "fr_BE",
+    siteName:    "TF Technics",
+    title:       "TF Technics | Électricien Dépanneur Bruxelles – Urgence 24h/24",
+    description: "TF Technics — électricien professionnel : dépannage urgence Bruxelles en moins de 60 min, bornes de recharge, mise en conformité RGIE. Devis gratuit.",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, type: "image/png" }],
   },
   alternates: {
