@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Phone, Clock, Shield, Zap, ArrowUpRight, MapPin, Menu, X, Star } from "lucide-react";
+import { Phone, Clock, Shield, Zap, ArrowUpRight, MapPin, Menu, X, Star, ChevronDown, BatteryCharging, Wrench, PlugZap, ScanSearch } from "lucide-react";
 import { useState } from "react";
+import type { LucideIcon } from "lucide-react";
 import type { Dictionary } from "@/i18n/dictionaries/types";
 import LocaleSwitcher from "@/components/layout/LocaleSwitcher";
 
@@ -26,19 +27,27 @@ const STATS = [
   { value: "2 ans",    label: "Garantie",        gold: false },
 ];
 
+const SERVICES_NAV: { label: string; href: string; Icon: LucideIcon }[] = [
+  { label: "Dépannage d'urgence",    href: "/services/depannage-urgence",      Icon: Zap            },
+  { label: "Borne de recharge",      href: "/services/borne-recharge",         Icon: BatteryCharging },
+  { label: "Mise en conformité",     href: "/services/renovation-conformite",  Icon: Wrench         },
+  { label: "Installation électrique",href: "/services/installation-electrique",Icon: PlugZap        },
+  { label: "Diagnostic électrique",  href: "/services/diagnostic-electrique",  Icon: ScanSearch     },
+];
+
 interface HeroSectionProps { dict: Dictionary }
 
 export default function HeroSection({ dict }: HeroSectionProps) {
   const { hero, nav } = dict;
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen,     setMenuOpen]     = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   const navLinks = [
-    { label: nav.services, href: "#services" },
-    { label: nav.zones,    href: "#zones"    },
-    { label: nav.bornes,   href: "#bornes"   },
-    { label: "Tarifs",     href: "/tarifs"   },
-    { label: "Blog",       href: "/blog"     },
-    { label: nav.contact,  href: "#contact"  },
+    { label: nav.zones,   href: "#zones"   },
+    { label: nav.bornes,  href: "#bornes"  },
+    { label: "Tarifs",    href: "/tarifs"  },
+    { label: "Blog",      href: "/blog"    },
+    { label: nav.contact, href: "#contact" },
   ];
   const titleLines = hero.title.split("\n");
 
@@ -58,6 +67,33 @@ export default function HeroSection({ dict }: HeroSectionProps) {
             <Image src="/logo.svg" alt="TF Technics" width={148} height={32} priority className="h-8 w-auto" />
           </a>
           <div className="hidden md:flex items-center gap-5">
+
+            {/* ── Dropdown Services ── */}
+            <div className="relative group/svc py-4">
+              <button className="flex items-center gap-1 text-[13px] font-medium text-[#6b6b6b] hover:text-[#2b2b2b] transition-colors duration-300">
+                Services
+                <ChevronDown size={11} strokeWidth={2.5} className="transition-transform duration-300 group-hover/svc:rotate-180" />
+              </button>
+
+              {/* Panel — pt-2 crée un pont invisible pour ne pas fermer au survol */}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 w-max opacity-0 pointer-events-none group-hover/svc:opacity-100 group-hover/svc:pointer-events-auto transition-all duration-200 pt-2">
+                <div className="rounded-2xl bg-white ring-1 ring-black/[0.07] shadow-[0_8px_40px_rgba(43,43,43,0.13)] p-2 min-w-[240px] flex flex-col gap-0.5">
+                  {SERVICES_NAV.map(({ label, href, Icon }) => (
+                    <a key={href} href={href}
+                      className="group/item flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#f97316]/[0.06] transition-colors duration-200"
+                    >
+                      <span className="w-7 h-7 rounded-lg bg-[#f97316]/10 flex items-center justify-center flex-shrink-0 text-[#f97316]">
+                        <Icon size={14} strokeWidth={2} />
+                      </span>
+                      <span className="text-[13px] font-semibold text-[#2b2b2b] group-hover/item:text-[#f97316] transition-colors duration-200">
+                        {label}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {navLinks.map((l) => (
               <a key={l.label} href={l.href} className="text-[13px] font-medium text-[#6b6b6b] hover:text-[#2b2b2b] transition-colors duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]">
                 {l.label}
@@ -89,10 +125,38 @@ export default function HeroSection({ dict }: HeroSectionProps) {
           transition={{ duration: 0.35, ease: SPRING }}
           className="absolute top-20 left-4 right-4 rounded-2xl bg-white/95 backdrop-blur-2xl ring-1 ring-black/[0.07] shadow-[0_16px_64px_rgba(43,43,43,0.14)] p-5 flex flex-col gap-1 md:hidden"
         >
+          {/* Services accordéon mobile */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={menuOpen ? { opacity: 1, y: 0, transition: { delay: 0, duration: 0.4, ease: SPRING } } : { opacity: 0, y: 12 }}
+          >
+            <button
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-[16px] font-semibold text-[#2b2b2b] hover:bg-[#2b2b2b]/[0.04] transition-colors"
+            >
+              Services
+              <ChevronDown size={16} strokeWidth={2} className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`} />
+            </button>
+            {servicesOpen && (
+              <div className="pl-2 flex flex-col gap-0.5 mt-1">
+                {SERVICES_NAV.map(({ label, href, Icon }) => (
+                  <a key={href} href={href} onClick={() => setMenuOpen(false)}
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#6b6b6b] hover:text-[#2b2b2b] hover:bg-[#2b2b2b]/[0.04] transition-colors"
+                  >
+                    <span className="w-6 h-6 rounded-lg bg-[#f97316]/10 flex items-center justify-center flex-shrink-0 text-[#f97316]">
+                      <Icon size={13} strokeWidth={2} />
+                    </span>
+                    {label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </motion.div>
+
           {navLinks.map((l, i) => (
             <motion.a key={l.label} href={l.href} onClick={() => setMenuOpen(false)}
               initial={{ opacity: 0, y: 12 }}
-              animate={menuOpen ? { opacity: 1, y: 0, transition: { delay: 0.06 * i, duration: 0.4, ease: SPRING } } : { opacity: 0, y: 12 }}
+              animate={menuOpen ? { opacity: 1, y: 0, transition: { delay: 0.06 * (i + 1), duration: 0.4, ease: SPRING } } : { opacity: 0, y: 12 }}
               className="px-4 py-3.5 rounded-xl text-[16px] font-semibold text-[#2b2b2b] hover:bg-[#2b2b2b]/[0.04] transition-colors">
               {l.label}
             </motion.a>
