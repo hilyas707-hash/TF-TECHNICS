@@ -130,16 +130,22 @@ export default function ServicesSection({ dict }: Props) {
                       overflow-hidden
                     `}
                   >
-                    {/* Reflet ambiant sur la carte featured */}
+                    {/* Image + dégradé sur la carte dépannage */}
                     {isFeatured && (
-                      <div
-                        aria-hidden
-                        className="absolute -top-20 -right-20 w-64 h-64 rounded-full pointer-events-none"
-                        style={{
-                          background:
-                            "radial-gradient(circle, rgba(249,115,22,0.15) 0%, transparent 70%)",
-                        }}
-                      />
+                      <>
+                        <img
+                          src="/DepannageElectrique.jpg"
+                          alt=""
+                          aria-hidden
+                          className="absolute inset-0 w-full h-full object-cover object-center rounded-[calc(1.75rem-0.5rem)] opacity-30 pointer-events-none select-none"
+                        />
+                        {/* Dégradé gauche → transparent pour lisibilité du texte */}
+                        <div
+                          aria-hidden
+                          className="absolute inset-0 pointer-events-none rounded-[calc(1.75rem-0.5rem)]"
+                          style={{ background: "linear-gradient(90deg, #2b2b2b 35%, rgba(43,43,43,0.7) 65%, rgba(43,43,43,0.15) 100%)" }}
+                        />
+                      </>
                     )}
 
                     {/* Icône */}
