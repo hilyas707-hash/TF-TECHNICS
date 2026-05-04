@@ -203,7 +203,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
             alt="Électricien TF Technics en intervention à Bruxelles"
             fill
             priority
-            className="object-cover object-top animate-ken-burns"
+            className="object-cover object-[center_15%] animate-ken-burns"
             sizes="100vw"
           />
         </div>
