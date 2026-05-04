@@ -20,8 +20,9 @@ const SERVICES_NAV: { label: string; href: string; Icon: LucideIcon }[] = [
 
 const NAV_LINKS = [
   { label: "Zones",    href: "/#zones"   },
-  { label: "Bornes",   href: "/#bornes"  },
   { label: "Tarifs",   href: "/tarifs"   },
+  { label: "Devis",    href: "/devis"    },
+  { label: "FAQ",      href: "/faq"      },
   { label: "Blog",     href: "/blog"     },
   { label: "Contact",  href: "/#contact" },
 ];

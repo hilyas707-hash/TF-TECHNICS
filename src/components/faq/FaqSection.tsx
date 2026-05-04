@@ -160,7 +160,7 @@ export default function FaqSection() {
         <SectionBridge
           text="Prêt à nous confier votre projet ? On est disponibles maintenant — même ce soir."
           cta="Nous contacter directement"
-          href="#contact"
+          href="/#contact"
         />
 
       </div>
