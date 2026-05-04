@@ -102,7 +102,7 @@ export default function CommunePage({ commune }: Props) {
               </span>
             </a>
             <a
-              href="#devis"
+              href="/devis"
               className="
                 inline-flex items-center justify-center gap-2
                 px-5 py-3 rounded-full

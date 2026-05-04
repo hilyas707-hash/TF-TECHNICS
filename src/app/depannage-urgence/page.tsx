@@ -138,7 +138,7 @@ export default function DepannageUrgencePage() {
                 Appeler maintenant : +32 483 48 04 96
               </a>
               <Link
-                href="/#devis"
+                href="/devis"
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-white/20 text-white font-semibold text-[15px] hover:border-white/50 hover:bg-white/[0.06] transition-all duration-300"
               >
                 Demander un devis gratuit

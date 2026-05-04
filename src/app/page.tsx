@@ -11,7 +11,6 @@ const ServicesSection = dynamic(() => import("@/components/services/ServicesSect
 const TrustSection    = dynamic(() => import("@/components/trust/TrustSection"),    { loading: () => <div id="confiance" /> });
 const ZonesSection    = dynamic(() => import("@/components/zones/ZonesSection"),    { loading: () => <div id="zones" /> });
 const BornesSection   = dynamic(() => import("@/components/bornes/BornesSection"),  { loading: () => <div id="bornes" /> });
-const DevisSection    = dynamic(() => import("@/components/devis/DevisSection"),    { loading: () => <div id="devis" /> });
 const FaqSection      = dynamic(() => import("@/components/faq/FaqSection"),        { loading: () => <div id="faq" /> });
 const ContactSection  = dynamic(() => import("@/components/contact/ContactSection"), { loading: () => <div id="contact" /> });
 const Footer          = dynamic(() => import("@/components/layout/Footer"));
@@ -276,10 +275,7 @@ export default async function Home() {
       {/* 5 — Bornes de recharge */}
       <BornesSection dict={dict} />
 
-      {/* 6 — Formulaire devis multi-étapes */}
-      <DevisSection />
-
-      {/* 7 — FAQ accordéon */}
+      {/* 6 — FAQ accordéon */}
       <FaqSection />
 
       {/* 8 — Contact + urgence */}

@@ -231,7 +231,7 @@ export default function TarifsPage() {
               </span>
             </a>
             <Link
-              href="/#devis"
+              href="/devis"
               className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#2b2b2b]/15 bg-white text-[#2b2b2b] font-semibold text-[15px] hover:border-[#f97316] hover:text-[#f97316] transition-all duration-300"
             >
               Demander un devis en ligne

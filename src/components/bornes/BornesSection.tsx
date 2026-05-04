@@ -159,7 +159,7 @@ export default function BornesSection({ dict }: Props) {
         <SectionBridge
           text="Vous voulez savoir combien ça coûte exactement ? Obtenez votre estimation en 2 minutes."
           cta="Demander un devis gratuit"
-          href="#devis"
+          href="/devis"
         />
 
       </div>

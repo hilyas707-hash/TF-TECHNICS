@@ -130,7 +130,7 @@ export default function ServiceDetailPage({ service }: Props) {
                 </span>
               </a>
               <Link
-                href="/#devis"
+                href="/devis"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#2b2b2b]/12 text-[#2b2b2b] font-semibold text-[15px] hover:bg-[#2b2b2b]/[0.04] hover:border-[#2b2b2b]/20 active:scale-[0.98] transition-all duration-500"
               >
                 <FileText size={15} strokeWidth={2} /> Demander un devis
@@ -518,7 +518,7 @@ export default function ServiceDetailPage({ service }: Props) {
               </span>
             </a>
             <Link
-              href="/#devis"
+              href="/devis"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#2b2b2b]/12 text-[#2b2b2b] font-semibold text-[15px] hover:bg-[#2b2b2b]/[0.04] active:scale-[0.98] transition-all duration-400"
             >
               <FileText size={15} strokeWidth={2} /> Demander un devis gratuit

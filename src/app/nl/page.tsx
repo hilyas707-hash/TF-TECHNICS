@@ -8,7 +8,6 @@ const ServicesSection = dynamic(() => import("@/components/services/ServicesSect
 const TrustSection    = dynamic(() => import("@/components/trust/TrustSection"),    { loading: () => <div id="confiance" /> });
 const ZonesSection    = dynamic(() => import("@/components/zones/ZonesSection"),    { loading: () => <div id="zones" /> });
 const BornesSection   = dynamic(() => import("@/components/bornes/BornesSection"),  { loading: () => <div id="bornes" /> });
-const DevisSection    = dynamic(() => import("@/components/devis/DevisSection"),    { loading: () => <div id="devis" /> });
 const FaqSection      = dynamic(() => import("@/components/faq/FaqSection"),        { loading: () => <div id="faq" /> });
 const ContactSection  = dynamic(() => import("@/components/contact/ContactSection"), { loading: () => <div id="contact" /> });
 const Footer          = dynamic(() => import("@/components/layout/Footer"));
@@ -180,10 +179,7 @@ export default async function NlHome() {
       {/* 5 — Laadpalen */}
       <BornesSection dict={dict} />
 
-      {/* 6 — Offerteformulier */}
-      <DevisSection />
-
-      {/* 7 — Veelgestelde vragen */}
+      {/* 6 — Veelgestelde vragen */}
       <FaqSection />
 
       {/* 8 — Contact + spoed */}

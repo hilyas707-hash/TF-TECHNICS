@@ -740,7 +740,7 @@ export default function DevisSection() {
         <SectionBridge
           text="Une dernière hésitation ? Toutes les réponses sont juste en dessous."
           cta="Consulter la FAQ"
-          href="#faq"
+          href="/#faq"
         />
 
       </div>
