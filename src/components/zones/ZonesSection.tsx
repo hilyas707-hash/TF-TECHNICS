@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -28,15 +28,10 @@ export default function ZonesSection({ dict }: Props) {
 
   return (
     <section id="zones" className="relative bg-white py-24 md:py-32 overflow-hidden">
-      {/* Décoration */}
-      <div
-        aria-hidden
-        className="halo-br pointer-events-none absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full"
-      />
+      <div aria-hidden className="halo-br pointer-events-none absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 xl:px-12">
 
-        {/* En-tête */}
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +50,7 @@ export default function ZonesSection({ dict }: Props) {
           </p>
         </motion.div>
 
-        {/* ── MOBILE : accordéons compacts ──────────────────────────────────── */}
+        {/* Mobile : accordéons */}
         <div className="flex flex-col gap-3 md:hidden">
           {regions.map((region, i) => {
             const isOpen = openIndex === i;
@@ -69,7 +64,6 @@ export default function ZonesSection({ dict }: Props) {
                 transition={{ duration: 0.55, ease: SPRING, delay: i * 0.07 }}
                 className="rounded-2xl border border-black/[0.07] bg-white overflow-hidden"
               >
-                {/* Ligne d'en-tête cliquable */}
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : i)}
@@ -79,19 +73,14 @@ export default function ZonesSection({ dict }: Props) {
                     <span className={`w-2 h-2 rounded-full flex-shrink-0 ${s.dot}`} />
                     <span className="font-bold text-[0.95rem] text-[#2b2b2b]">{region.name}</span>
                     <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold border ${s.badge}`}>
-                      {region.cities.length} communes
+                      {region.cities.length} {zones.communes}
                     </span>
                   </div>
-                  <motion.div
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.3, ease: SPRING }}
-                    className="flex-shrink-0"
-                  >
+                  <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3, ease: SPRING }} className="flex-shrink-0">
                     <ChevronDown size={16} strokeWidth={2} className="text-[#9b9b9b]" />
                   </motion.div>
                 </button>
 
-                {/* Communes en pills */}
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
@@ -103,10 +92,7 @@ export default function ZonesSection({ dict }: Props) {
                     >
                       <div className="px-5 pb-5 flex flex-wrap gap-2">
                         {region.cities.map((city) => (
-                          <span
-                            key={city}
-                            className={`rounded-full px-3 py-1 text-[12px] font-medium border ${s.pill}`}
-                          >
+                          <span key={city} className={`rounded-full px-3 py-1 text-[12px] font-medium border ${s.pill}`}>
                             {city}
                           </span>
                         ))}
@@ -119,7 +105,7 @@ export default function ZonesSection({ dict }: Props) {
           })}
         </div>
 
-        {/* ── DESKTOP : grille 3 colonnes (inchangée) ───────────────────────── */}
+        {/* Desktop : grille 3 colonnes */}
         <div className="hidden md:grid md:grid-cols-3 gap-5">
           {regions.map((region, i) => {
             const s = REGION_STYLES[i];
@@ -139,7 +125,7 @@ export default function ZonesSection({ dict }: Props) {
                         <h3 className="font-bold text-[1rem] text-[#2b2b2b] leading-tight">{region.name}</h3>
                       </div>
                       <span className={`flex-shrink-0 rounded-full px-2.5 py-1 text-[10px] font-semibold border ${s.badge}`}>
-                        {region.cities.length} communes
+                        {region.cities.length} {zones.communes}
                       </span>
                     </div>
                     <ul className="flex flex-col gap-0">
@@ -166,20 +152,20 @@ export default function ZonesSection({ dict }: Props) {
           className="mt-10 text-center"
         >
           <p className="text-[0.9rem] text-[#6b6b6b]">
-            Votre commune n&apos;est pas listée ?{" "}
+            {zones.notListed}{" "}
             <a
-              href="#contact"
+              href="/contact"
               className="font-semibold text-[#f97316] underline underline-offset-2 decoration-[#f97316]/40 hover:decoration-[#f97316] transition-all duration-300"
             >
-              Contactez-nous
+              {zones.contactUs}
             </a>{" "}
-            — nous étudions chaque demande.
+            {zones.weConsider}
           </p>
         </motion.div>
 
         <SectionBridge
-          text="Vous avez un véhicule électrique — ou vous y pensez ? On installe votre borne de recharge."
-          cta="Découvrir nos bornes de recharge"
+          text={zones.bridgeText}
+          cta={zones.bridgeCta}
           href="#bornes"
         />
 

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -7,13 +7,6 @@ import SectionBridge from "@/components/ui/SectionBridge";
 import type { Dictionary } from "@/i18n/dictionaries/types";
 
 const SPRING = [0.32, 0.72, 0, 1] as const;
-
-const EXTRA_BENEFITS = [
-  "Compatible toutes marques de véhicules électriques",
-  "Modes de charge 2 et 3 (jusqu'à 22 kW)",
-  "Application mobile de supervision incluse",
-  "Garantie pièces & main-d'œuvre 2 ans",
-];
 
 interface Props { dict: Dictionary }
 
@@ -27,19 +20,13 @@ export default function BornesSection({ dict }: Props) {
   ];
 
   return (
-    <section
-      id="bornes"
-      className="relative bg-[#fff7ed] py-24 md:py-32 overflow-hidden"
-    >
-      <div
-        aria-hidden
-        className="halo-circle pointer-events-none absolute -bottom-32 -right-32 w-[700px] h-[700px] rounded-full"
-      />
+    <section id="bornes" className="relative bg-[#fff7ed] py-24 md:py-32 overflow-hidden">
+      <div aria-hidden className="halo-circle pointer-events-none absolute -bottom-32 -right-32 w-[700px] h-[700px] rounded-full" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 xl:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* ── GAUCHE — Contenu ── */}
+          {/* Gauche — Contenu */}
           <motion.div
             initial={{ opacity: 0, x: -32 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -67,7 +54,7 @@ export default function BornesSection({ dict }: Props) {
             </div>
 
             <div className="flex flex-col gap-2 pl-1">
-              {EXTRA_BENEFITS.map((b) => (
+              {bornes.extraBenefits.map((b) => (
                 <div key={b} className="flex items-center gap-2.5">
                   <Zap size={12} strokeWidth={2.5} className="text-[#f97316] flex-shrink-0" />
                   <span className="text-[0.875rem] text-[#6b6b6b]">{b}</span>
@@ -77,7 +64,7 @@ export default function BornesSection({ dict }: Props) {
 
             <div className="pt-2">
               <a
-                href="#contact"
+                href="/contact"
                 className="
                   group inline-flex items-center justify-between gap-3
                   pl-5 pr-2 py-2.5 rounded-full
@@ -96,7 +83,7 @@ export default function BornesSection({ dict }: Props) {
             </div>
           </motion.div>
 
-          {/* ── DROITE — Image ── */}
+          {/* Droite — Image */}
           <motion.div
             initial={{ opacity: 0, x: 32 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -104,17 +91,10 @@ export default function BornesSection({ dict }: Props) {
             transition={{ duration: 1.0, ease: SPRING, delay: 0.1 }}
             className="relative w-full"
           >
-            <div
-              aria-hidden
-              className="absolute inset-4 translate-y-4 rounded-[2rem] bg-[#f97316]/20 blur-2xl -z-10"
-            />
+            <div aria-hidden className="absolute inset-4 translate-y-4 rounded-[2rem] bg-[#f97316]/20 blur-2xl -z-10" />
 
-            {/* Outer shell */}
             <div className="relative rounded-[2rem] p-2 bg-[#f97316]/10 ring-1 ring-[#f97316]/20 shadow-[0_8px_48px_rgba(249,115,22,0.15)]">
-              {/* Image */}
-              <div
-                className="rounded-inner relative overflow-hidden aspect-[4/5] sm:aspect-[3/4]"
-              >
+              <div className="rounded-inner relative overflow-hidden aspect-[4/5] sm:aspect-[3/4]">
                 <Image
                   src="/electric-car-power-charging_1.jpg"
                   alt="Connecteur de borne de recharge installé par TF Technics"
@@ -123,10 +103,7 @@ export default function BornesSection({ dict }: Props) {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
-                {/* Overlay bas */}
-                <div
-                  className="halo-bottom-orange absolute inset-0 pointer-events-none"
-                />
+                <div className="halo-bottom-orange absolute inset-0 pointer-events-none" />
 
                 {/* Badge flottant */}
                 <motion.div
@@ -141,13 +118,13 @@ export default function BornesSection({ dict }: Props) {
                   </div>
                   <div>
                     <p className="text-[12px] font-bold text-[#2b2b2b] leading-tight">
-                      Jusqu&apos;à 22 kW
+                      {bornes.badgePower}
                     </p>
-                    <p className="text-[11px] text-[#6b6b6b] mt-0.5">Charge rapide · Mode 3</p>
+                    <p className="text-[11px] text-[#6b6b6b] mt-0.5">{bornes.badgeCharge}</p>
                   </div>
                   <div className="ml-auto">
-                    <p className="text-[11px] font-extrabold text-[#f97316]">Installation</p>
-                    <p className="text-[10px] text-[#6b6b6b]">en 1 journée</p>
+                    <p className="text-[11px] font-extrabold text-[#f97316]">{bornes.badgeInstall}</p>
+                    <p className="text-[10px] text-[#6b6b6b]">{bornes.badgeDuration}</p>
                   </div>
                 </motion.div>
               </div>
@@ -157,8 +134,8 @@ export default function BornesSection({ dict }: Props) {
         </div>
 
         <SectionBridge
-          text="Vous voulez savoir combien ça coûte exactement ? Obtenez votre estimation en 2 minutes."
-          cta="Demander un devis gratuit"
+          text={bornes.bridgeText}
+          cta={bornes.bridgeCta}
           href="/devis"
         />
 

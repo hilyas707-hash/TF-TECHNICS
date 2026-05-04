@@ -285,7 +285,7 @@ export default function DepannageUrgencePage() {
                 +32 483 48 04 96 — Appeler maintenant
               </a>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="text-[14px] font-semibold text-white/60 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white/60 transition-all duration-300"
               >
                 Formulaire de contact →

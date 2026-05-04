@@ -7,21 +7,21 @@ import type { Dictionary } from "@/i18n/dictionaries/types";
 interface Props { dict: Dictionary }
 
 export default function Footer({ dict }: Props) {
-  void dict;
+  const { footer } = dict;
   const year = new Date().getFullYear();
 
   const SERVICES = [
-    { label: "Dépannage d'urgence",    href: "/services/depannage-urgence"       },
-    { label: "Borne de recharge",      href: "/services/borne-recharge"          },
-    { label: "Mise en conformité",     href: "/services/renovation-conformite"   },
-    { label: "Installation électrique",href: "/services/installation-electrique" },
-    { label: "Diagnostic électrique",  href: "/services/diagnostic-electrique"   },
+    { label: footer.services.depannage,    href: "/services/depannage-urgence"       },
+    { label: footer.services.borne,        href: "/services/borne-recharge"          },
+    { label: footer.services.renovation,   href: "/services/renovation-conformite"   },
+    { label: footer.services.installation, href: "/services/installation-electrique" },
+    { label: footer.services.diagnostic,   href: "/services/diagnostic-electrique"   },
   ];
 
   const LEGAL = [
-    { label: "Mentions légales",             href: "/mentions-legales"           },
-    { label: "Politique de confidentialité", href: "/politique-confidentialite"  },
-    { label: "Cookies",                      href: "/cookies"                    },
+    { label: footer.legal,   href: "/mentions-legales"           },
+    { label: footer.privacy, href: "/politique-confidentialite"  },
+    { label: footer.cookies, href: "/cookies"                    },
   ];
 
   return (
@@ -38,21 +38,21 @@ export default function Footer({ dict }: Props) {
               <span className="text-white">-Technics</span>
             </Link>
             <p className="text-[0.85rem] text-white/60 leading-relaxed">
-              Électricien dépanneur à Bruxelles, Flandre et Brabant Wallon.
+              {footer.description}
             </p>
             <a
               href="tel:+32483480496"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#c2410c] text-white font-bold text-[13px] w-fit shadow-[0_4px_16px_rgba(194,65,12,0.35)] hover:bg-[#9a3412] transition-all duration-300"
             >
               <Phone size={13} strokeWidth={2.5} />
-              Appeler maintenant
+              {footer.callNow}
             </a>
           </div>
 
           {/* Droite — services */}
           <div className="flex flex-col gap-3">
             <p className="text-[10px] uppercase tracking-[0.18em] font-semibold text-white/55">
-              Services
+              {footer.servicesLabel}
             </p>
             <ul className="flex flex-col gap-2">
               {SERVICES.map((s) => (
@@ -72,7 +72,7 @@ export default function Footer({ dict }: Props) {
         {/* ── Bas ── */}
         <div className="border-t border-white/[0.07] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[0.75rem] text-white/55">
-            © {year} TF Technics · Assuré RC professionnelle
+            © {year} TF Technics · {footer.insurance}
           </p>
           <div className="flex items-center gap-4">
             {LEGAL.map((l) => (

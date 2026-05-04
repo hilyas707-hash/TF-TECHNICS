@@ -1,7 +1,6 @@
 import type { Dictionary } from "./types";
 
 const nl: Dictionary = {
-  /* ─── Metagegevens SEO ────────────────────────────────────────────────── */
   meta: {
     siteName: "Elektricien Herstellingen Brussel",
     defaultTitle: "Elektricien Herstellingen Brussel | Spoed 24u/24 – 7d/7",
@@ -11,7 +10,6 @@ const nl: Dictionary = {
       "elektricien brussel, elektrische panne, spoed elektricien, laadpaal elektrische wagen, erkende elektricien belgie",
   },
 
-  /* ─── Navigatie ───────────────────────────────────────────────────────── */
   nav: {
     services: "Diensten",
     zones: "Werkgebied",
@@ -20,9 +18,12 @@ const nl: Dictionary = {
     contact: "Contact",
     callNow: "Nu bellen",
     language: "FR",
+    tarifs: "Tarieven",
+    blog: "Blog",
+    devis: "Offerte",
+    faq: "FAQ",
   },
 
-  /* ─── Hero ────────────────────────────────────────────────────────────── */
   hero: {
     badge: "Interventie binnen 60 min",
     title: "Uw elektricien\nvoor herstellingen in Brussel",
@@ -36,9 +37,13 @@ const nl: Dictionary = {
       available: "Beschikbaar 24u/24",
       speed: "Interventie < 60 min",
     },
+    commitment:
+      "TF Technics interveniëert voor alle dringende elektrische herstellingen in Brussel, Waals-Brabant en Vlaanderen binnen maximaal 60 minuten. Beschikbaar 24u/24 en 7d/7 op +32 483 48 04 96 — inclusief weekends en Belgische feestdagen.",
+    statsZone: "Brussel · Vlaanderen · Waals-Brabant",
+    floatingDelay: "Interventietijd",
+    floatingWarranty: "Garantie werken",
   },
 
-  /* ─── Diensten ────────────────────────────────────────────────────────── */
   services: {
     sectionTitle: "Onze elektrische diensten",
     sectionSubtitle:
@@ -70,9 +75,62 @@ const nl: Dictionary = {
           "Volledige controle van uw installatie: meting van lekstromen, verificatie van IP-indices, gedetailleerd technisch rapport en prioriteitsaanbevelingen.",
       },
     },
+    learnMore: "Meer info",
+    bridgeText: "Honderden klanten in Brussel en Brabant vertrouwen ons al.",
+    bridgeCta: "Ontdek hun getuigenissen",
   },
 
-  /* ─── Werkgebied ──────────────────────────────────────────────────────── */
+  trust: {
+    sectionTitle: "Uw vertrouwde elektricien in Brussel",
+    stats: {
+      interventions: { value: "24u/24",   label: "Beschikbaar 7d/7" },
+      experience:    { value: "0 €",      label: "Gratis offerte" },
+      satisfaction:  { value: "2 jaar",   label: "Garantie werken" },
+      response:      { value: "< 60 min", label: "Reactietijd" },
+    },
+    reviewsTitle: "Wat onze klanten zeggen",
+    description:
+      "Erkend en verzekerd met BA Professionele Aansprakelijkheid, interveniëert TF Technics in Brussel, Vlaanderen en Waals-Brabant voor dringende elektrische herstellingen, laadpaalinstallaties en AREI-conformiteitswerken. Onze klanten vertrouwen ons al jaren.",
+    testimonialsLabel: "Klantengetuigenissen",
+    reassurance: "Verzekerd BA Prof. · Gratis offerte · Brussel — Vlaanderen — Waals-Brabant",
+    bridgeText: "Wij werken waarschijnlijk in uw gemeente — bekijk onze werkgebieden.",
+    bridgeCta: "Bekijk onze werkgebieden",
+    reviews: [
+      {
+        name: "Sophie V.",
+        location: "Elsene",
+        date: "2 weken geleden",
+        rating: 5,
+        text: "Ultrasnelle interventie op een zondagavond. Vakkundige, nette en efficiënte technieker. Panne opgelost in 30 minuten. Sterk aanbevolen!",
+        avatar: "S",
+      },
+      {
+        name: "Marc D.",
+        location: "Etterbeek",
+        date: "1 maand geleden",
+        rating: 5,
+        text: "Zeer goede ervaring voor de installatie van mijn laadpaal. Netjes werk, eerlijke prijs en goede opvolging. Dank aan het hele team.",
+        avatar: "M",
+      },
+      {
+        name: "Laura B.",
+        location: "Sint-Lambrechts-Woluwe",
+        date: "3 weken geleden",
+        rating: 5,
+        text: "Hoofdzekering kapot midden in de nacht. Gebeld om 22u, aankomst in minder dan 45 min. Zeer geruststellend en bekwaam. Correcte prijs voor een spoedinterventie.",
+        avatar: "L",
+      },
+      {
+        name: "Thomas K.",
+        location: "Ukkel",
+        date: "2 maanden geleden",
+        rating: 5,
+        text: "AREI-conformiteit snel uitgevoerd vóór mijn verkoop. Duidelijk rapport, werken goed uitgevoerd. Serieus van begin tot einde.",
+        avatar: "T",
+      },
+    ],
+  },
+
   zones: {
     sectionTitle: "Elektricien in Brussel, Vlaanderen en Waals-Brabant",
     sectionSubtitle:
@@ -104,9 +162,14 @@ const nl: Dictionary = {
         ],
       },
     },
+    communes: "gemeenten",
+    notListed: "Staat uw gemeente er niet bij?",
+    contactUs: "Contacteer ons",
+    weConsider: "— wij bekijken elke aanvraag.",
+    bridgeText: "Heeft u een elektrisch voertuig — of denkt u eraan? Wij installeren uw laadpaal.",
+    bridgeCta: "Ontdek onze laadpalen",
   },
 
-  /* ─── Laadpalen ───────────────────────────────────────────────────────── */
   bornes: {
     sectionTitle: "Laadpalen in Brussel",
     sectionSubtitle:
@@ -117,24 +180,40 @@ const nl: Dictionary = {
       subsidy: "Hulp bij premieaanvragen",
       speed: "Installatie op één dag",
     },
+    extraBenefits: [
+      "Compatibel met alle merken elektrische voertuigen",
+      "Laadmodi 2 en 3 (tot 22 kW)",
+      "Mobiele supervisie-app inbegrepen",
+      "Garantie onderdelen & arbeid 2 jaar",
+    ],
+    badgePower: "Tot 22 kW",
+    badgeCharge: "Snelladen · Modus 3",
+    badgeInstall: "Installatie",
+    badgeDuration: "op 1 dag",
+    bridgeText: "Wilt u weten hoeveel het precies kost? Krijg uw schatting in 2 minuten.",
+    bridgeCta: "Gratis offerte aanvragen",
   },
 
-  /* ─── Vertrouwen / Sociale bewijzen ──────────────────────────────────── */
-  trust: {
-    sectionTitle: "Uw vertrouwde elektricien in Brussel",
-    stats: {
-      interventions: { value: "24u/24",   label: "Beschikbaar 7d/7" },
-      experience:    { value: "0 €",      label: "Gratis offerte" },
-      satisfaction:  { value: "2 jaar",   label: "Garantie werken" },
-      response:      { value: "< 60 min", label: "Reactietijd" },
-    },
+  faq: {
+    sectionTitle: "Vragen over uw elektricien in Brussel",
+    sectionSubtitle:
+      "Vindt u het antwoord op uw vraag niet? Bel ons of gebruik ons offerteformulier.",
+    callCta: "Ons direct bellen",
+    bridgeText: "Klaar om uw project aan ons toe te vertrouwen? We zijn nu beschikbaar — ook vanavond.",
+    bridgeCta: "Contacteer ons direct",
+    filterAll: "Alle vragen",
+    filterDepannage: "Spoedherstellingen",
+    filterBorne: "Laadpaal",
+    filterRgie: "AREI-conformiteit",
+    filterInstallation: "Installatie",
+    filterGeneral: "Tarieven & algemeen",
   },
 
-  /* ─── Contact & Spoed ─────────────────────────────────────────────────── */
   contact: {
     sectionTitle: "Contacteer ons",
     urgencyTitle: "Elektrisch noodgeval?",
-    urgencySubtitle: "Bel ons onmiddellijk, wij interveniëren binnen 60 minuten.",
+    urgencySubtitle:
+      "TF Technics interveniëert voor alle dringende elektrische herstellingen in Brussel en Waals-Brabant binnen maximaal 60 minuten. Beschikbaar 24u/24 en 7d/7 op +32 483 48 04 96 — inclusief weekends en feestdagen.",
     phone: "+32 483 48 04 96",
     email: "info@tftechnics.be",
     hours: "Beschikbaar 24u/24 – 7d/7",
@@ -143,14 +222,33 @@ const nl: Dictionary = {
     formMessage: "Beschrijf uw probleem",
     formSubmit: "Mijn aanvraag verzenden",
     formSuccess: "Uw bericht is verzonden. Wij nemen snel contact met u op.",
+    availableBadge: "Nu beschikbaar",
+    contactLabel: "Contacteer ons",
+    phoneLabel: "Telefoon",
+    emailLabel: "E-mail",
+    availLabel: "Beschikbaarheid",
+    sending: "Verzenden…",
+    error: "Er is een fout opgetreden. Bel ons direct.",
+    placeholderMessage: "Beschrijf uw panne of project…",
   },
 
-  /* ─── Voettekst ───────────────────────────────────────────────────────── */
   footer: {
     tagline: "Elektricien – Brussel, Vlaanderen, Waals-Brabant",
     rights: "Alle rechten voorbehouden.",
     legal: "Juridische vermeldingen",
     privacy: "Privacybeleid",
+    description: "Elektricien in Brussel, Vlaanderen en Waals-Brabant.",
+    callNow: "Nu bellen",
+    insurance: "Verzekerd BA Professioneel",
+    cookies: "Cookies",
+    servicesLabel: "Diensten",
+    services: {
+      depannage:    "Spoedherstellingen",
+      borne:        "Laadpaal",
+      renovation:   "AREI-conformiteit",
+      installation: "Elektrische installatie",
+      diagnostic:   "Elektrische diagnose",
+    },
   },
 };
 

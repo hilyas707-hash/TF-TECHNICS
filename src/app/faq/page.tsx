@@ -61,7 +61,7 @@ export default async function FaqPage() {
       />
       <Navbar />
       <div className="pt-20">
-        <FaqSection />
+        <FaqSection dict={dict} />
       </div>
       <Footer dict={dict} />
     </>

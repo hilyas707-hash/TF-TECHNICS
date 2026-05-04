@@ -24,7 +24,7 @@ const NAV_LINKS = [
   { label: "Devis",    href: "/devis"    },
   { label: "FAQ",      href: "/faq"      },
   { label: "Blog",     href: "/blog"     },
-  { label: "Contact",  href: "/#contact" },
+  { label: "Contact",  href: "/contact" },
 ];
 
 export default function Navbar() {

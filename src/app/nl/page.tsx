@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { getDictionary } from "@/i18n";
-import { FAQ_ITEMS } from "@/data/faq";
+import { FAQ_ITEMS_NL } from "@/data/faq-nl";
 import HeroSection from "@/components/hero/HeroSection";
 
 const ServicesSection = dynamic(() => import("@/components/services/ServicesSection"), { loading: () => <div id="services" /> });
@@ -138,7 +138,7 @@ const jsonLdNl = {
 const faqJsonLdNl = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: FAQ_ITEMS.map((item) => ({
+  mainEntity: FAQ_ITEMS_NL.map((item) => ({
     "@type": "Question",
     name: item.question,
     acceptedAnswer: {
@@ -180,7 +180,7 @@ export default async function NlHome() {
       <BornesSection dict={dict} />
 
       {/* 6 — Veelgestelde vragen */}
-      <FaqSection />
+      <FaqSection dict={dict} items={FAQ_ITEMS_NL} />
 
       {/* 8 — Contact + spoed */}
       <ContactSection dict={dict} />

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Phone, Clock, Shield, Zap, ArrowUpRight, MapPin, Menu, X, Star, ChevronDown, BatteryCharging, Wrench, PlugZap, ScanSearch } from "lucide-react";
+import { Phone, Clock, Shield, Zap, ArrowUpRight, MapPin, Menu, X, ChevronDown, BatteryCharging, Wrench, PlugZap, ScanSearch } from "lucide-react";
 import { useState } from "react";
 import type { LucideIcon } from "lucide-react";
 import type { Dictionary } from "@/i18n/dictionaries/types";
@@ -19,41 +19,58 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: SPRING } },
 };
 // H1 = élément LCP — doit rester visible (opacity: 1) dès le rendu initial
-// pour que Lighthouse/Google le comptabilise immédiatement comme LCP candidate.
 const fadeUpLCP = {
   hidden:  { opacity: 1, y: 32 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: SPRING } },
 };
 
-const STATS = [
-  { value: "< 60 min", label: "Délai moyen"      },
-  { value: "24h/24",   label: "Disponibilité"    },
-  { value: "0 €",      label: "Devis gratuit"    },
-  { value: "2 ans",    label: "Garantie",        gold: false },
-];
+const SERVICES_ICONS: Record<string, LucideIcon> = {
+  depannage:    Zap,
+  borne:        BatteryCharging,
+  renovation:   Wrench,
+  installation: PlugZap,
+  diagnostic:   ScanSearch,
+};
 
-const SERVICES_NAV: { label: string; href: string; Icon: LucideIcon }[] = [
-  { label: "Dépannage d'urgence",    href: "/services/depannage-urgence",      Icon: Zap            },
-  { label: "Borne de recharge",      href: "/services/borne-recharge",         Icon: BatteryCharging },
-  { label: "Mise en conformité",     href: "/services/renovation-conformite",  Icon: Wrench         },
-  { label: "Installation électrique",href: "/services/installation-electrique",Icon: PlugZap        },
-  { label: "Diagnostic électrique",  href: "/services/diagnostic-electrique",  Icon: ScanSearch     },
-];
+const SERVICES_SLUGS: Record<string, string> = {
+  depannage:    "depannage-urgence",
+  borne:        "borne-recharge",
+  renovation:   "renovation-conformite",
+  installation: "installation-electrique",
+  diagnostic:   "diagnostic-electrique",
+};
 
 interface HeroSectionProps { dict: Dictionary }
 
 export default function HeroSection({ dict }: HeroSectionProps) {
-  const { hero, nav } = dict;
+  const { hero, nav, services, trust } = dict;
   const [menuOpen,     setMenuOpen]     = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
+  const servicesNav = (Object.entries(services.items) as [string, { title: string; description: string }][]).map(
+    ([key, item]) => ({
+      label: item.title,
+      href:  `/services/${SERVICES_SLUGS[key]}`,
+      Icon:  SERVICES_ICONS[key],
+    })
+  );
+
   const navLinks = [
     { label: nav.zones,   href: "#zones"   },
-    { label: nav.bornes,  href: "#bornes"  },
-    { label: "Tarifs",    href: "/tarifs"  },
-    { label: "Blog",      href: "/blog"    },
-    { label: nav.contact, href: "#contact" },
+    { label: nav.tarifs,  href: "/tarifs"  },
+    { label: nav.devis,   href: "/devis"   },
+    { label: nav.faq,     href: "/faq"     },
+    { label: nav.blog,    href: "/blog"    },
+    { label: nav.contact, href: "/contact" },
   ];
+
+  const statsBar = [
+    { value: trust.stats.response.value,      label: trust.stats.response.label      },
+    { value: trust.stats.interventions.value, label: trust.stats.interventions.label },
+    { value: trust.stats.experience.value,    label: trust.stats.experience.label    },
+    { value: trust.stats.satisfaction.value,  label: trust.stats.satisfaction.label  },
+  ];
+
   const titleLines = hero.title.split("\n");
 
   return (
@@ -73,17 +90,15 @@ export default function HeroSection({ dict }: HeroSectionProps) {
           </a>
           <div className="hidden md:flex items-center gap-5">
 
-            {/* ── Dropdown Services ── */}
+            {/* Dropdown Services */}
             <div className="relative group/svc py-4">
               <button type="button" className="flex items-center gap-1 text-[13px] font-medium text-[#6b6b6b] hover:text-[#2b2b2b] transition-colors duration-300">
-                Services
+                {nav.services}
                 <ChevronDown size={11} strokeWidth={2.5} className="transition-transform duration-300 group-hover/svc:rotate-180" />
               </button>
-
-              {/* Panel — pt-2 crée un pont invisible pour ne pas fermer au survol */}
               <div className="absolute top-full left-1/2 -translate-x-1/2 w-max opacity-0 pointer-events-none group-hover/svc:opacity-100 group-hover/svc:pointer-events-auto transition-all duration-200 pt-2">
-                <div className="rounded-2xl bg-white ring-1 ring-black/[0.07] shadow-[0_8px_40px_rgba(43,43,43,0.13)] p-2 min-w-[240px] flex flex-col gap-0.5">
-                  {SERVICES_NAV.map(({ label, href, Icon }) => (
+                <div className="rounded-2xl bg-white ring-1 ring-black/[0.07] shadow-[0_8px_40px_rgba(43,43,43,0.13)] p-2 min-w-[260px] flex flex-col gap-0.5">
+                  {servicesNav.map(({ label, href, Icon }) => (
                     <a key={href} href={href}
                       className="group/item flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#f97316]/[0.06] transition-colors duration-200"
                     >
@@ -130,7 +145,6 @@ export default function HeroSection({ dict }: HeroSectionProps) {
           transition={{ duration: 0.35, ease: SPRING }}
           className="absolute top-20 left-4 right-4 rounded-2xl bg-white/95 backdrop-blur-2xl ring-1 ring-black/[0.07] shadow-[0_16px_64px_rgba(43,43,43,0.14)] p-5 flex flex-col gap-1 md:hidden"
         >
-          {/* Services accordéon mobile */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={menuOpen ? { opacity: 1, y: 0, transition: { delay: 0, duration: 0.4, ease: SPRING } } : { opacity: 0, y: 12 }}
@@ -140,12 +154,12 @@ export default function HeroSection({ dict }: HeroSectionProps) {
               onClick={() => setServicesOpen(!servicesOpen)}
               className="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-[16px] font-semibold text-[#2b2b2b] hover:bg-[#2b2b2b]/[0.04] transition-colors"
             >
-              Services
+              {nav.services}
               <ChevronDown size={16} strokeWidth={2} className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`} />
             </button>
             {servicesOpen && (
               <div className="pl-2 flex flex-col gap-0.5 mt-1">
-                {SERVICES_NAV.map(({ label, href, Icon }) => (
+                {servicesNav.map(({ label, href, Icon }) => (
                   <a key={href} href={href} onClick={() => setMenuOpen(false)}
                     className="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#6b6b6b] hover:text-[#2b2b2b] hover:bg-[#2b2b2b]/[0.04] transition-colors"
                   >
@@ -194,10 +208,8 @@ export default function HeroSection({ dict }: HeroSectionProps) {
           />
         </div>
 
-        {/* Overlay multicouche */}
         <div aria-hidden className="hero-overlay-top absolute inset-0 pointer-events-none" />
         <div aria-hidden className="hero-overlay-side absolute inset-0 pointer-events-none" />
-        {/* Halo orange bas-gauche — signature marque */}
         <div aria-hidden className="hero-halo absolute pointer-events-none bottom-0 left-0 w-[700px] h-[400px]" />
 
         {/* Carte haut droite — délai */}
@@ -208,8 +220,12 @@ export default function HeroSection({ dict }: HeroSectionProps) {
           className="absolute top-28 right-5 md:top-32 md:right-10 z-10 hidden sm:block"
         >
           <div className="px-4 py-3.5 rounded-2xl bg-black/40 backdrop-blur-xl ring-1 ring-white/[0.12] shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
-            <p className="text-[28px] font-extrabold leading-none tracking-[-0.04em] text-white">&lt;&nbsp;60&nbsp;min</p>
-            <p className="text-[11px] text-white/80 mt-1.5 font-medium tracking-wider uppercase">Délai d&apos;intervention</p>
+            <p className="text-[28px] font-extrabold leading-none tracking-[-0.04em] text-white">
+              {trust.stats.response.value}
+            </p>
+            <p className="text-[11px] text-white/80 mt-1.5 font-medium tracking-wider uppercase">
+              {hero.floatingDelay}
+            </p>
           </div>
         </motion.div>
 
@@ -221,15 +237,18 @@ export default function HeroSection({ dict }: HeroSectionProps) {
           className="absolute top-[46%] -translate-y-1/2 right-5 md:right-10 z-10 hidden md:block"
         >
           <div className="px-4 py-3.5 rounded-2xl bg-black/40 backdrop-blur-xl ring-1 ring-white/[0.12] shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
-            <p className="text-[28px] font-extrabold leading-none tracking-[-0.04em] text-white">2 ans</p>
-            <p className="text-[11px] text-white/80 mt-1.5 font-medium tracking-wider uppercase">Garantie travaux</p>
+            <p className="text-[28px] font-extrabold leading-none tracking-[-0.04em] text-white">
+              {trust.stats.satisfaction.value}
+            </p>
+            <p className="text-[11px] text-white/80 mt-1.5 font-medium tracking-wider uppercase">
+              {hero.floatingWarranty}
+            </p>
           </div>
         </motion.div>
 
-        {/* ── Contenu principal ancré en bas ── */}
+        {/* Contenu principal ancré en bas */}
         <div className="relative z-10 mt-auto w-full">
 
-          {/* Bloc texte */}
           <div className="max-w-7xl mx-auto px-5 sm:px-10 xl:px-16 pt-0 pb-6">
             <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-5 max-w-[42rem]">
 
@@ -244,7 +263,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
                 </span>
               </motion.div>
 
-              {/* H1 — LCP : opacity toujours 1, seul translateY anime */}
+              {/* H1 — LCP */}
               <motion.h1 variants={fadeUpLCP}
                 className="text-[clamp(2.8rem,8vw,6.5rem)] font-extrabold leading-[1.02] tracking-[-0.04em] text-white">
                 {titleLines[0]}
@@ -283,19 +302,15 @@ export default function HeroSection({ dict }: HeroSectionProps) {
                 </div>
               </motion.div>
 
-              {/* Phrase d'engagement — texte plein pour crawlers IA et voix */}
+              {/* Phrase d'engagement */}
               <motion.p variants={fadeUp} className="text-[0.75rem] leading-relaxed text-white/55 max-w-[34rem]">
-                TF Technics intervient pour tout dépannage électrique urgent à Bruxelles,
-                en Brabant Wallon et en Flandre dans un délai maximum de 60 minutes.
-                Disponible 24h/24 et 7j/7 au{" "}
-                <span className="font-semibold text-white/75">{hero.phone}</span>
-                {" "}— y compris les week-ends et jours fériés belges.
+                {hero.commitment}
               </motion.p>
 
             </motion.div>
           </div>
 
-          {/* ── Barre de stats bas de page ── */}
+          {/* Barre de stats bas de page */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -304,9 +319,9 @@ export default function HeroSection({ dict }: HeroSectionProps) {
           >
             <div className="max-w-7xl mx-auto px-5 sm:px-10 xl:px-16">
               <div className="flex items-stretch divide-x divide-white/[0.08] overflow-x-auto scrollbar-none">
-                {STATS.map((s) => (
+                {statsBar.map((s) => (
                   <div key={s.label} className="flex flex-col items-center justify-center px-6 py-4 flex-1 min-w-[90px] gap-0.5">
-                    <span className={`text-[1.1rem] font-extrabold tracking-[-0.03em] leading-none ${s.gold ? "text-[#dbb82d]" : "text-white"}`}>
+                    <span className="text-[1.1rem] font-extrabold tracking-[-0.03em] leading-none text-white">
                       {s.value}
                     </span>
                     <span className="text-[10px] text-white/65 font-medium uppercase tracking-wider whitespace-nowrap">
@@ -317,7 +332,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
                 <div className="hidden lg:flex items-center justify-center px-6 py-4 flex-1 gap-1.5">
                   <MapPin size={11} strokeWidth={2} className="text-white/60" />
                   <span className="text-[11px] text-white/65 font-medium whitespace-nowrap">
-                    Bruxelles · Flandre · Brabant Wallon
+                    {hero.statsZone}
                   </span>
                 </div>
               </div>

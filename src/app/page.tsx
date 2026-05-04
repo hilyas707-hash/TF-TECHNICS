@@ -231,7 +231,7 @@ const websiteJsonLd = {
         { "@type": "ListItem", position: 3, name: "Zones d'intervention", item: "https://tftechnics.be/#zones" },
         { "@type": "ListItem", position: 4, name: "Tarifs",               item: "https://tftechnics.be/tarifs" },
         { "@type": "ListItem", position: 5, name: "Blog",                 item: "https://tftechnics.be/blog" },
-        { "@type": "ListItem", position: 6, name: "Contact",              item: "https://tftechnics.be/#contact" },
+        { "@type": "ListItem", position: 6, name: "Contact",              item: "https://tftechnics.be/contact" },
       ],
     },
   ],
@@ -276,7 +276,7 @@ export default async function Home() {
       <BornesSection dict={dict} />
 
       {/* 6 — FAQ accordéon */}
-      <FaqSection />
+      <FaqSection dict={dict} />
 
       {/* 8 — Contact + urgence */}
       <ContactSection dict={dict} />
