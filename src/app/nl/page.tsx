@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { getDictionary } from "@/i18n";
-import { FAQ_ITEMS_NL } from "@/data/faq-nl";
 import HeroSection from "@/components/hero/HeroSection";
 
 const ServicesSection = dynamic(() => import("@/components/services/ServicesSection"), { loading: () => <div id="services" /> });
 const TrustSection    = dynamic(() => import("@/components/trust/TrustSection"),    { loading: () => <div id="confiance" /> });
 const ZonesSection    = dynamic(() => import("@/components/zones/ZonesSection"),    { loading: () => <div id="zones" /> });
 const BornesSection   = dynamic(() => import("@/components/bornes/BornesSection"),  { loading: () => <div id="bornes" /> });
-const FaqSection      = dynamic(() => import("@/components/faq/FaqSection"),        { loading: () => <div id="faq" /> });
 const ContactSection  = dynamic(() => import("@/components/contact/ContactSection"), { loading: () => <div id="contact" /> });
 const Footer          = dynamic(() => import("@/components/layout/Footer"));
 
@@ -134,19 +132,6 @@ const jsonLdNl = {
   currenciesAccepted: "EUR",
 };
 
-/* ── Schema FAQPage NL ───────────────────────────────────────────────────── */
-const faqJsonLdNl = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQ_ITEMS_NL.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-};
 
 export default async function NlHome() {
   const dict = await getDictionary("nl");
@@ -158,12 +143,6 @@ export default async function NlHome() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdNl) }}
       />
-      {/* JSON-LD FAQPage NL */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLdNl) }}
-      />
-
       {/* 1 — Hero + Navigatie */}
       <HeroSection dict={dict} />
 
@@ -179,8 +158,18 @@ export default async function NlHome() {
       {/* 5 — Laadpalen */}
       <BornesSection dict={dict} />
 
-      {/* 6 — Veelgestelde vragen */}
-      <FaqSection dict={dict} items={FAQ_ITEMS_NL} />
+      {/* 6 — Link naar FAQ */}
+      <section id="faq" className="py-20 bg-zinc-50">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-xs uppercase tracking-[0.2em] font-medium text-orange-500 mb-4">FAQ</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">Vragen over onze diensten?</h2>
+          <p className="text-zinc-500 mb-8 max-w-lg mx-auto text-base">Responstijden, tarieven, garanties, AREI-conformiteit… Alle antwoorden staan in onze uitgebreide FAQ.</p>
+          <a href="/faq" className="inline-flex items-center gap-3 bg-zinc-900 text-white px-8 py-4 rounded-full font-medium hover:bg-zinc-800 transition-all duration-300">
+            Bekijk alle veelgestelde vragen
+            <span className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-sm">→</span>
+          </a>
+        </div>
+      </section>
 
       {/* 8 — Contact + spoed */}
       <ContactSection dict={dict} />

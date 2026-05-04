@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { getDictionary } from "@/i18n";
-import { FAQ_ITEMS } from "@/data/faq";
 import HeroSection from "@/components/hero/HeroSection";
 
 /* Sections sous le fold — JS chargé en chunks asynchrones séparés.
@@ -11,7 +10,6 @@ const ServicesSection = dynamic(() => import("@/components/services/ServicesSect
 const TrustSection    = dynamic(() => import("@/components/trust/TrustSection"),    { loading: () => <div id="confiance" /> });
 const ZonesSection    = dynamic(() => import("@/components/zones/ZonesSection"),    { loading: () => <div id="zones" /> });
 const BornesSection   = dynamic(() => import("@/components/bornes/BornesSection"),  { loading: () => <div id="bornes" /> });
-const FaqSection      = dynamic(() => import("@/components/faq/FaqSection"),        { loading: () => <div id="faq" /> });
 const ContactSection  = dynamic(() => import("@/components/contact/ContactSection"), { loading: () => <div id="contact" /> });
 const Footer          = dynamic(() => import("@/components/layout/Footer"));
 
@@ -237,19 +235,6 @@ const websiteJsonLd = {
   ],
 };
 
-/* ── Schéma JSON-LD FAQPage ──────────────────────────────────────────────── */
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQ_ITEMS.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-};
 
 export default async function Home() {
   const dict = await getDictionary("fr");
@@ -257,7 +242,6 @@ export default async function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
 
       {/* 1 — Hero + Navigation flottante */}
@@ -275,8 +259,18 @@ export default async function Home() {
       {/* 5 — Bornes de recharge */}
       <BornesSection dict={dict} />
 
-      {/* 6 — FAQ accordéon */}
-      <FaqSection dict={dict} />
+      {/* 6 — Lien vers la FAQ */}
+      <section id="faq" className="py-20 bg-zinc-50">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-xs uppercase tracking-[0.2em] font-medium text-orange-500 mb-4">FAQ</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">Des questions sur nos prestations ?</h2>
+          <p className="text-zinc-500 mb-8 max-w-lg mx-auto text-base">Délais d&apos;intervention, tarifs, garanties, conformité AREI… Retrouvez toutes les réponses dans notre FAQ complète.</p>
+          <a href="/faq" className="inline-flex items-center gap-3 bg-zinc-900 text-white px-8 py-4 rounded-full font-medium hover:bg-zinc-800 transition-all duration-300">
+            Voir toutes les questions fréquentes
+            <span className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-sm">→</span>
+          </a>
+        </div>
+      </section>
 
       {/* 8 — Contact + urgence */}
       <ContactSection dict={dict} />
