@@ -186,7 +186,7 @@ export default function CookieBanner() {
                     13 mois, conformément au RGPD.{" "}
                     <a
                       href="/cookies"
-                      className="text-[#f97316] font-semibold hover:underline inline-flex items-center gap-0.5"
+                      className="text-[#c2410c] font-semibold hover:underline inline-flex items-center gap-0.5"
                     >
                       En savoir plus
                       <ExternalLink size={10} strokeWidth={2.5} />
@@ -203,11 +203,11 @@ export default function CookieBanner() {
                   className="
                     group w-full inline-flex items-center justify-center gap-2
                     py-3 rounded-full
-                    bg-[#f97316] text-white font-bold text-[13px]
+                    bg-[#c2410c] text-white font-bold text-[13px]
                     transition-all duration-400 ease-[cubic-bezier(0.32,0.72,0,1)]
-                    hover:bg-[#ea580c] active:scale-[0.98]
-                    shadow-[0_4px_16px_rgba(249,115,22,0.35)]
-                    hover:shadow-[0_4px_20px_rgba(249,115,22,0.50)]
+                    hover:bg-[#9a3412] active:scale-[0.98]
+                    shadow-[0_4px_16px_rgba(194,65,12,0.35)]
+                    hover:shadow-[0_4px_20px_rgba(194,65,12,0.50)]
                   "
                 >
                   <Check size={13} strokeWidth={2.5} />
@@ -399,7 +399,7 @@ export default function CookieBanner() {
                 </button>
                 <button
                   onClick={acceptAll}
-                  className="flex-1 py-2.5 rounded-full bg-[#f97316] text-white font-bold text-[13px] hover:bg-[#ea580c] transition-all duration-300 active:scale-[0.98] shadow-[0_4px_14px_rgba(249,115,22,0.35)]"
+                  className="flex-1 py-2.5 rounded-full bg-[#c2410c] text-white font-bold text-[13px] hover:bg-[#9a3412] transition-all duration-300 active:scale-[0.98] shadow-[0_4px_14px_rgba(194,65,12,0.35)]"
                 >
                   Tout accepter
                 </button>

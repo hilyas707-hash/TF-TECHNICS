@@ -37,12 +37,12 @@ export default function Footer({ dict }: Props) {
               <span className="text-[#f97316]">tf</span>
               <span className="text-white">-Technics</span>
             </Link>
-            <p className="text-[0.85rem] text-white/40 leading-relaxed">
+            <p className="text-[0.85rem] text-white/60 leading-relaxed">
               Électricien dépanneur à Bruxelles, Flandre et Brabant Wallon.
             </p>
             <a
               href="tel:+32483480496"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f97316] text-white font-bold text-[13px] w-fit shadow-[0_4px_16px_rgba(249,115,22,0.35)] hover:bg-[#ea580c] transition-all duration-300"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#c2410c] text-white font-bold text-[13px] w-fit shadow-[0_4px_16px_rgba(194,65,12,0.35)] hover:bg-[#9a3412] transition-all duration-300"
             >
               <Phone size={13} strokeWidth={2.5} />
               Appeler maintenant
@@ -51,7 +51,7 @@ export default function Footer({ dict }: Props) {
 
           {/* Droite — services */}
           <div className="flex flex-col gap-3">
-            <p className="text-[10px] uppercase tracking-[0.18em] font-semibold text-white/30">
+            <p className="text-[10px] uppercase tracking-[0.18em] font-semibold text-white/55">
               Services
             </p>
             <ul className="flex flex-col gap-2">
@@ -71,7 +71,7 @@ export default function Footer({ dict }: Props) {
 
         {/* ── Bas ── */}
         <div className="border-t border-white/[0.07] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[0.75rem] text-white/25">
+          <p className="text-[0.75rem] text-white/55">
             © {year} TF Technics · Assuré RC professionnelle
           </p>
           <div className="flex items-center gap-4">
@@ -79,7 +79,7 @@ export default function Footer({ dict }: Props) {
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-[0.72rem] text-white/25 hover:text-white/55 transition-colors duration-300"
+                className="text-[0.72rem] text-white/55 hover:text-white/80 transition-colors duration-300"
               >
                 {l.label}
               </Link>

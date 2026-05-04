@@ -42,7 +42,14 @@
       "Bash(sed -i 's/style={{ background: \"radial-gradient\\(ellipse at 50% 50%, rgba\\(249,115,22,0.40\\) 0%, transparent 68%\\)\" }}/className=\"halo-urgence\"/' services/ServicesSection.tsx)",
       "Bash(sed -i 's/style={{ background: \"radial-gradient\\(circle at 80% 80%, rgba\\(249,115,22,0.05\\) 0%, transparent 65%\\)\" }}/className=\"halo-br\"/' zones/ZonesSection.tsx)",
       "Bash(sed -i 's/style={{ background: \"radial-gradient\\(circle, rgba\\(249,115,22,0.10\\) 0%, transparent 65%\\)\" }}/className=\"halo-circle\"/' bornes/BornesSection.tsx)",
-      "Bash(sed -i 's/style={{ transform: \"translateY\\(16px\\)\" }}/className=\"translate-y-4\"/' bornes/BornesSection.tsx)"
+      "Bash(sed -i 's/style={{ transform: \"translateY\\(16px\\)\" }}/className=\"translate-y-4\"/' bornes/BornesSection.tsx)",
+      "WebFetch(domain:tftechnics.be)",
+      "Bash(python3 *)",
+      "Bash(node *)",
+      "WebFetch(domain:pagespeed.web.dev)",
+      "WebFetch(domain:www.googleapis.com)",
+      "Bash(npx lighthouse *)",
+      "Bash(sort -k5 -rn)"
     ]
   }
 }

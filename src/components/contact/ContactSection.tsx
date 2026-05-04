@@ -95,11 +95,11 @@ export default function ContactSection({ dict }: Props) {
                 className="
                   group flex-shrink-0 inline-flex items-center justify-between gap-3
                   pl-6 pr-2 py-2.5 rounded-full
-                  bg-[#f97316] text-white font-bold text-[16px]
+                  bg-[#c2410c] text-white font-bold text-[16px]
                   transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
-                  hover:bg-[#ea580c] active:scale-[0.98]
-                  shadow-[0_4px_24px_rgba(249,115,22,0.45)]
-                  hover:shadow-[0_6px_32px_rgba(249,115,22,0.60)]
+                  hover:bg-[#9a3412] active:scale-[0.98]
+                  shadow-[0_4px_24px_rgba(194,65,12,0.45)]
+                  hover:shadow-[0_6px_32px_rgba(194,65,12,0.60)]
                 "
               >
                 <div className="flex items-center gap-3">

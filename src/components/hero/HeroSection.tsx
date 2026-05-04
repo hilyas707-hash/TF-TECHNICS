@@ -262,7 +262,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
               {/* CTA */}
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-1">
                 <a href={`tel:${hero.phone.replace(/\s/g, "")}`}
-                  className="group relative flex items-center justify-between gap-3 w-full sm:w-auto sm:inline-flex pl-5 pr-2 py-3.5 sm:py-3 rounded-full bg-[#f97316] text-white font-bold text-[15px] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#ea580c] active:scale-[0.98] shadow-[0_4px_32px_rgba(249,115,22,0.55)] hover:shadow-[0_8px_40px_rgba(249,115,22,0.7)]">
+                  className="group relative flex items-center justify-between gap-3 w-full sm:w-auto sm:inline-flex pl-5 pr-2 py-3.5 sm:py-3 rounded-full bg-[#c2410c] text-white font-bold text-[15px] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#9a3412] active:scale-[0.98] shadow-[0_4px_32px_rgba(194,65,12,0.55)] hover:shadow-[0_8px_40px_rgba(194,65,12,0.7)]">
                   <div className="flex items-center gap-2.5">
                     <Phone size={15} strokeWidth={2.5} />{hero.cta}
                   </div>

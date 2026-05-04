@@ -4,13 +4,13 @@ import { getDictionary } from "@/i18n";
 import { FAQ_ITEMS } from "@/data/faq";
 import HeroSection from "@/components/hero/HeroSection";
 
-const ServicesSection = dynamic(() => import("@/components/services/ServicesSection"));
-const TrustSection    = dynamic(() => import("@/components/trust/TrustSection"));
-const ZonesSection    = dynamic(() => import("@/components/zones/ZonesSection"));
-const BornesSection   = dynamic(() => import("@/components/bornes/BornesSection"));
-const DevisSection    = dynamic(() => import("@/components/devis/DevisSection"));
-const FaqSection      = dynamic(() => import("@/components/faq/FaqSection"));
-const ContactSection  = dynamic(() => import("@/components/contact/ContactSection"));
+const ServicesSection = dynamic(() => import("@/components/services/ServicesSection"), { loading: () => <div id="services" /> });
+const TrustSection    = dynamic(() => import("@/components/trust/TrustSection"),    { loading: () => <div id="confiance" /> });
+const ZonesSection    = dynamic(() => import("@/components/zones/ZonesSection"),    { loading: () => <div id="zones" /> });
+const BornesSection   = dynamic(() => import("@/components/bornes/BornesSection"),  { loading: () => <div id="bornes" /> });
+const DevisSection    = dynamic(() => import("@/components/devis/DevisSection"),    { loading: () => <div id="devis" /> });
+const FaqSection      = dynamic(() => import("@/components/faq/FaqSection"),        { loading: () => <div id="faq" /> });
+const ContactSection  = dynamic(() => import("@/components/contact/ContactSection"), { loading: () => <div id="contact" /> });
 const Footer          = dynamic(() => import("@/components/layout/Footer"));
 
 /* ── Métadonnées SEO — page d'accueil NL ───────────────────────────────────── */
