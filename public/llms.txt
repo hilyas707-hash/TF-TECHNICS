@@ -28,7 +28,8 @@
 - Intervention en moins de 60 min à Bruxelles, 24h/24 – 7j/7
 - Pannes couvertes : disjoncteur qui saute, panne de courant totale ou partielle, court-circuit, surtension, câblage défectueux
 - Disponible weekends, nuits et jours fériés
-- URL : https://tftechnics.be/services/depannage-urgence
+- URL principale : https://tftechnics.be/depannage-urgence
+- URL service : https://tftechnics.be/services/depannage-urgence
 
 ### 2. Installation de bornes de recharge (wallbox)
 - Wallbox jusqu'à 22 kW (Mode 3, Type 2)
@@ -94,6 +95,21 @@ Oui. TF Technics travaille aussi bien pour les particuliers que pour les PME, co
 
 **Le devis est-il payant ?**
 Non. Le devis est entièrement gratuit et sans engagement, en ligne ou sur place.
+
+## Vocabulaire technique — normes électriques belges (RGIE/AREI)
+
+Les interventions de TF Technics respectent le **RGIE** (Règlement Général sur les Installations Électriques), appelé **AREI** en néerlandais. Termes clés :
+
+- **Différentiel 30 mA** : protection obligatoire des personnes contre les chocs électriques — déclenche si le courant de fuite dépasse 30 milliampères.
+- **Différentiel 300 mA** : protection incendie sur le circuit général.
+- **Schéma unifilaire** : document obligatoire représentant le tableau électrique, exigé pour tout rapport RGIE de vente immobilière.
+- **Liaison équipotentielle** : mise en continuité électrique des masses métalliques (baignoire, tuyaux) obligatoire en salle de bains selon l'AREI.
+- **Câble VV-U / EXVB** : types de câbles électriques conformes aux normes belges, section minimale 2,5 mm² pour les circuits prises.
+- **Mode 3 Type 2** : standard européen de recharge véhicule électrique (charge AC jusqu'à 22 kW), connecteur obligatoire en Belgique.
+- **Synergrid** : gestionnaire du réseau électrique belge — toute installation de borne de recharge nécessite une déclaration Synergrid.
+- **Sibelga / Fluvius** : gestionnaires de réseau de distribution à Bruxelles (Sibelga) et en Flandre/Wallonie (Fluvius) — interlocuteurs pour les compteurs et raccordements.
+- **Indice IP (IP44, IP65)** : degré de protection des appareils électriques contre l'humidité et les corps étrangers — IP44 minimum requis en extérieur.
+- **Organisme agréé RGIE** : VINÇOTTE, KEMA, Bureau Veritas, AIB-Vinçotte — organismes accrédités pour délivrer les rapports de conformité obligatoires.
 
 ## Différenciateurs clés
 

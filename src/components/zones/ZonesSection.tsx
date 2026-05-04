@@ -71,6 +71,7 @@ export default function ZonesSection({ dict }: Props) {
               >
                 {/* Ligne d'en-tête cliquable */}
                 <button
+                  type="button"
                   onClick={() => setOpenIndex(isOpen ? null : i)}
                   className="w-full flex items-center justify-between gap-3 px-5 py-4 text-left"
                 >

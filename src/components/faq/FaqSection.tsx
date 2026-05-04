@@ -93,6 +93,7 @@ export default function FaqSection() {
                   {/* Bouton question — h3 pour la hiérarchie SEO, contents = invisible visuellement */}
                   <h3 className="contents">
                   <button
+                    type="button"
                     onClick={() => toggle(i)}
                     aria-expanded={isOpen}
                     className="

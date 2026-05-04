@@ -69,7 +69,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
 
             {/* ── Dropdown Services ── */}
             <div className="relative group/svc py-4">
-              <button className="flex items-center gap-1 text-[13px] font-medium text-[#6b6b6b] hover:text-[#2b2b2b] transition-colors duration-300">
+              <button type="button" className="flex items-center gap-1 text-[13px] font-medium text-[#6b6b6b] hover:text-[#2b2b2b] transition-colors duration-300">
                 Services
                 <ChevronDown size={11} strokeWidth={2.5} className="transition-transform duration-300 group-hover/svc:rotate-180" />
               </button>
@@ -105,7 +105,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
               className="group hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-[#2b2b2b] text-white text-[13px] font-semibold transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#f97316] active:scale-[0.97]">
               <Phone size={12} strokeWidth={2.5} />{nav.callNow}
             </a>
-            <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu"
+            <button type="button" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu"
               className="md:hidden relative w-11 h-11 rounded-full bg-[#2b2b2b]/[0.07] flex items-center justify-center transition-colors hover:bg-[#2b2b2b]/[0.12] active:scale-[0.95]">
               <motion.div animate={{ rotate: menuOpen ? 45 : 0, opacity: menuOpen ? 0 : 1 }} transition={{ duration: 0.3, ease: SPRING }} className="absolute">
                 <Menu size={18} strokeWidth={2} className="text-[#2b2b2b]" />
@@ -130,6 +130,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
             animate={menuOpen ? { opacity: 1, y: 0, transition: { delay: 0, duration: 0.4, ease: SPRING } } : { opacity: 0, y: 12 }}
           >
             <button
+              type="button"
               onClick={() => setServicesOpen(!servicesOpen)}
               className="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-[16px] font-semibold text-[#2b2b2b] hover:bg-[#2b2b2b]/[0.04] transition-colors"
             >

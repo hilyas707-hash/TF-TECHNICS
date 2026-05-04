@@ -44,6 +44,8 @@ const jsonLd = {
   "@type": ["LocalBusiness", "Electrician"],
   "@id": "https://tftechnics.be/#business",
   name: "TF Technics",
+  legalName: "TF Technics SRL",
+  vatID: "BE1037.492.402",
   description:
     "Électricien professionnel intervenant en urgence à Bruxelles, en Flandre et en Brabant Wallon. Dépannage, installation de bornes de recharge et mise en conformité RGIE.",
   url: "https://tftechnics.be",
