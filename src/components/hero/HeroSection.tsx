@@ -40,17 +40,19 @@ const SERVICES_SLUGS: Record<string, string> = {
   diagnostic:   "diagnostic-electrique",
 };
 
-interface HeroSectionProps { dict: Dictionary }
+interface HeroSectionProps { dict: Dictionary; locale?: string }
 
-export default function HeroSection({ dict }: HeroSectionProps) {
+export default function HeroSection({ dict, locale }: HeroSectionProps) {
   const { hero, nav, services, trust } = dict;
   const [menuOpen,     setMenuOpen]     = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
+  const serviceBase = locale === "nl" ? "/nl/services" : "/services";
+
   const servicesNav = (Object.entries(services.items) as [string, { title: string; description: string }][]).map(
     ([key, item]) => ({
       label: item.title,
-      href:  `/services/${SERVICES_SLUGS[key]}`,
+      href:  `${serviceBase}/${SERVICES_SLUGS[key]}`,
       Icon:  SERVICES_ICONS[key],
     })
   );

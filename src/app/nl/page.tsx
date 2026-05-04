@@ -144,7 +144,7 @@ export default async function NlHome() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdNl) }}
       />
       {/* 1 — Hero + Navigatie */}
-      <HeroSection dict={dict} />
+      <HeroSection dict={dict} locale="nl" />
 
       {/* 2 — Onze diensten */}
       <ServicesSection dict={dict} locale="nl" />
