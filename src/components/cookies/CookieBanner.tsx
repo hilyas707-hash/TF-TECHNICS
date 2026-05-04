@@ -157,9 +157,9 @@ export default function CookieBanner() {
       {view === "banner" && (
         <motion.div
           key="banner"
-          initial={{ opacity: 0, y: 80, filter: "blur(8px)" }}
-          animate={{ opacity: 1, y: 0,  filter: "blur(0px)" }}
-          exit={{   opacity: 0, y: 80,  filter: "blur(8px)" }}
+          initial={{ opacity: 0, y: 64 }}
+          animate={{ opacity: 1, y: 0  }}
+          exit={{   opacity: 0, y: 64  }}
           transition={{ duration: 0.55, ease: SPRING }}
           className="
             fixed bottom-4 left-4 right-4 z-[100]

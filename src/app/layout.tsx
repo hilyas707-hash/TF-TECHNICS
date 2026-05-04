@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import { GoogleTagManager } from '@next/third-parties/google';
+import Script from "next/script";
 import "./globals.css";
 import CookieBanner from "@/components/cookies/CookieBanner";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
@@ -65,7 +65,14 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
-      <GoogleTagManager gtmId="GTM-5GSLL4S5" />
+      {/* GTM — lazyOnload : chargé après le load event pour ne pas bloquer le thread principal */}
+      <Script
+        id="gtm-init"
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{
+          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5GSLL4S5');`,
+        }}
+      />
 
       <body className="min-h-full bg-white text-[#2b2b2b]">
         <ScrollToTop />

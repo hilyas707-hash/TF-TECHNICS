@@ -79,18 +79,13 @@ body {
 .hero-halo         { background: radial-gradient(ellipse at 20% 100%, rgba(249,115,22,0.10) 0%, transparent 55%); }
 
 /* Halos de section — décoration ambiante orange */
-.halo-top          { background: radial-gradient(ellipse at 50% 0%,   rgba(249,115,22,0.08) 0%, transparent 60%); }
 .halo-top-md       { background: radial-gradient(ellipse at 50% -10%, rgba(249,115,22,0.07) 0%, transparent 55%); }
-.halo-top-lg       { background: radial-gradient(ellipse at 50% 0%,   rgba(249,115,22,0.15) 0%, transparent 60%); }
-.halo-bottom       { background: radial-gradient(ellipse at 50% 100%, rgba(249,115,22,0.08) 0%, transparent 55%); }
 .halo-center       { background: radial-gradient(ellipse,             rgba(249,115,22,0.05) 0%, transparent 70%); }
 .halo-center-lg    { background: radial-gradient(ellipse,             rgba(249,115,22,0.15) 0%, transparent 65%); }
 .halo-tl           { background: radial-gradient(ellipse at 0% 0%,    rgba(249,115,22,0.06) 0%, transparent 65%); }
-.halo-tr           { background: radial-gradient(circle at 70% 30%,   rgba(249,115,22,0.06) 0%, transparent 65%); }
 .halo-br           { background: radial-gradient(circle at 80% 80%,   rgba(249,115,22,0.05) 0%, transparent 65%); }
 .halo-br-md        { background: radial-gradient(circle at 80% 50%,   rgba(249,115,22,0.05) 0%, transparent 65%); }
 .halo-circle       { background: radial-gradient(circle,              rgba(249,115,22,0.10) 0%, transparent 65%); }
-.halo-service-top  { background: radial-gradient(ellipse at 60% 0%,   rgba(249,115,22,0.08) 0%, transparent 60%); }
 .halo-urgence        { background: radial-gradient(ellipse at 50% 50%,  rgba(249,115,22,0.40) 0%, transparent 68%); }
 .halo-bottom-orange  { background: linear-gradient(to top, rgba(249,115,22,0.25) 0%, transparent 55%); }
 

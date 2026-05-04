@@ -18,6 +18,12 @@ const fadeUp = {
   hidden:  { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: SPRING } },
 };
+// H1 = élément LCP — doit rester visible (opacity: 1) dès le rendu initial
+// pour que Lighthouse/Google le comptabilise immédiatement comme LCP candidate.
+const fadeUpLCP = {
+  hidden:  { opacity: 1, y: 32 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: SPRING } },
+};
 
 const STATS = [
   { value: "< 60 min", label: "Délai moyen"      },
@@ -238,8 +244,8 @@ export default function HeroSection({ dict }: HeroSectionProps) {
                 </span>
               </motion.div>
 
-              {/* H1 */}
-              <motion.h1 variants={fadeUp}
+              {/* H1 — LCP : opacity toujours 1, seul translateY anime */}
+              <motion.h1 variants={fadeUpLCP}
                 className="text-[clamp(2.8rem,8vw,6.5rem)] font-extrabold leading-[1.02] tracking-[-0.04em] text-white">
                 {titleLines[0]}
                 <br />
