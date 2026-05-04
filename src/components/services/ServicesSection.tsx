@@ -1,15 +1,10 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Zap,
-  PlugZap,
-  BatteryCharging,
-  Wrench,
-  ScanSearch,
-  ArrowUpRight,
+  Zap, PlugZap, BatteryCharging, Wrench, ScanSearch, ArrowUpRight,
 } from "lucide-react";
 import SectionBridge from "@/components/ui/SectionBridge";
 import type { Dictionary } from "@/i18n/dictionaries/types";
@@ -32,16 +27,14 @@ const SERVICE_SLUGS: Record<string, string> = {
   diagnostic:   "diagnostic-electrique",
 };
 
-/* Image ou dégradé par service */
 const SERVICE_VISUALS: Record<string, { img?: string; gradient: string }> = {
-  depannage:    { img: "/depannageelectrique.png",           gradient: "linear-gradient(135deg,#1e1e1e 0%,#2b2b2b 100%)" },
-  borne:        { img: "/BorneElectriqueCards.jpg",          gradient: "linear-gradient(135deg,#0f2027 0%,#203a43 50%,#2c5364 100%)" },
-  renovation:   { img: "/MiseAuNorme.png", gradient: "linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)" },
-  installation: { img: "/InstalationElectrique.jpg", gradient: "linear-gradient(135deg,#2b2b2b 0%,#3d2c1e 50%,#f97316 100%)" },
-  diagnostic:   { gradient: "linear-gradient(135deg,#f5f5f5 0%,#ebebeb 100%)" },
+  depannage:    { img: "/depannageelectrique.png",    gradient: "linear-gradient(135deg,#1e1e1e 0%,#2b2b2b 100%)" },
+  borne:        { img: "/BorneElectriqueCards.jpg",   gradient: "linear-gradient(135deg,#0f2027 0%,#203a43 50%,#2c5364 100%)" },
+  renovation:   { img: "/MiseAuNorme.png",            gradient: "linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)" },
+  installation: { img: "/InstalationElectrique.jpg",  gradient: "linear-gradient(135deg,#2b2b2b 0%,#3d2c1e 50%,#f97316 100%)" },
+  diagnostic:   {                                     gradient: "linear-gradient(135deg,#f5f5f5 0%,#ebebeb 100%)" },
 };
 
-/* Bento spans */
 const BENTO_SPAN = [
   "col-span-12 lg:col-span-7",
   "col-span-12 lg:col-span-5",
@@ -49,7 +42,6 @@ const BENTO_SPAN = [
   "col-span-12 md:col-span-6",
 ];
 
-/* Hauteur de la zone image par card */
 const IMG_HEIGHT = ["h-56", "h-52", "h-48", "h-48"];
 
 interface Props { dict: Dictionary }
@@ -65,12 +57,10 @@ export default function ServicesSection({ dict }: Props) {
   return (
     <section id="services" className="relative bg-white py-24 md:py-32 overflow-hidden">
 
-      {/* Décoration ambiante */}
       <div aria-hidden className="halo-center pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[300px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 xl:px-12">
 
-        {/* En-tête */}
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -89,10 +79,10 @@ export default function ServicesSection({ dict }: Props) {
         {/* Grille Bento */}
         <div className="grid grid-cols-12 gap-4 md:gap-5">
           {items.map(([key, item], i) => {
-            const Icon    = SERVICE_ICONS[key];
-            const visual  = SERVICE_VISUALS[key];
-            const isWide  = i === 4;
-            const isDiag  = key === "diagnostic";
+            const Icon   = SERVICE_ICONS[key];
+            const visual = SERVICE_VISUALS[key];
+            const isWide = i === 4;
+            const isDiag = key === "diagnostic";
 
             return (
               <motion.div
@@ -112,7 +102,6 @@ export default function ServicesSection({ dict }: Props) {
                     bg-white flex ${isWide ? "flex-col md:flex-row" : "flex-col"}
                   `}>
 
-                    {/* ── Zone image / visuel ── */}
                     <div className={`
                       relative overflow-hidden flex-shrink-0
                       ${isWide ? "md:w-2/5 w-full" : "w-full"}
@@ -127,19 +116,11 @@ export default function ServicesSection({ dict }: Props) {
                           className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105 will-change-transform"
                         />
                       ) : (
-                        <div
-                          className="w-full h-full flex items-center justify-center"
-                          style={{ background: visual.gradient }}
-                        >
-                          <Icon
-                            size={48}
-                            strokeWidth={1.2}
-                            className={isDiag ? "text-[#2b2b2b]/20" : "text-white/20"}
-                          />
+                        <div className="w-full h-full flex items-center justify-center" style={{ background: visual.gradient }}>
+                          <Icon size={48} strokeWidth={1.2} className={isDiag ? "text-[#2b2b2b]/20" : "text-white/20"} />
                         </div>
                       )}
 
-                      {/* Filtre orange urgence + pulse — dépannage uniquement */}
                       {key === "depannage" && (
                         <>
                           <div className="absolute inset-0 bg-[#f97316]/20 mix-blend-multiply pointer-events-none z-[1]" />
@@ -147,17 +128,12 @@ export default function ServicesSection({ dict }: Props) {
                         </>
                       )}
 
-                      {/* Badge icône en overlay */}
                       <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-[#f97316] text-white flex items-center justify-center shadow-[0_4px_14px_rgba(249,115,22,0.50)] transition-transform duration-500 group-hover:scale-110 z-[2]">
                         <Icon size={18} strokeWidth={2} />
                       </div>
                     </div>
 
-                    {/* ── Contenu ── */}
-                    <div className={`
-                      flex flex-col gap-3 flex-1
-                      p-6 ${isWide ? "md:p-8 md:justify-center" : ""}
-                    `}>
+                    <div className={`flex flex-col gap-3 flex-1 p-6 ${isWide ? "md:p-8 md:justify-center" : ""}`}>
                       <h3 className="font-bold text-[1.05rem] leading-tight tracking-[-0.01em] text-[#2b2b2b]">
                         {item.title}
                       </h3>
@@ -165,22 +141,15 @@ export default function ServicesSection({ dict }: Props) {
                         {item.description}
                       </p>
 
-                      {/* Bouton En savoir plus */}
                       <div className="pt-2 mt-auto">
                         <span className="
-                          inline-flex items-center gap-2
-                          px-4 py-2 rounded-full
-                          text-[12px] font-bold
-                          bg-[#2b2b2b] text-white
+                          inline-flex items-center gap-2 px-4 py-2 rounded-full
+                          text-[12px] font-bold bg-[#2b2b2b] text-white
                           transition-all duration-400 ease-[cubic-bezier(0.32,0.72,0,1)]
                           group-hover:bg-[#f97316] group-hover:shadow-[0_4px_16px_rgba(249,115,22,0.38)]
                         ">
-                          En savoir plus
-                          <ArrowUpRight
-                            size={13}
-                            strokeWidth={2.5}
-                            className="transition-transform duration-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                          />
+                          {services.learnMore}
+                          <ArrowUpRight size={13} strokeWidth={2.5} className="transition-transform duration-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                         </span>
                       </div>
                     </div>
@@ -193,8 +162,8 @@ export default function ServicesSection({ dict }: Props) {
         </div>
 
         <SectionBridge
-          text="Des centaines de clients à Bruxelles et en Brabant nous font déjà confiance."
-          cta="Découvrez leurs témoignages"
+          text={services.bridgeText}
+          cta={services.bridgeCta}
           href="#confiance"
         />
 

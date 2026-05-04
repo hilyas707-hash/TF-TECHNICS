@@ -19,7 +19,7 @@ export default function ContactSection({ dict }: Props) {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (honey) return; // honeypot : bot détecté, on ignore silencieusement
+    if (honey) return;
     setLoading(true);
     setError("");
     try {
@@ -31,56 +31,34 @@ export default function ContactSection({ dict }: Props) {
       if (!res.ok) throw new Error("Erreur");
       setSent(true);
     } catch {
-      setError("Une erreur est survenue. Appelez-nous directement.");
+      setError(contact.error);
     } finally {
       setLoading(false);
     }
   }
 
   return (
-    <section
-      id="contact"
-      className="relative bg-white py-24 md:py-32 overflow-hidden"
-    >
-      {/* Décoration */}
-      <div
-        aria-hidden
-        className="halo-tl pointer-events-none absolute top-0 left-0 w-[700px] h-[500px]"
-      />
+    <section id="contact" className="relative bg-white py-24 md:py-32 overflow-hidden">
+      <div aria-hidden className="halo-tl pointer-events-none absolute top-0 left-0 w-[700px] h-[500px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 xl:px-12">
 
-        {/* Bandeau urgence — fond anthracite */}
+        {/* Bandeau urgence */}
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.85, ease: SPRING }}
-          className="
-            mb-16 md:mb-20 rounded-[2rem] p-2
-            bg-[#2b2b2b] ring-1 ring-white/[0.06]
-            shadow-[0_8px_48px_rgba(43,43,43,0.22)]
-          "
+          className="mb-16 md:mb-20 rounded-[2rem] p-2 bg-[#2b2b2b] ring-1 ring-white/[0.06] shadow-[0_8px_48px_rgba(43,43,43,0.22)]"
         >
-          <div
-            className="
-              rounded-[calc(2rem-0.5rem)] px-7 py-10 md:py-14
-              bg-[#2b2b2b]
-              shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]
-              overflow-hidden relative
-            "
-          >
-            {/* Reflet orange */}
-            <div
-              aria-hidden
-              className="halo-center-lg pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full"
-            />
+          <div className="rounded-[calc(2rem-0.5rem)] px-7 py-10 md:py-14 bg-[#2b2b2b] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] overflow-hidden relative">
+            <div aria-hidden className="halo-center-lg pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full" />
 
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="flex flex-col gap-3 text-center md:text-left">
                 <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#f97316]/15 border border-[#f97316]/25 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#f97316] mx-auto md:mx-0 w-fit">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#f97316] animate-pulse" />
-                  Disponible maintenant
+                  {contact.availableBadge}
                 </span>
                 <h2 className="text-[clamp(1.7rem,3.5vw,2.6rem)] font-extrabold tracking-[-0.03em] text-white leading-[1.1]">
                   {contact.urgencyTitle}
@@ -127,7 +105,7 @@ export default function ContactSection({ dict }: Props) {
           >
             <div>
               <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-orange-50 border border-orange-100 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#f97316] w-fit mb-4">
-                Nous contacter
+                {contact.contactLabel}
               </span>
               <h3 className="text-[1.6rem] font-extrabold tracking-[-0.025em] text-[#2b2b2b] leading-tight">
                 {contact.sectionTitle}
@@ -138,19 +116,19 @@ export default function ContactSection({ dict }: Props) {
               {[
                 {
                   icon: <Phone size={16} strokeWidth={2} />,
-                  label: "Téléphone",
+                  label: contact.phoneLabel,
                   value: contact.phone,
                   href: `tel:${contact.phone.replace(/\s/g, "")}`,
                 },
                 {
                   icon: <Mail size={16} strokeWidth={2} />,
-                  label: "E-mail",
+                  label: contact.emailLabel,
                   value: contact.email,
                   href: `mailto:${contact.email}`,
                 },
                 {
                   icon: <Clock size={16} strokeWidth={2} />,
-                  label: "Disponibilité",
+                  label: contact.availLabel,
                   value: contact.hours,
                   href: null,
                 },
@@ -164,16 +142,11 @@ export default function ContactSection({ dict }: Props) {
                       {info.label}
                     </p>
                     {info.href ? (
-                      <a
-                        href={info.href}
-                        className="text-[0.95rem] font-semibold text-[#2b2b2b] hover:text-[#f97316] transition-colors duration-300"
-                      >
+                      <a href={info.href} className="text-[0.95rem] font-semibold text-[#2b2b2b] hover:text-[#f97316] transition-colors duration-300">
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-[0.95rem] font-semibold text-[#2b2b2b]">
-                        {info.value}
-                      </p>
+                      <p className="text-[0.95rem] font-semibold text-[#2b2b2b]">{info.value}</p>
                     )}
                   </div>
                 </div>
@@ -189,9 +162,7 @@ export default function ContactSection({ dict }: Props) {
             transition={{ duration: 0.8, ease: SPRING, delay: 0.1 }}
             className="lg:col-span-3"
           >
-            {/* Outer shell */}
             <div className="rounded-[1.75rem] p-2 bg-black/[0.025] ring-1 ring-black/[0.06] shadow-[0_4px_24px_rgba(43,43,43,0.07)]">
-              {/* Inner core */}
               <div className="rounded-[calc(1.75rem-0.5rem)] bg-white p-6 md:p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)]">
                 {sent ? (
                   <motion.div
@@ -209,7 +180,7 @@ export default function ContactSection({ dict }: Props) {
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                    {/* Honeypot anti-spam — invisible pour les humains */}
+                    {/* Honeypot anti-spam */}
                     <input
                       type="text"
                       name="website"
@@ -219,7 +190,7 @@ export default function ContactSection({ dict }: Props) {
                       aria-hidden="true"
                       className="absolute left-[-9999px] opacity-0 pointer-events-none"
                     />
-                    {/* Nom */}
+
                     <div className="flex flex-col gap-1.5">
                       <label className="text-[12px] font-semibold text-[#6b6b6b] uppercase tracking-[0.1em]">
                         {contact.formName}
@@ -229,19 +200,11 @@ export default function ContactSection({ dict }: Props) {
                         required
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        className="
-                          w-full px-4 py-3 rounded-xl
-                          bg-[#2b2b2b]/[0.04] border border-[#2b2b2b]/[0.08]
-                          text-[0.95rem] text-[#2b2b2b] font-medium
-                          placeholder:text-[#6b6b6b]/60
-                          focus:outline-none focus:border-[#f97316]/50 focus:bg-orange-50/50
-                          transition-all duration-300
-                        "
+                        className="w-full px-4 py-3 rounded-xl bg-[#2b2b2b]/[0.04] border border-[#2b2b2b]/[0.08] text-[0.95rem] text-[#2b2b2b] font-medium placeholder:text-[#6b6b6b]/60 focus:outline-none focus:border-[#f97316]/50 focus:bg-orange-50/50 transition-all duration-300"
                         placeholder="Jean Dupont"
                       />
                     </div>
 
-                    {/* Téléphone */}
                     <div className="flex flex-col gap-1.5">
                       <label className="text-[12px] font-semibold text-[#6b6b6b] uppercase tracking-[0.1em]">
                         {contact.formPhone}
@@ -251,19 +214,11 @@ export default function ContactSection({ dict }: Props) {
                         required
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        className="
-                          w-full px-4 py-3 rounded-xl
-                          bg-[#2b2b2b]/[0.04] border border-[#2b2b2b]/[0.08]
-                          text-[0.95rem] text-[#2b2b2b] font-medium
-                          placeholder:text-[#6b6b6b]/60
-                          focus:outline-none focus:border-[#f97316]/50 focus:bg-orange-50/50
-                          transition-all duration-300
-                        "
+                        className="w-full px-4 py-3 rounded-xl bg-[#2b2b2b]/[0.04] border border-[#2b2b2b]/[0.08] text-[0.95rem] text-[#2b2b2b] font-medium placeholder:text-[#6b6b6b]/60 focus:outline-none focus:border-[#f97316]/50 focus:bg-orange-50/50 transition-all duration-300"
                         placeholder="+32 4XX XX XX XX"
                       />
                     </div>
 
-                    {/* Message */}
                     <div className="flex flex-col gap-1.5">
                       <label className="text-[12px] font-semibold text-[#6b6b6b] uppercase tracking-[0.1em]">
                         {contact.formMessage}
@@ -273,19 +228,11 @@ export default function ContactSection({ dict }: Props) {
                         rows={4}
                         value={form.message}
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
-                        className="
-                          w-full px-4 py-3 rounded-xl resize-none
-                          bg-[#2b2b2b]/[0.04] border border-[#2b2b2b]/[0.08]
-                          text-[0.95rem] text-[#2b2b2b] font-medium
-                          placeholder:text-[#6b6b6b]/60
-                          focus:outline-none focus:border-[#f97316]/50 focus:bg-orange-50/50
-                          transition-all duration-300
-                        "
-                        placeholder="Décrivez votre panne ou votre projet…"
+                        className="w-full px-4 py-3 rounded-xl resize-none bg-[#2b2b2b]/[0.04] border border-[#2b2b2b]/[0.08] text-[0.95rem] text-[#2b2b2b] font-medium placeholder:text-[#6b6b6b]/60 focus:outline-none focus:border-[#f97316]/50 focus:bg-orange-50/50 transition-all duration-300"
+                        placeholder={contact.placeholderMessage}
                       />
                     </div>
 
-                    {/* Bouton envoi */}
                     {error && (
                       <p className="text-[0.82rem] text-red-500 font-medium">{error}</p>
                     )}
@@ -302,7 +249,7 @@ export default function ContactSection({ dict }: Props) {
                         hover:shadow-[0_4px_20px_rgba(249,115,22,0.38)]
                       "
                     >
-                      {loading ? "Envoi…" : contact.formSubmit}
+                      {loading ? contact.sending : contact.formSubmit}
                       <span className="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-110">
                         <Send size={14} strokeWidth={2.5} />
                       </span>

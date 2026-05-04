@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
@@ -7,60 +7,23 @@ import type { Dictionary } from "@/i18n/dictionaries/types";
 
 const SPRING = [0.32, 0.72, 0, 1] as const;
 
-/* ── Témoignages clients — à remplacer par de vrais avis Google ─────────── */
-const REVIEWS = [
-  {
-    name: "Sophie V.",
-    location: "Ixelles",
-    date: "il y a 2 semaines",
-    rating: 5,
-    text: "Intervention ultra-rapide un dimanche soir. Technicien professionnel, propre et efficace. Panne résolue en 30 minutes. Je recommande vivement !",
-    avatar: "S",
-  },
-  {
-    name: "Marc D.",
-    location: "Etterbeek",
-    date: "il y a 1 mois",
-    rating: 5,
-    text: "Très bonne expérience pour l'installation de ma borne de recharge. Travail soigné, prix honnête et bon suivi. Merci à toute l'équipe.",
-    avatar: "M",
-  },
-  {
-    name: "Laura B.",
-    location: "Woluwe-Saint-Lambert",
-    date: "il y a 3 semaines",
-    rating: 5,
-    text: "Disjoncteur général en panne en pleine nuit. Appelé à 22h, arrivée en moins de 45 min. Très rassurant et compétent. Tarif correct pour une urgence.",
-    avatar: "L",
-  },
-  {
-    name: "Thomas K.",
-    location: "Uccle",
-    date: "il y a 2 mois",
-    rating: 5,
-    text: "Mise en conformité RGIE réalisée rapidement avant ma vente. Rapport clair, travaux bien exécutés. Sérieux du début à la fin.",
-    avatar: "T",
-  },
-];
-
-/* ── Chiffres clés ───────────────────────────────────────────────────────── */
-const STATS = [
-  { value: "24h/24",   label: "Disponible 7j/7" },
-  { value: "0 €",      label: "Devis gratuit" },
-  { value: "2 ans",    label: "Garantie travaux" },
-  { value: "< 60 min", label: "Délai d'intervention" },
-];
-
 interface Props { dict: Dictionary }
 
 export default function TrustSection({ dict }: Props) {
-  void dict; // conservé pour compatibilité i18n future
+  const { trust } = dict;
+
+  const stats = [
+    trust.stats.response,
+    trust.stats.interventions,
+    trust.stats.experience,
+    trust.stats.satisfaction,
+  ];
 
   return (
     <section id="confiance" className="bg-bornes-gradient py-24 md:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 xl:px-12">
 
-        {/* ── En-tête ─────────────────────────────────────────────────────── */}
+        {/* En-tête */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,16 +32,16 @@ export default function TrustSection({ dict }: Props) {
           className="mb-16 text-center flex flex-col items-center gap-3"
         >
           <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] leading-[1.08]">
-            Ce que disent nos clients
+            {trust.reviewsTitle}
           </h2>
           <p className="text-[0.95rem] text-[#6b6b6b] max-w-lg">
-            Électricien agréé et assuré RC professionnelle, TF Technics intervient à Bruxelles, en Flandre et en Brabant Wallon pour les dépannages électriques urgents, les installations de bornes de recharge wallbox et les mises en conformité AREI. Nos clients nous font confiance depuis des années.
+            {trust.description}
           </p>
         </motion.div>
 
-        {/* ── Chiffres clés ───────────────────────────────────────────────── */}
+        {/* Chiffres clés */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mb-16">
-          {STATS.map((stat, i) => (
+          {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 28 }}
@@ -97,7 +60,7 @@ export default function TrustSection({ dict }: Props) {
           ))}
         </div>
 
-        {/* ── Témoignages clients ───────────────────────────────────────── */}
+        {/* Label témoignages */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -105,7 +68,7 @@ export default function TrustSection({ dict }: Props) {
           transition={{ duration: 0.6, ease: SPRING }}
           className="flex items-center justify-center gap-2 mb-8"
         >
-          <span className="text-[0.8rem] font-semibold text-[#2b2b2b]">Témoignages clients</span>
+          <span className="text-[0.8rem] font-semibold text-[#2b2b2b]">{trust.testimonialsLabel}</span>
           <span className="flex">
             {[...Array(5)].map((_, k) => (
               <Star key={k} size={13} fill="#dbb82d" stroke="none" />
@@ -113,8 +76,9 @@ export default function TrustSection({ dict }: Props) {
           </span>
         </motion.div>
 
+        {/* Témoignages */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {REVIEWS.map((review, i) => (
+          {trust.reviews.map((review, i) => (
             <motion.div
               key={review.name}
               initial={{ opacity: 0, y: 32 }}
@@ -123,19 +87,14 @@ export default function TrustSection({ dict }: Props) {
               transition={{ duration: 0.72, ease: SPRING, delay: i * 0.09 }}
               className="rounded-2xl border border-[#f0f0f0] bg-white p-6 flex flex-col gap-4 shadow-[0_2px_16px_rgba(43,43,43,0.05)] hover:shadow-[0_6px_28px_rgba(43,43,43,0.09)] transition-shadow duration-300"
             >
-              {/* Étoiles */}
               <div className="flex gap-0.5">
                 {[...Array(review.rating)].map((_, k) => (
                   <Star key={k} size={14} fill="#dbb82d" stroke="none" />
                 ))}
               </div>
-
-              {/* Texte */}
               <p className="text-[0.875rem] text-[#4b4b4b] leading-relaxed flex-1">
-                "{review.text}"
+                &ldquo;{review.text}&rdquo;
               </p>
-
-              {/* Auteur */}
               <div className="flex items-center gap-3 pt-2 border-t border-[#f0f0f0]">
                 <div className="w-8 h-8 rounded-full bg-[#dbb82d] flex items-center justify-center text-white text-[0.75rem] font-bold flex-shrink-0">
                   {review.avatar}
@@ -157,12 +116,12 @@ export default function TrustSection({ dict }: Props) {
           transition={{ duration: 0.7, ease: SPRING, delay: 0.4 }}
           className="mt-12 text-center text-[0.85rem] text-[#6b6b6b] font-medium tracking-wide"
         >
-          Assuré RC Pro · Devis gratuit · Bruxelles — Flandre — Brabant Wallon
+          {trust.reassurance}
         </motion.p>
 
         <SectionBridge
-          text="Nous intervenons probablement dans votre commune — vérifiez en un coup d'œil."
-          cta="Voir nos zones d'intervention"
+          text={trust.bridgeText}
+          cta={trust.bridgeCta}
           href="#zones"
         />
 

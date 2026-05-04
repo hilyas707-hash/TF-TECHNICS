@@ -12,7 +12,7 @@ export default function ConditionsGeneralesPage() {
     <LegalPage
       title="Conditions générales"
       subtitle="Conditions générales de vente et de prestation de services de TF Technics SRL."
-      lastUpdated="Janvier 2025"
+      lastUpdated="Mai 2026"
       sections={[
         {
           title: "Objet",
@@ -37,7 +37,7 @@ export default function ConditionsGeneralesPage() {
         {
           title: "Tarifs et modalités de paiement",
           content:
-            "Les tarifs sont communiqués sur devis. Ils sont exprimés en euros TTC (TVA belge applicable). Sauf accord contraire :\n• Acompte de 30 % à la commande pour les travaux supérieurs à 500 €.\n• Solde payable à réception de la facture, dans un délai de 14 jours.\nTout retard de paiement entraîne de plein droit et sans mise en demeure une indemnité forfaitaire de 40 € et des intérêts de retard au taux légal.",
+            "Les tarifs sont établis selon la grille tarifaire officielle de TF Technics SRL, disponible sur le site et communiquée sur tout bon d'intervention. Le technicien informe le client du montant du forfait avant tout démarrage des travaux.\n\n• TVA : 6 % selon l'AR du 18 juillet 1986.\n• Règlement : toute prestation est réglée au grand comptant immédiatement après l'intervention.\n• Commande de pièces : un acompte de 60 % du prix de la pièce est exigé avant toute commande.\n• Le frais de déplacement reste dû même si la réparation s'avère techniquement impossible.\n\nTout retard de paiement entraîne de plein droit et sans mise en demeure une indemnité forfaitaire de 40 € et des intérêts de retard au taux légal belge.",
         },
         {
           title: "Garantie",
@@ -52,7 +52,7 @@ export default function ConditionsGeneralesPage() {
         {
           title: "Annulation et résiliation",
           content:
-            "En cas d'annulation par le client après signature du devis, l'acompte versé reste acquis à TF Technics SRL à titre d'indemnité forfaitaire. TF Technics SRL se réserve le droit de résilier un contrat en cas de force majeure, d'impossibilité technique ou de manquement grave du client à ses obligations.",
+            "En cas d'annulation par le client, aucun acompte n'est récupérable. L'acompte versé reste intégralement acquis à TF Technics SRL à titre d'indemnité forfaitaire, sans préjudice de tout dommage supplémentaire. TF Technics SRL se réserve le droit de résilier un contrat en cas de force majeure, d'impossibilité technique ou de manquement grave du client à ses obligations.",
         },
         {
           title: "Protection des données",
