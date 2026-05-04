@@ -31,9 +31,71 @@ const ICON_MAP_LG = {
 
 const PHONE = "+32 483 48 04 96";
 
-interface Props { service: ServiceData }
+const LABELS = {
+  fr: {
+    home:          "Accueil",
+    homeHref:      "/",
+    call:          "Appeler",
+    callNow:       "Appeler maintenant",
+    requestQuote:  "Demander un devis",
+    pills:         ["Intervention < 60 min", "24h/24 – 7j/7", "Assuré RC Pro", "Devis gratuit"],
+    situations:    "Situations fréquentes",
+    situationsH2:  "Ces situations vous parlent ?",
+    situationsP:   "Vous n’êtes pas seul. Voici les cas les plus fréquents pour lesquels nos clients font appel à TF Technics.",
+    callUs:        "Appelez-nous maintenant",
+    whyUs:         "Pourquoi nous choisir",
+    whatYouGet:    "Ce que vous obtenez avec TF Technics",
+    pricing:       "Tarifs",
+    pricingH2:     "Transparence totale sur les prix",
+    pricingNote:   "* Les prix sont indicatifs et confirmés avant toute intervention. Devis gratuit et sans engagement.",
+    howItWorks:    "Comment ça se passe",
+    howItWorksH2:  "Le déroulement de votre intervention",
+    faqBadge:      "Questions fréquentes",
+    faqH2prefix:   "Vos questions sur",
+    relatedH2:     "Nos autres services",
+    relatedP:      "TF Technics couvre tous vos besoins électriques.",
+    learnMore:     "En savoir plus",
+    ctaH2:         "Prêt à passer à l’action ?",
+    ctaP:          "Appelez-nous pour une intervention immédiate ou remplissez notre formulaire pour recevoir un devis gratuit sous 2 heures.",
+    callNowFinal:  "Appeler maintenant",
+    quoteBtn:      "Demander un devis gratuit",
+    relatedBase:   "/services",
+  },
+  nl: {
+    home:          "Startpagina",
+    homeHref:      "/nl",
+    call:          "Bellen",
+    callNow:       "Bel ons nu",
+    requestQuote:  "Offerte aanvragen",
+    pills:         ["Interventie < 60 min", "24u/24 – 7d/7", "Verzekerd BA Pro", "Gratis offerte"],
+    situations:    "Veelvoorkomende situaties",
+    situationsH2:  "Herkenbaar ?",
+    situationsP:   "U bent niet alleen. Hier zijn de meest voorkomende situaties waarvoor onze klanten een beroep doen op TF Technics.",
+    callUs:        "Bel ons nu",
+    whyUs:         "Waarom ons kiezen",
+    whatYouGet:    "Wat u krijgt met TF Technics",
+    pricing:       "Tarieven",
+    pricingH2:     "Volledige transparantie over de prijzen",
+    pricingNote:   "* Prijzen zijn indicatief en worden bevestigd vóór elke interventie. Gratis en vrijblijvende offerte.",
+    howItWorks:    "Hoe verloopt het",
+    howItWorksH2:  "Het verloop van uw interventie",
+    faqBadge:      "Veelgestelde vragen",
+    faqH2prefix:   "Uw vragen over",
+    relatedH2:     "Onze andere diensten",
+    relatedP:      "TF Technics dekt al uw elektrische behoeften.",
+    learnMore:     "Meer weten",
+    ctaH2:         "Klaar om te starten ?",
+    ctaP:          "Bel ons voor een onmiddellijke interventie of vul ons formulier in voor een gratis offerte binnen 2 uur.",
+    callNowFinal:  "Bel ons nu",
+    quoteBtn:      "Gratis offerte aanvragen",
+    relatedBase:   "/nl/services",
+  },
+};
 
-export default function ServiceDetailPage({ service }: Props) {
+interface Props { service: ServiceData; locale?: "fr" | "nl" }
+
+export default function ServiceDetailPage({ service, locale = "fr" }: Props) {
+  const L = LABELS[locale];
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const icon    = ICON_MAP[service.iconKey];
   const iconLg  = ICON_MAP_LG[service.iconKey];
@@ -57,11 +119,11 @@ export default function ServiceDetailPage({ service }: Props) {
         <nav className="flex items-center justify-between gap-6 w-full max-w-5xl px-5 py-3 rounded-full bg-white/85 backdrop-blur-xl ring-1 ring-black/[0.07] shadow-[0_4px_28px_rgba(43,43,43,0.09)]">
           <div className="flex items-center gap-4">
             <Link
-              href="/"
+              href={L.homeHref}
               className="flex items-center gap-1.5 text-[13px] font-semibold text-[#6b6b6b] hover:text-[#2b2b2b] transition-colors duration-300"
             >
               <ArrowLeft size={14} strokeWidth={2.5} />
-              Accueil
+              {L.home}
             </Link>
             <span className="text-[#2b2b2b]/20">/</span>
             <span className="text-[13px] font-semibold text-[#2b2b2b] truncate max-w-[200px]">
@@ -73,7 +135,7 @@ export default function ServiceDetailPage({ service }: Props) {
             className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#f97316] text-white text-[13px] font-bold hover:bg-[#ea580c] transition-all duration-400 shadow-[0_2px_10px_rgba(249,115,22,0.38)]"
           >
             <Phone size={12} strokeWidth={2.5} />
-            <span className="hidden sm:inline">Appeler</span>
+            <span className="hidden sm:inline">{L.call}</span>
           </a>
         </nav>
       </motion.header>
@@ -124,7 +186,7 @@ export default function ServiceDetailPage({ service }: Props) {
                 href={`tel:${PHONE.replace(/\s/g, "")}`}
                 className="group inline-flex items-center justify-between gap-3 pl-5 pr-2 py-3.5 rounded-full bg-[#f97316] text-white font-bold text-[15px] shadow-[0_4px_24px_rgba(249,115,22,0.42)] hover:bg-[#ea580c] hover:shadow-[0_8px_32px_rgba(249,115,22,0.55)] active:scale-[0.98] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
               >
-                <div className="flex items-center gap-2.5"><Phone size={15} strokeWidth={2.5} /> Appeler maintenant</div>
+                <div className="flex items-center gap-2.5"><Phone size={15} strokeWidth={2.5} /> {L.callNow}</div>
                 <span className="w-9 h-9 rounded-full bg-white/25 flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-110 transition-transform duration-500">
                   <ArrowUpRight size={14} strokeWidth={2.5} />
                 </span>
@@ -133,13 +195,13 @@ export default function ServiceDetailPage({ service }: Props) {
                 href="/devis"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#2b2b2b]/12 text-[#2b2b2b] font-semibold text-[15px] hover:bg-[#2b2b2b]/[0.04] hover:border-[#2b2b2b]/20 active:scale-[0.98] transition-all duration-500"
               >
-                <FileText size={15} strokeWidth={2} /> Demander un devis
+                <FileText size={15} strokeWidth={2} /> {L.requestQuote}
               </Link>
             </div>
 
             {/* Pilules de réassurance */}
             <div className="flex flex-wrap gap-2 pt-1">
-              {["Intervention < 60 min", "24h/24 – 7j/7", "Assuré RC Pro", "Devis gratuit"].map((tag) => (
+              {L.pills.map((tag) => (
                 <span key={tag} className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 bg-[#f5f5f5] border border-[#ebebeb] text-[12px] font-semibold text-[#4b4b4b]">
                   <CheckCircle2 size={11} strokeWidth={2.5} className="text-[#f97316]" />
                   {tag}
@@ -187,13 +249,13 @@ export default function ServiceDetailPage({ service }: Props) {
           >
             <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#f97316]/15 border border-[#f97316]/25 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#f97316]">
               <AlertTriangle size={11} strokeWidth={2.5} />
-              Situations fréquentes
+              {L.situations}
             </span>
             <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold tracking-[-0.03em] text-white leading-[1.08]">
-              Ces situations vous parlent&nbsp;?
+              {L.situationsH2}
             </h2>
             <p className="text-[0.95rem] text-white/75 max-w-lg leading-relaxed">
-              Vous n&apos;êtes pas seul. Voici les cas les plus fréquents pour lesquels nos clients font appel à TF Technics.
+              {L.situationsP}
             </p>
           </motion.div>
 
@@ -231,7 +293,7 @@ export default function ServiceDetailPage({ service }: Props) {
               href={`tel:${PHONE.replace(/\s/g, "")}`}
               className="group inline-flex items-center justify-between gap-3 pl-5 pr-2 py-3 rounded-full bg-[#f97316] text-white font-bold text-[14px] shadow-[0_4px_20px_rgba(249,115,22,0.38)] hover:bg-[#ea580c] active:scale-[0.98] transition-all duration-500"
             >
-              <div className="flex items-center gap-2.5"><Phone size={14} strokeWidth={2.5} /> Appelez-nous maintenant</div>
+              <div className="flex items-center gap-2.5"><Phone size={14} strokeWidth={2.5} /> {L.callUs}</div>
               <span className="w-8 h-8 rounded-full bg-white/25 flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-110 transition-transform duration-500">
                 <ArrowUpRight size={13} strokeWidth={2.5} />
               </span>
@@ -253,10 +315,10 @@ export default function ServiceDetailPage({ service }: Props) {
             className="mb-10 flex flex-col gap-2"
           >
             <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-orange-50 border border-orange-100 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#f97316] w-fit">
-              Pourquoi nous choisir
+              {L.whyUs}
             </span>
             <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] leading-[1.08]">
-              Ce que vous obtenez avec TF Technics
+              {L.whatYouGet}
             </h2>
           </motion.div>
 
@@ -299,10 +361,10 @@ export default function ServiceDetailPage({ service }: Props) {
             <div className="flex flex-col gap-2">
               <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#f97316]/15 border border-[#f97316]/25 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#f97316] w-fit">
                 <Euro size={11} strokeWidth={2.5} />
-                Tarifs
+                {L.pricing}
               </span>
               <h2 className="text-[clamp(1.6rem,3vw,2.4rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] leading-[1.1]">
-                Transparence totale sur les prix
+                {L.pricingH2}
               </h2>
               <p className="text-[0.95rem] text-[#6b6b6b] font-medium leading-relaxed">
                 {service.pricing.tagline}
@@ -326,7 +388,7 @@ export default function ServiceDetailPage({ service }: Props) {
             </ul>
 
             <p className="text-[0.8rem] text-[#9b9b9b] font-medium">
-              * Les prix sont indicatifs et confirmés avant toute intervention. Devis gratuit et sans engagement.
+              {L.pricingNote}
             </p>
           </motion.div>
         </div>
@@ -350,10 +412,10 @@ export default function ServiceDetailPage({ service }: Props) {
             className="mb-12 text-center flex flex-col items-center gap-2"
           >
             <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-[#f97316]/15 border border-[#f97316]/25 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#f97316]">
-              Comment ça se passe
+              {L.howItWorks}
             </span>
             <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold tracking-[-0.03em] text-white leading-[1.08]">
-              Le déroulement de votre intervention
+              {L.howItWorksH2}
             </h2>
           </motion.div>
 
@@ -396,10 +458,10 @@ export default function ServiceDetailPage({ service }: Props) {
             className="mb-10 flex flex-col gap-2"
           >
             <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 bg-orange-50 border border-orange-100 text-[11px] uppercase tracking-[0.18em] font-semibold text-[#f97316] w-fit">
-              Questions fréquentes
+              {L.faqBadge}
             </span>
             <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] leading-[1.08]">
-              Vos questions sur {service.title.toLowerCase()}
+              {L.faqH2prefix} {service.title.toLowerCase()}
             </h2>
           </motion.div>
 
@@ -456,10 +518,10 @@ export default function ServiceDetailPage({ service }: Props) {
             className="mb-8 flex flex-col gap-1.5"
           >
             <h2 className="text-[clamp(1.3rem,2.5vw,1.8rem)] font-extrabold tracking-[-0.025em] text-[#2b2b2b]">
-              Nos autres services
+              {L.relatedH2}
             </h2>
             <p className="text-[0.88rem] text-[#6b6b6b]">
-              TF Technics couvre tous vos besoins électriques.
+              {L.relatedP}
             </p>
           </motion.div>
 
@@ -473,7 +535,7 @@ export default function ServiceDetailPage({ service }: Props) {
                 transition={{ duration: 0.6, ease: SPRING, delay: i * 0.08 }}
               >
                 <Link
-                  href={`/services/${s.slug}`}
+                  href={`${L.relatedBase}/${s.slug}`}
                   className="group flex flex-col gap-4 h-full rounded-2xl p-5 bg-white ring-1 ring-black/[0.07] hover:ring-[#f97316]/30 hover:shadow-[0_6px_28px_rgba(43,43,43,0.08)] transition-all duration-400"
                 >
                   <div className="w-10 h-10 rounded-xl bg-[#f97316]/10 flex items-center justify-center text-[#f97316] group-hover:bg-[#f97316] group-hover:text-white transition-all duration-400">
@@ -484,7 +546,7 @@ export default function ServiceDetailPage({ service }: Props) {
                     <p className="text-[0.8rem] text-[#6b6b6b] leading-relaxed line-clamp-2">{s.heroSubtitle}</p>
                   </div>
                   <span className="flex items-center gap-1.5 text-[0.8rem] font-semibold text-[#f97316]">
-                    En savoir plus <ExternalLink size={12} strokeWidth={2.5} />
+                    {L.learnMore} <ExternalLink size={12} strokeWidth={2.5} />
                   </span>
                 </Link>
               </motion.div>
@@ -502,17 +564,17 @@ export default function ServiceDetailPage({ service }: Props) {
             {iconLg}
           </div>
           <h2 className="text-[clamp(1.6rem,3vw,2.6rem)] font-extrabold tracking-[-0.03em] text-[#2b2b2b] leading-[1.1]">
-            Prêt à passer à l&apos;action&nbsp;?
+            {L.ctaH2}
           </h2>
           <p className="text-[1rem] text-[#6b6b6b] max-w-md leading-relaxed">
-            Appelez-nous pour une intervention immédiate ou remplissez notre formulaire pour recevoir un devis gratuit sous 2 heures.
+            {L.ctaP}
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
               href={`tel:${PHONE.replace(/\s/g, "")}`}
               className="group inline-flex items-center justify-between gap-3 pl-5 pr-2 py-3.5 rounded-full bg-[#f97316] text-white font-bold text-[15px] shadow-[0_4px_20px_rgba(249,115,22,0.38)] hover:bg-[#ea580c] active:scale-[0.98] transition-all duration-500"
             >
-              <div className="flex items-center gap-2.5"><Phone size={15} strokeWidth={2.5} /> Appeler maintenant</div>
+              <div className="flex items-center gap-2.5"><Phone size={15} strokeWidth={2.5} /> {L.callNowFinal}</div>
               <span className="w-9 h-9 rounded-full bg-white/25 flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-110 transition-transform duration-500">
                 <ArrowUpRight size={14} strokeWidth={2.5} />
               </span>
@@ -521,7 +583,7 @@ export default function ServiceDetailPage({ service }: Props) {
               href="/devis"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#2b2b2b]/12 text-[#2b2b2b] font-semibold text-[15px] hover:bg-[#2b2b2b]/[0.04] active:scale-[0.98] transition-all duration-400"
             >
-              <FileText size={15} strokeWidth={2} /> Demander un devis gratuit
+              <FileText size={15} strokeWidth={2} /> {L.quoteBtn}
             </Link>
           </div>
         </div>

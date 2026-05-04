@@ -44,9 +44,10 @@ const BENTO_SPAN = [
 
 const IMG_HEIGHT = ["h-56", "h-52", "h-48", "h-48"];
 
-interface Props { dict: Dictionary }
+interface Props { dict: Dictionary; locale?: string }
 
-export default function ServicesSection({ dict }: Props) {
+export default function ServicesSection({ dict, locale }: Props) {
+  const serviceBase = locale === "nl" ? "/nl/services" : "/services";
   const { services } = dict;
 
   const items = (Object.entries(services.items) as [
@@ -93,7 +94,7 @@ export default function ServicesSection({ dict }: Props) {
                 transition={{ duration: 0.75, ease: SPRING, delay: i * 0.07 }}
                 className={BENTO_SPAN[i]}
               >
-                <Link href={`/services/${SERVICE_SLUGS[key]}`} className="block h-full">
+                <Link href={`${serviceBase}/${SERVICE_SLUGS[key]}`} className="block h-full">
                   <div className={`
                     group relative h-full rounded-[1.75rem] overflow-hidden
                     ring-1 ring-black/[0.07]

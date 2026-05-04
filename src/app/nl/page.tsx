@@ -147,7 +147,7 @@ export default async function NlHome() {
       <HeroSection dict={dict} />
 
       {/* 2 — Onze diensten */}
-      <ServicesSection dict={dict} />
+      <ServicesSection dict={dict} locale="nl" />
 
       {/* 3 — Cijfers (donkere achtergrond) */}
       <TrustSection dict={dict} />
