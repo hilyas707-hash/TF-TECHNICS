@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { getDictionary } from "@/i18n";
 import { FAQ_ITEMS } from "@/data/faq";
-import HeroSection     from "@/components/hero/HeroSection";
-import ServicesSection from "@/components/services/ServicesSection";
-import TrustSection    from "@/components/trust/TrustSection";
-import ZonesSection    from "@/components/zones/ZonesSection";
-import BornesSection   from "@/components/bornes/BornesSection";
-import DevisSection    from "@/components/devis/DevisSection";
-import FaqSection      from "@/components/faq/FaqSection";
-import ContactSection  from "@/components/contact/ContactSection";
-import Footer          from "@/components/layout/Footer";
+import HeroSection from "@/components/hero/HeroSection";
+
+const ServicesSection = dynamic(() => import("@/components/services/ServicesSection"));
+const TrustSection    = dynamic(() => import("@/components/trust/TrustSection"));
+const ZonesSection    = dynamic(() => import("@/components/zones/ZonesSection"));
+const BornesSection   = dynamic(() => import("@/components/bornes/BornesSection"));
+const DevisSection    = dynamic(() => import("@/components/devis/DevisSection"));
+const FaqSection      = dynamic(() => import("@/components/faq/FaqSection"));
+const ContactSection  = dynamic(() => import("@/components/contact/ContactSection"));
+const Footer          = dynamic(() => import("@/components/layout/Footer"));
 
 /* ── Métadonnées SEO — page d'accueil NL ───────────────────────────────────── */
 export const metadata: Metadata = {
