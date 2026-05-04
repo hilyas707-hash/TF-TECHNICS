@@ -57,13 +57,14 @@ export default function HeroSection({ dict, locale }: HeroSectionProps) {
     })
   );
 
+  const isNl = locale === "nl";
   const navLinks = [
-    { label: nav.zones,   href: "#zones"   },
-    { label: nav.tarifs,  href: "/tarifs"  },
-    { label: nav.devis,   href: "/devis"   },
-    { label: nav.faq,     href: "/faq"     },
-    { label: nav.blog,    href: "/blog"    },
-    { label: nav.contact, href: "/contact" },
+    { label: nav.zones,   href: "#zones"                          },
+    { label: nav.tarifs,  href: isNl ? "/nl/tarifs"  : "/tarifs"  },
+    { label: nav.devis,   href: "/devis"                          },
+    { label: nav.faq,     href: isNl ? "/nl/faq"     : "/faq"     },
+    { label: nav.blog,    href: "/blog"                            },
+    { label: nav.contact, href: isNl ? "/nl/contact" : "/contact" },
   ];
 
   const statsBar = [
