@@ -61,7 +61,7 @@ export default function HeroSection({ dict, locale }: HeroSectionProps) {
   const navLinks = [
     { label: nav.zones,   href: "#zones"                          },
     { label: nav.tarifs,  href: isNl ? "/nl/tarifs"  : "/tarifs"  },
-    { label: nav.devis,   href: "/devis"                          },
+    { label: nav.devis,   href: isNl ? "/nl/devis"  : "/devis"    },
     { label: nav.faq,     href: isNl ? "/nl/faq"     : "/faq"     },
     { label: nav.blog,    href: "/blog"                            },
     { label: nav.contact, href: isNl ? "/nl/contact" : "/contact" },
