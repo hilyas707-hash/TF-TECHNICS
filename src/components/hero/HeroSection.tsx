@@ -321,20 +321,20 @@ export default function HeroSection({ dict, locale }: HeroSectionProps) {
             className="w-full border-t border-white/[0.08] bg-black/50 backdrop-blur-xl"
           >
             <div className="max-w-7xl mx-auto px-5 sm:px-10 xl:px-16">
-              <div className="flex items-stretch divide-x divide-white/[0.08] overflow-x-auto scrollbar-none">
+              <div className="flex items-stretch divide-x divide-white/[0.08]">
                 {statsBar.map((s) => (
-                  <div key={s.label} className="flex flex-col items-center justify-center px-6 py-4 flex-1 min-w-[90px] gap-0.5">
-                    <span className="text-[1.1rem] font-extrabold tracking-[-0.03em] leading-none text-white">
+                  <div key={s.label} className="flex flex-col items-center justify-center px-3 sm:px-5 py-2.5 flex-1 gap-0.5">
+                    <span className="text-[0.95rem] sm:text-[1rem] font-extrabold tracking-[-0.03em] leading-none text-white">
                       {s.value}
                     </span>
-                    <span className="text-[10px] text-white/65 font-medium uppercase tracking-wider whitespace-nowrap">
+                    <span className="text-[9px] sm:text-[10px] text-white/65 font-medium uppercase tracking-wide whitespace-nowrap">
                       {s.label}
                     </span>
                   </div>
                 ))}
-                <div className="hidden lg:flex items-center justify-center px-6 py-4 flex-1 gap-1.5">
-                  <MapPin size={11} strokeWidth={2} className="text-white/60" />
-                  <span className="text-[11px] text-white/65 font-medium whitespace-nowrap">
+                <div className="hidden xl:flex items-center justify-center px-5 py-2.5 flex-1 gap-1.5">
+                  <MapPin size={10} strokeWidth={2} className="text-white/60" />
+                  <span className="text-[10px] text-white/65 font-medium whitespace-nowrap">
                     {hero.statsZone}
                   </span>
                 </div>
