@@ -12,9 +12,11 @@ interface LegalPageProps {
   subtitle: string;
   lastUpdated: string;
   sections: Section[];
+  locale?: "fr" | "nl";
 }
 
-export default function LegalPage({ title, subtitle, lastUpdated, sections }: LegalPageProps) {
+export default function LegalPage({ title, subtitle, lastUpdated, sections, locale = "fr" }: LegalPageProps) {
+  const isNl = locale === "nl";
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -22,18 +24,18 @@ export default function LegalPage({ title, subtitle, lastUpdated, sections }: Le
       <div className="bg-[#2b2b2b] pt-28 pb-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-8">
           <Link
-            href="/"
+            href={isNl ? "/nl" : "/"}
             className="inline-flex items-center gap-2 text-white/40 hover:text-white/80 transition-colors duration-300 text-[0.875rem] font-medium mb-8"
           >
             <ArrowLeft size={14} strokeWidth={2} />
-            Retour au site
+            {isNl ? "Terug naar de startpagina" : "Retour au site"}
           </Link>
           <h1 className="text-[clamp(1.8rem,4vw,3rem)] font-extrabold text-white tracking-[-0.03em] leading-[1.1] mb-3">
             {title}
           </h1>
           <p className="text-white/50 text-[0.95rem]">{subtitle}</p>
           <p className="text-white/30 text-[0.8rem] mt-2 font-medium">
-            Dernière mise à jour : {lastUpdated}
+            {isNl ? "Laatste update" : "Dernière mise à jour"} : {lastUpdated}
           </p>
         </div>
       </div>
@@ -67,10 +69,12 @@ export default function LegalPage({ title, subtitle, lastUpdated, sections }: Le
         {/* Contact légal */}
         <div className="mt-14 p-6 rounded-2xl bg-orange-50 border border-orange-100">
           <p className="text-[0.9rem] text-[#2b2b2b] font-semibold mb-1">
-            Questions légales ?
+            {isNl ? "Juridische vragen?" : "Questions légales ?"}
           </p>
           <p className="text-[0.875rem] text-[#6b6b6b]">
-            Pour toute question relative aux présentes informations légales, contactez-nous à :{" "}
+            {isNl
+              ? "Voor vragen over deze juridische informatie, contacteer ons via : "
+              : "Pour toute question relative aux présentes informations légales, contactez-nous à : "}
             <a href="mailto:info@tftechnics.be" className="text-[#f97316] font-semibold hover:underline">
               info@tftechnics.be
             </a>

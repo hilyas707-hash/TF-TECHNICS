@@ -20,10 +20,11 @@ export default function Footer({ dict, locale }: Props) {
     { label: footer.services.diagnostic,   href: `${serviceBase}/diagnostic-electrique`   },
   ];
 
+  const legalBase = isNl ? "/nl" : "";
   const LEGAL = [
-    { label: footer.legal,   href: "/mentions-legales"           },
-    { label: footer.privacy, href: "/politique-confidentialite"  },
-    { label: footer.cookies, href: "/cookies"                    },
+    { label: footer.legal,   href: `${legalBase}/mentions-legales`           },
+    { label: footer.privacy, href: `${legalBase}/politique-confidentialite`  },
+    { label: footer.cookies, href: `${legalBase}/cookies`                    },
   ];
 
   return (
