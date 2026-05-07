@@ -8,9 +8,9 @@ import type { Dictionary } from "@/i18n/dictionaries/types";
 
 const SPRING = [0.32, 0.72, 0, 1] as const;
 
-interface Props { dict: Dictionary }
+interface Props { dict: Dictionary; locale?: string }
 
-export default function BornesSection({ dict }: Props) {
+export default function BornesSection({ dict, locale }: Props) {
   const { bornes } = dict;
 
   const features = [
@@ -64,7 +64,7 @@ export default function BornesSection({ dict }: Props) {
 
             <div className="pt-2">
               <a
-                href="/contact"
+                href={locale === "nl" ? "/nl/contact" : "/contact"}
                 className="
                   group inline-flex items-center justify-between gap-3
                   pl-5 pr-2 py-2.5 rounded-full
@@ -136,7 +136,7 @@ export default function BornesSection({ dict }: Props) {
         <SectionBridge
           text={bornes.bridgeText}
           cta={bornes.bridgeCta}
-          href="/devis"
+          href={locale === "nl" ? "/nl/devis" : "/devis"}
         />
 
       </div>

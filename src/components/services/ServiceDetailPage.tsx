@@ -59,6 +59,7 @@ const LABELS = {
     ctaP:          "Appelez-nous pour une intervention immédiate ou remplissez notre formulaire pour recevoir un devis gratuit sous 2 heures.",
     callNowFinal:  "Appeler maintenant",
     quoteBtn:      "Demander un devis gratuit",
+    devisHref:     "/devis",
     relatedBase:   "/services",
   },
   nl: {
@@ -88,6 +89,7 @@ const LABELS = {
     ctaP:          "Bel ons voor een onmiddellijke interventie of vul ons formulier in voor een gratis offerte binnen 2 uur.",
     callNowFinal:  "Bel ons nu",
     quoteBtn:      "Gratis offerte aanvragen",
+    devisHref:     "/nl/devis",
     relatedBase:   "/nl/services",
   },
 };
@@ -192,7 +194,7 @@ export default function ServiceDetailPage({ service, locale = "fr" }: Props) {
                 </span>
               </a>
               <Link
-                href="/devis"
+                href={L.devisHref}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#2b2b2b]/12 text-[#2b2b2b] font-semibold text-[15px] hover:bg-[#2b2b2b]/[0.04] hover:border-[#2b2b2b]/20 active:scale-[0.98] transition-all duration-500"
               >
                 <FileText size={15} strokeWidth={2} /> {L.requestQuote}
@@ -580,7 +582,7 @@ export default function ServiceDetailPage({ service, locale = "fr" }: Props) {
               </span>
             </a>
             <Link
-              href="/devis"
+              href={L.devisHref}
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-[#2b2b2b]/12 text-[#2b2b2b] font-semibold text-[15px] hover:bg-[#2b2b2b]/[0.04] active:scale-[0.98] transition-all duration-400"
             >
               <FileText size={15} strokeWidth={2} /> {L.quoteBtn}

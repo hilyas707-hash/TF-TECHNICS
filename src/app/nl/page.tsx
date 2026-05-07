@@ -156,7 +156,7 @@ export default async function NlHome() {
       <ZonesSection dict={dict} />
 
       {/* 5 — Laadpalen */}
-      <BornesSection dict={dict} />
+      <BornesSection dict={dict} locale="nl" />
 
       {/* 6 — Link naar FAQ */}
       <section id="faq" className="py-20 bg-zinc-50">

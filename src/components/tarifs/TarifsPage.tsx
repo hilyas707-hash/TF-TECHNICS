@@ -49,8 +49,9 @@ const T = {
     ctaH2:    "Besoin d'un devis précis ?",
     ctaP:     "Appelez-nous ou remplissez le formulaire. Réponse en moins de 2h en journée.",
     callBtn:  "Appeler maintenant",
-    quoteBtn: "Demander un devis en ligne",
-    back:     "← Retour à l'accueil",
+    quoteBtn:  "Demander un devis en ligne",
+    quoteHref: "/devis",
+    back:      "← Retour à l'accueil",
   },
   nl: {
     home: "Startpagina", homeHref: "/nl", pageLabel: "Tarieven",
@@ -94,8 +95,9 @@ const T = {
     ctaH2:    "Precieze offerte nodig?",
     ctaP:     "Bel ons of vul het formulier in. Antwoord binnen 2u overdag.",
     callBtn:  "Bel ons nu",
-    quoteBtn: "Online offerte aanvragen",
-    back:     "← Terug naar de startpagina",
+    quoteBtn:  "Online offerte aanvragen",
+    quoteHref: "/nl/devis",
+    back:      "← Terug naar de startpagina",
   },
 };
 
@@ -315,7 +317,7 @@ export default function TarifsPage({ locale = "fr" }: Props) {
               </span>
             </a>
             <Link
-              href="/devis"
+              href={t.quoteHref}
               className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#2b2b2b]/15 bg-white text-[#2b2b2b] font-semibold text-[15px] hover:border-[#f97316] hover:text-[#f97316] transition-all duration-300"
             >
               {t.quoteBtn}
