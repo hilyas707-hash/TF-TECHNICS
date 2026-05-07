@@ -40,9 +40,9 @@ export default async function NlFaqPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Navbar />
       <div className="pt-20">
-        <FaqSection dict={dict} items={FAQ_ITEMS_NL} />
+        <FaqSection dict={dict} items={FAQ_ITEMS_NL} locale="nl" />
       </div>
-      <Footer dict={dict} />
+      <Footer dict={dict} locale="nl" />
     </>
   );
 }

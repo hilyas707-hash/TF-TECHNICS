@@ -14,9 +14,9 @@ const REGION_STYLES = [
   { dot: "bg-[#6b6b6b]",  badge: "bg-[#6b6b6b]/[0.07] border-[#6b6b6b]/15 text-[#6b6b6b]",  pill: "bg-[#f8f8f8] text-[#6b6b6b] border-[#e8e8e8]" },
 ];
 
-interface Props { dict: Dictionary }
+interface Props { dict: Dictionary; locale?: string }
 
-export default function ZonesSection({ dict }: Props) {
+export default function ZonesSection({ dict, locale }: Props) {
   const { zones } = dict;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -154,7 +154,7 @@ export default function ZonesSection({ dict }: Props) {
           <p className="text-[0.9rem] text-[#6b6b6b]">
             {zones.notListed}{" "}
             <a
-              href="/contact"
+              href={locale === "nl" ? "/nl/contact" : "/contact"}
               className="font-semibold text-[#f97316] underline underline-offset-2 decoration-[#f97316]/40 hover:decoration-[#f97316] transition-all duration-300"
             >
               {zones.contactUs}

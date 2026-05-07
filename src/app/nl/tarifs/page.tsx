@@ -27,7 +27,7 @@ export default async function NlTarifsPage() {
     <>
       <Navbar />
       <TarifsPage locale="nl" />
-      <Footer dict={dict} />
+      <Footer dict={dict} locale="nl" />
     </>
   );
 }

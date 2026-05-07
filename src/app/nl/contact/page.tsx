@@ -30,7 +30,7 @@ export default async function NlContactPage() {
       <div className="pt-20">
         <ContactSection dict={dict} />
       </div>
-      <Footer dict={dict} />
+      <Footer dict={dict} locale="nl" />
     </>
   );
 }

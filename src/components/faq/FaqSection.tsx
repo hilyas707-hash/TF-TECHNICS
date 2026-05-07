@@ -29,9 +29,10 @@ const FILTERS: FilterConfig[] = [
 interface Props {
   dict: Dictionary;
   items?: FaqItem[];
+  locale?: string;
 }
 
-export default function FaqSection({ dict, items }: Props) {
+export default function FaqSection({ dict, items, locale }: Props) {
   const faqItems = items ?? FAQ_ITEMS;
   const { faq, contact } = dict;
   const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
@@ -218,7 +219,7 @@ export default function FaqSection({ dict, items }: Props) {
         <SectionBridge
           text={faq.bridgeText}
           cta={faq.bridgeCta}
-          href="/contact"
+          href={locale === "nl" ? "/nl/contact" : "/contact"}
         />
 
       </div>

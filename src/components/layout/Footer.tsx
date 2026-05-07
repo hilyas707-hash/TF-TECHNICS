@@ -4,18 +4,20 @@ import Link from "next/link";
 import { Phone } from "lucide-react";
 import type { Dictionary } from "@/i18n/dictionaries/types";
 
-interface Props { dict: Dictionary }
+interface Props { dict: Dictionary; locale?: string }
 
-export default function Footer({ dict }: Props) {
+export default function Footer({ dict, locale }: Props) {
   const { footer } = dict;
   const year = new Date().getFullYear();
+  const isNl = locale === "nl";
+  const serviceBase = isNl ? "/nl/services" : "/services";
 
   const SERVICES = [
-    { label: footer.services.depannage,    href: "/services/depannage-urgence"       },
-    { label: footer.services.borne,        href: "/services/borne-recharge"          },
-    { label: footer.services.renovation,   href: "/services/renovation-conformite"   },
-    { label: footer.services.installation, href: "/services/installation-electrique" },
-    { label: footer.services.diagnostic,   href: "/services/diagnostic-electrique"   },
+    { label: footer.services.depannage,    href: `${serviceBase}/depannage-urgence`       },
+    { label: footer.services.borne,        href: `${serviceBase}/borne-recharge`          },
+    { label: footer.services.renovation,   href: `${serviceBase}/renovation-conformite`   },
+    { label: footer.services.installation, href: `${serviceBase}/installation-electrique` },
+    { label: footer.services.diagnostic,   href: `${serviceBase}/diagnostic-electrique`   },
   ];
 
   const LEGAL = [
@@ -33,7 +35,7 @@ export default function Footer({ dict }: Props) {
 
           {/* Gauche — marque + CTA */}
           <div className="flex flex-col gap-5 max-w-xs">
-            <Link href="/" className="text-[1.4rem] font-extrabold tracking-[-0.03em] w-fit">
+            <Link href={isNl ? "/nl" : "/"} className="text-[1.4rem] font-extrabold tracking-[-0.03em] w-fit">
               <span className="text-[#f97316]">tf</span>
               <span className="text-white">-Technics</span>
             </Link>

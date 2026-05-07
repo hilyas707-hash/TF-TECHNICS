@@ -10,6 +10,7 @@ import {
 import { useState } from "react";
 import type { ServiceData } from "@/data/services";
 import { SERVICES_DATA } from "@/data/services";
+import { SERVICES_DATA_NL } from "@/data/services-nl";
 
 const SPRING = [0.32, 0.72, 0, 1] as const;
 
@@ -104,7 +105,8 @@ export default function ServiceDetailPage({ service, locale = "fr" }: Props) {
 
   const titleLines = service.heroTitle.split("\n");
 
-  const related = SERVICES_DATA
+  const allServices = locale === "nl" ? SERVICES_DATA_NL : SERVICES_DATA;
+  const related = allServices
     .filter((s) => s.slug !== service.slug)
     .slice(0, 3);
 

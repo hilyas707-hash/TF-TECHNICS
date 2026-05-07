@@ -153,7 +153,7 @@ export default async function NlHome() {
       <TrustSection dict={dict} />
 
       {/* 4 — Werkgebied */}
-      <ZonesSection dict={dict} />
+      <ZonesSection dict={dict} locale="nl" />
 
       {/* 5 — Laadpalen */}
       <BornesSection dict={dict} locale="nl" />
@@ -164,7 +164,7 @@ export default async function NlHome() {
           <p className="text-xs uppercase tracking-[0.2em] font-medium text-orange-500 mb-4">FAQ</p>
           <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">Vragen over onze diensten?</h2>
           <p className="text-zinc-500 mb-8 max-w-lg mx-auto text-base">Responstijden, tarieven, garanties, AREI-conformiteit… Alle antwoorden staan in onze uitgebreide FAQ.</p>
-          <a href="/faq" className="inline-flex items-center gap-3 bg-zinc-900 text-white px-8 py-4 rounded-full font-medium hover:bg-zinc-800 transition-all duration-300">
+          <a href="/nl/faq" className="inline-flex items-center gap-3 bg-zinc-900 text-white px-8 py-4 rounded-full font-medium hover:bg-zinc-800 transition-all duration-300">
             Bekijk alle veelgestelde vragen
             <span className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-sm">→</span>
           </a>
@@ -175,7 +175,7 @@ export default async function NlHome() {
       <ContactSection dict={dict} />
 
       {/* 9 — Voettekst + juridisch */}
-      <Footer dict={dict} />
+      <Footer dict={dict} locale="nl" />
     </>
   );
 }

@@ -46,7 +46,7 @@ export default async function NlDevisPage() {
       <div className="pt-20">
         <DevisSection locale="nl" />
       </div>
-      <Footer dict={dict} />
+      <Footer dict={dict} locale="nl" />
     </>
   );
 }
