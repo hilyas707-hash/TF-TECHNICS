@@ -4,32 +4,63 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Phone, Menu, X, ChevronDown, Zap, BatteryCharging, Wrench, PlugZap, ScanSearch } from "lucide-react";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import type { LucideIcon } from "lucide-react";
 import LocaleSwitcher from "@/components/layout/LocaleSwitcher";
 
 const SPRING = [0.32, 0.72, 0, 1] as const;
 const PHONE  = "+32 483 48 04 96";
 
-const SERVICES_NAV: { label: string; href: string; Icon: LucideIcon }[] = [
-  { label: "Dépannage d'urgence",     href: "/services/depannage-urgence",      Icon: Zap             },
-  { label: "Borne de recharge",       href: "/services/borne-recharge",         Icon: BatteryCharging },
-  { label: "Mise en conformité",      href: "/services/renovation-conformite",  Icon: Wrench          },
-  { label: "Installation électrique", href: "/services/installation-electrique",Icon: PlugZap         },
-  { label: "Diagnostic électrique",   href: "/services/diagnostic-electrique",  Icon: ScanSearch      },
+const SERVICES_FR = [
+  { label: "Dépannage d'urgence",     slug: "depannage-urgence",       Icon: Zap             },
+  { label: "Borne de recharge",       slug: "borne-recharge",          Icon: BatteryCharging },
+  { label: "Mise en conformité",      slug: "renovation-conformite",   Icon: Wrench          },
+  { label: "Installation électrique", slug: "installation-electrique", Icon: PlugZap         },
+  { label: "Diagnostic électrique",   slug: "diagnostic-electrique",   Icon: ScanSearch      },
 ];
 
-const NAV_LINKS = [
-  { label: "Zones",    href: "/#zones"   },
-  { label: "Tarifs",   href: "/tarifs"   },
-  { label: "Devis",    href: "/devis"    },
-  { label: "FAQ",      href: "/faq"      },
-  { label: "Blog",     href: "/blog"     },
-  { label: "Contact",  href: "/contact" },
+const SERVICES_NL = [
+  { label: "Elektrische spoed",      slug: "depannage-urgence",       Icon: Zap             },
+  { label: "Laadpaal",               slug: "borne-recharge",          Icon: BatteryCharging },
+  { label: "AREI-conformiteit",      slug: "renovation-conformite",   Icon: Wrench          },
+  { label: "Elektrische installatie",slug: "installation-electrique", Icon: PlugZap         },
+  { label: "Elektrische diagnose",   slug: "diagnostic-electrique",   Icon: ScanSearch      },
 ];
 
 export default function Navbar() {
   const [menuOpen,     setMenuOpen]     = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const pathname = usePathname();
+  const isNl = pathname.startsWith("/nl");
+
+  const base         = isNl ? "/nl" : "";
+  const serviceBase  = isNl ? "/nl/services" : "/services";
+  const servicesData = isNl ? SERVICES_NL : SERVICES_FR;
+
+  const SERVICES_NAV: { label: string; href: string; Icon: LucideIcon }[] = servicesData.map(
+    ({ label, slug, Icon }) => ({ label, href: `${serviceBase}/${slug}`, Icon })
+  );
+
+  const NAV_LINKS = isNl
+    ? [
+        { label: "Zones",     href: "/nl#zones"     },
+        { label: "Tarieven",  href: "/nl/tarifs"    },
+        { label: "Offerte",   href: "/nl/devis"     },
+        { label: "FAQ",       href: "/nl/faq"       },
+        { label: "Blog",      href: "/blog"         },
+        { label: "Contact",   href: "/nl/contact"   },
+      ]
+    : [
+        { label: "Zones",    href: "/#zones"   },
+        { label: "Tarifs",   href: "/tarifs"   },
+        { label: "Devis",    href: "/devis"    },
+        { label: "FAQ",      href: "/faq"      },
+        { label: "Blog",     href: "/blog"     },
+        { label: "Contact",  href: "/contact"  },
+      ];
+
+  const callLabel = isNl ? "Bellen" : "Appeler";
+  const logoHref  = isNl ? "/nl" : "/";
 
   return (
     <motion.header
@@ -39,7 +70,7 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-5"
     >
       <nav className="flex items-center justify-between gap-6 w-full max-w-5xl px-5 py-0 rounded-full bg-white/85 backdrop-blur-xl ring-1 ring-black/[0.07] shadow-[0_4px_28px_rgba(43,43,43,0.09)]">
-        <a href="/" className="flex items-center flex-shrink-0 select-none py-2">
+        <a href={logoHref} className="flex items-center flex-shrink-0 select-none py-2">
           <Image src="/logo.svg" alt="TF Technics" width={148} height={32} priority className="h-8 w-auto" />
         </a>
 
@@ -47,7 +78,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-5">
           <div className="relative group/svc py-4">
             <button className="flex items-center gap-1 text-[13px] font-medium text-[#6b6b6b] hover:text-[#2b2b2b] transition-colors duration-300">
-              Services
+              {isNl ? "Diensten" : "Services"}
               <ChevronDown size={11} strokeWidth={2.5} className="transition-transform duration-300 group-hover/svc:rotate-180" />
             </button>
             <div className="absolute top-full left-1/2 -translate-x-1/2 w-max opacity-0 pointer-events-none group-hover/svc:opacity-100 group-hover/svc:pointer-events-auto transition-all duration-200 pt-2">
@@ -80,7 +111,7 @@ export default function Navbar() {
           <div className="hidden sm:block"><LocaleSwitcher /></div>
           <a href={`tel:${PHONE.replace(/\s/g, "")}`}
             className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-[#2b2b2b] text-white text-[13px] font-semibold transition-all duration-500 hover:bg-[#f97316] active:scale-[0.97]">
-            <Phone size={12} strokeWidth={2.5} />Appeler
+            <Phone size={12} strokeWidth={2.5} />{callLabel}
           </a>
           <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu"
             className="md:hidden relative w-11 h-11 rounded-full bg-[#2b2b2b]/[0.07] flex items-center justify-center transition-colors hover:bg-[#2b2b2b]/[0.12] active:scale-[0.95]">
@@ -109,7 +140,7 @@ export default function Navbar() {
             onClick={() => setServicesOpen(!servicesOpen)}
             className="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-[16px] font-semibold text-[#2b2b2b] hover:bg-[#2b2b2b]/[0.04] transition-colors"
           >
-            Services
+            {isNl ? "Diensten" : "Services"}
             <ChevronDown size={16} strokeWidth={2} className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`} />
           </button>
           {servicesOpen && (
