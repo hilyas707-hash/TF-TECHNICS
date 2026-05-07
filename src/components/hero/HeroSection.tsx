@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Phone, Clock, Shield, Zap, ArrowUpRight, MapPin, Menu, X, ChevronDown, BatteryCharging, Wrench, PlugZap, ScanSearch } from "lucide-react";
+import { Phone, Zap, ArrowUpRight, MapPin, Menu, X, ChevronDown, BatteryCharging, Wrench, PlugZap, ScanSearch } from "lucide-react";
 import { useState } from "react";
 import type { LucideIcon } from "lucide-react";
 import type { Dictionary } from "@/i18n/dictionaries/types";
@@ -215,40 +215,6 @@ export default function HeroSection({ dict, locale }: HeroSectionProps) {
         <div aria-hidden className="hero-overlay-side absolute inset-0 pointer-events-none" />
         <div aria-hidden className="hero-halo absolute pointer-events-none bottom-0 left-0 w-[700px] h-[400px]" />
 
-        {/* Carte haut droite — délai */}
-        <motion.div
-          initial={{ opacity: 0, y: -20, x: 20 }}
-          animate={{ opacity: 1, y: 0, x: 0 }}
-          transition={{ duration: 0.9, ease: SPRING, delay: 1.2 }}
-          className="absolute top-28 right-5 md:top-32 md:right-10 z-10 hidden sm:block"
-        >
-          <div className="px-4 py-3.5 rounded-2xl bg-black/40 backdrop-blur-xl ring-1 ring-white/[0.12] shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
-            <p className="text-[28px] font-extrabold leading-none tracking-[-0.04em] text-white">
-              {trust.stats.response.value}
-            </p>
-            <p className="text-[11px] text-white/80 mt-1.5 font-medium tracking-wider uppercase">
-              {hero.floatingDelay}
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Carte milieu droite — garantie */}
-        <motion.div
-          initial={{ opacity: 0, x: 24 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, ease: SPRING, delay: 1.45 }}
-          className="absolute top-[46%] -translate-y-1/2 right-5 md:right-10 z-10 hidden md:block"
-        >
-          <div className="px-4 py-3.5 rounded-2xl bg-black/40 backdrop-blur-xl ring-1 ring-white/[0.12] shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
-            <p className="text-[28px] font-extrabold leading-none tracking-[-0.04em] text-white">
-              {trust.stats.satisfaction.value}
-            </p>
-            <p className="text-[11px] text-white/80 mt-1.5 font-medium tracking-wider uppercase">
-              {hero.floatingWarranty}
-            </p>
-          </div>
-        </motion.div>
-
         {/* Contenu principal ancré en bas */}
         <div className="relative z-10 mt-auto w-full">
 
@@ -282,33 +248,15 @@ export default function HeroSection({ dict, locale }: HeroSectionProps) {
               </motion.p>
 
               {/* CTA */}
-              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-1">
+              <motion.div variants={fadeUp} className="pt-1">
                 <a href={`tel:${hero.phone.replace(/\s/g, "")}`}
-                  className="group relative flex items-center justify-between gap-3 w-full sm:w-auto sm:inline-flex pl-5 pr-2 py-3.5 sm:py-3 rounded-full bg-[#c2410c] text-white font-bold text-[15px] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#9a3412] active:scale-[0.98] shadow-[0_4px_32px_rgba(194,65,12,0.55)] hover:shadow-[0_8px_40px_rgba(194,65,12,0.7)]">
-                  <div className="flex items-center gap-2.5">
-                    <Phone size={15} strokeWidth={2.5} />{hero.cta}
-                  </div>
-                  <span className="w-10 h-10 sm:w-9 sm:h-9 rounded-full bg-white/25 flex items-center justify-center flex-shrink-0 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-110">
+                  className="group inline-flex items-center gap-3 pl-5 pr-2 py-3 rounded-full bg-[#c2410c] text-white font-bold text-[15px] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#9a3412] active:scale-[0.98] shadow-[0_4px_32px_rgba(194,65,12,0.55)] hover:shadow-[0_8px_40px_rgba(194,65,12,0.7)]">
+                  <Phone size={15} strokeWidth={2.5} />{hero.cta}
+                  <span className="w-9 h-9 rounded-full bg-white/25 flex items-center justify-center flex-shrink-0 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-110">
                     <ArrowUpRight size={15} strokeWidth={2.5} />
                   </span>
                 </a>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    { icon: <Shield size={11} strokeWidth={2} />, label: hero.trust.certified },
-                    { icon: <Clock  size={11} strokeWidth={2} />, label: hero.trust.available },
-                    { icon: <Zap    size={11} strokeWidth={2} />, label: hero.trust.speed     },
-                  ].map(({ icon, label }) => (
-                    <span key={label} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.12] backdrop-blur-md ring-1 ring-white/[0.18] text-white/90 text-[12px] font-medium">
-                      {icon}{label}
-                    </span>
-                  ))}
-                </div>
               </motion.div>
-
-              {/* Phrase d'engagement */}
-              <motion.p variants={fadeUp} className="text-[0.75rem] leading-relaxed text-white/55 max-w-[34rem]">
-                {hero.commitment}
-              </motion.p>
 
             </motion.div>
           </div>
